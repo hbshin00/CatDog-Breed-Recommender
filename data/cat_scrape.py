@@ -5,12 +5,19 @@ import pandas as pd
 link = "https://cattime.com/cat-breeds"
 pg = requests.get(link)
 temp_soup = BeautifulSoup(pg.content, 'html.parser')
-refs = temp_soup.find_all("a", class_="list-item-title")
+parent = temp_soup.find("div", class_="group with-image-mobile-only")
+refs = parent.find_all("a", class_="list-item-title")
 URLs = []
 breeds = []
+imgs = []
 for ref in refs:
     breeds.append(ref.get_text())
     URLs.append(ref["href"])
+for url in URLs:
+    pg1 = requests.get(url)
+    temp = BeautifulSoup(pg1.content, 'html.parser')
+    img = temp.find("img", class_="breed-featured-img")
+    imgs.append(img["src"])
 
 pg2 = requests.get(URLs[0])
 soup2 = BeautifulSoup(pg2.content, 'html.parser')
@@ -33,13 +40,12 @@ for URL in URLs:
             star.append(s)
     stars.append(star)
 
-
 panda = pd.DataFrame({
     "breed": breeds,
+    "imgs": imgs,
+    "urls": URLs,
     "intro": intros
 })
-
 for i in range(len(titles)):
     panda[titles[i]] = [int(stars[j][i]) if i < len(stars[j]) else -100 for j in range(len(stars))]
-
-panda.to_csv('data/cats.csv', index=False)
+panda.to_csv('data/cats.csv')
