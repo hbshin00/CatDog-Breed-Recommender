@@ -1,6 +1,7 @@
 from . import *  
 from app.irsystem.models.helpers import *
 from app.irsystem.models.helpers import NumpyEncoder as NumpyEncoder
+import pandas as pd
 
 project_name = "Catdog"
 net_id = "Tricia Park: tp294, Jarrett Coleman: jjc368, Hali Shin: hbs59, Matteo Savarese: mgs249, Junlin Yi: jy683"
@@ -8,6 +9,8 @@ net_id = "Tricia Park: tp294, Jarrett Coleman: jjc368, Hali Shin: hbs59, Matteo 
 @irsystem.route('/', methods=['GET'])
 def search():
 
+	dogs = pd.read_csv("data/dogs.csv")
+	cats = pd.read_csv("data/cats.csv")
 	# make_vector(request.args)
 	# render_results(results)
 
@@ -37,10 +40,10 @@ def make_vector(traits):
 	output = []
 	if request.args.get('dog-selected') is not None:
 		# process input for dog form
-		continue
+		raise NotImplementedError()
 	elif request.args.get('cat-selected') is not None:
 		# process input for cat form
-		continue
+		raise NotImplementedError()
 	return output
 
 def render_results(results):
