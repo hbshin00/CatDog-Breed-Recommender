@@ -11,7 +11,7 @@ def search():
 	# make_vector(request.args)
 	# render_results(results)
 
-	print(request.args)
+	# print(request.args)
 
 	query = request.args.get('apartment')
 	if not query:
