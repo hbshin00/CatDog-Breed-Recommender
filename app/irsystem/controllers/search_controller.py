@@ -3,11 +3,11 @@ from app.irsystem.models.helpers import *
 from app.irsystem.models.helpers import NumpyEncoder as NumpyEncoder
 
 project_name = "Catdog"
-net_id = "Tricia Park: tp294, Jarrett Coleman: jjc368, Hali Shin: hbs59, Matteo Savarese: mgs249, Junlin Yi:"
+net_id = "Tricia Park: tp294, Jarrett Coleman: jjc368, Hali Shin: hbs59, Matteo Savarese: mgs249, Junlin Yi: jy683"
 
 @irsystem.route('/', methods=['GET'])
 def search():
-	query = request.args.get('search')
+	query = request.args.get('apartment')
 	if not query:
 		data = []
 		output_message = ''
