@@ -7,6 +7,10 @@ net_id = "Tricia Park: tp294, Jarrett Coleman: jjc368, Hali Shin: hbs59, Matteo 
 
 @irsystem.route('/', methods=['GET'])
 def search():
+
+	# make_vector(request.args)
+	# render_results(results)
+
 	query = request.args.get('apartment')
 	if not query:
 		data = []
@@ -17,4 +21,22 @@ def search():
 	return render_template('search.html', name=project_name, netid=net_id, output_message=output_message, data=data)
 
 
+def make_vector(traits):
+	"""
+	Input: traits (dictionary of integer traits that user inputs)
+	Example: [('apartment', '3'), ('novice', '3'), ('sensitivity', '3'), ('alone', '3'), ('cold', '3'), ('hot', '3'), ('family-dog', '3'), ('kids-dog', '3'), ('dog-friendly', '3'), ('strangers', '3'), ('shedding-dog', '3'), ('drool', '3'), ('groom-dog', '3'), ('health-dog', '3'), ('weight-gain', '3'), ('size', '3'), ('train', '3'), ('intelligence-dog', '3'), ('mouthiness', '3'), ('prey', '3'), ('noise', '3'), ('wander', '3'), ('energy', '3'), ('intensity', '3'), ('exercise', '3'), ('playful', '3')]
+	
+	Output: vector (list of ints)
+	Example: [3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3]
+	"""
+	raise NotImplementedError()
 
+def render_results(results):
+	"""
+	Input: results (list of top k breeds)
+	Example: ["breed1", "breed2", "breed3"]
+
+	Output: render_template(?)
+	"""
+	# return render_template('search.html', name=project_name, netid=net_id, output_message=output_message, data=data)
+	raise NotImplementedError()
