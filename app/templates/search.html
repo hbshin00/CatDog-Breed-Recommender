@@ -2,13 +2,111 @@
     <head>
         <link rel="stylesheet" href="/static/bootstrap.min.css">
         <link rel="stylesheet" href="/static/main.css">
+        <link rel="stylesheet" href="style.css">
     </head>
     <body>
         <div class="topcorner">
             <p>Project Name: {{ name }}</p>
             <p>Student Name: ({{ netid }})</p>
         </div>
-        <form class="form-inline global-search">
+        <h1>Catdog Breed Recommender</h1>
+        <div id="catdog-form">
+            <p>Select dog or cat:</p>
+            <button id="dog-button" class="btn btn-info"> Dog </button>
+            <button id="cat-button" class="btn btn-info"> Cat </button>
+            <form id="dog-form">
+                <h2>Dog Trait Selector</h2>
+                <p>Left side is don't want, right side is want</p>
+                <p>Adapts well to apartment living:</p>
+                <input type="range" id="apartment" name="apartment" min="1" max="5">
+                <p>Good for novice owners:</p>
+                <input type="range" id="novice" name="novice" min="1" max="5">
+                <p>Sensitivity:</p>
+                <input type="range" id="sensitivity" name="sensitivity" min="1" max="5">
+                <p>Tolerates being alone:</p>
+                <input type="range" id="alone" name="alone" min="1" max="5">
+                <p>Tolerates cold weather:</p>
+                <input type="range" id="cold" name="cold" min="1" max="5">
+                <p>Tolerates hot weather:</p>
+                <input type="range" id="hot" name="hot" min="1" max="5">
+                <p>Affectionate with family:</p>
+                <input type="range" id="family-dog" name="family-dog" min="1" max="5">
+                <p>Kid-friendly:</p>
+                <input type="range" id="kids-dog" name="kids-dog" min="1" max="5">
+                <p>Dog-friendly:</p>
+                <input type="range" id="dog-friendly" name="og-friendly" min="1" max="5">
+                <p>Friendly towards strangers:</p>
+                <input type="range" id="strangers" name="strangers" min="1" max="5">
+                <p>Amount of shedding:</p>
+                <input type="range" id="shedding-dog" name="shedding-dog" min="1" max="5">
+                <p>Drooling potential:</p>
+                <input type="range" id="drool" name="drool" min="1" max="5">
+                <p>Easy to groom:</p>
+                <input type="range" id="groom-dog" name="groom-dog" min="1" max="5">
+                <p>General health:</p>
+                <input type="range" id="health-dog" name="health-dog" min="1" max="5">
+                <p>Potential for weight gain:</p>
+                <input type="range" id="weight-gain" name="weight-gain" min="1" max="5">
+                <p>Size:</p>
+                <input type="range" id="size" name="size" min="1" max="5">
+                <p>Easy to train:</p>
+                <input type="range" id="train" name="train" min="1" max="5">
+                <p>Intelligence:</p>
+                <input type="range" id="intelligence-dog" name="intelligence-dog" min="1" max="5">
+                <p>Potential for mouthiness:</p>
+                <input type="range" id="mouthiness" name="mouthiness" min="1" max="5">
+                <p>Prey drive:</p>
+                <input type="range" id="prey" name="prey" min="1" max="5">
+                <p>Tendnecy to bark or howl:</p>
+                <input type="range" id="noise" name="noise" min="1" max="5">
+                <p>Wanderlust potential:</p>
+                <input type="range" id="wander" name="wander" min="1" max="5">
+                <p>Energy level:</p>
+                <input type="range" id="energy" name="energy" min="1" max="5">
+                <p>Intensity:</p>
+                <input type="range" id="intensity" name="intensity" min="1" max="5">
+                <p>Exercise needs:</p>
+                <input type="range" id="exercise" name="exercise" min="1" max="5">
+                <p>Potential for playfulness:</p>
+                <input type="range" id="playful" name="playful" min="1" max="5">
+                <button type="submit" class="btn btn-info"> Submit </button>
+            </form>
+            <form id="cat-form">
+                <h2>Cat Trait Selector</h2>
+                <p>Left side is don't want, right side is want</p>
+                <p>Affectionate with family:</p>
+                <input type="range" id="family-cat" name="family-cat" min="1" max="5">
+                <p>Amount of shedding:</p>
+                <input type="range" id="shedding-cat" name="shedding-cat" min="1" max="5">
+                <p>General health:</p>
+                <input type="range" id="health-cat" name="health-cat" min="1" max="5">
+                <p>Kid-friendly:</p>
+                <input type="range" id="kids-cat" name="kids-cat" min="1" max="5">
+                <p>Easy to groom:</p>
+                <input type="range" id="groom-caat" name="groom-cat" min="1" max="5">
+                <p>Intelligence:</p>
+                <input type="range" id="intelligence-cat" name="intelligence-cat" min="1" max="5">
+                <p>Pet-friendly:</p>
+                <input type="range" id="pet-friendly" name="pet-friendly" min="1" max="5">
+
+                <button type="submit" class="btn btn-info"> Submit </button>
+            </form>
+
+            <script>
+                document.getElementById('cat-form').style.display = 'none';
+                document.getElementById('dog-form').style.display = 'none';
+                document.getElementById('dog-button').addEventListener('click', () => {
+                    document.getElementById('cat-form').style.display = 'none';
+                    document.getElementById('dog-form').style.display = 'block';
+                })
+                document.getElementById('cat-button').addEventListener('click', () => {
+                    document.getElementById('cat-form').style.display = 'block';
+                    document.getElementById('dog-form').style.display = 'none';
+                })
+            </script>
+        </div>
+
+        <!-- <form class="form-inline global-search">
             <h1 style="font-size: 55px; font-family:Futura; color: #4285F4">
                 C
                 <span style="color: #EA4335; ">S</span>
@@ -19,12 +117,18 @@
             </h1>
             
             <br><br>
-            
+             
             <div class="form-group">
                 <input id="input" type="text" name="search" class="form-control" placeholder="Your Input">
+
+                <input id="dog" type="radio" name="radio" value="Dog">
+                <label for="dog">Radio Test1</label>
+                <input id="cat" type="radio" name="radio" value="Cat">
+                <label for="cat">Radio Test2</label>
+
             </div>
             <button type="submit" class="btn btn-info"> Go! </button>
-        </form>
+        </form> -->
         <form class="form-inline global-search">
         {% if data %}
             <h1>{{output_message}}</h1>
