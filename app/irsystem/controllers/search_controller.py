@@ -2,12 +2,21 @@ from . import *
 from app.irsystem.models.helpers import *
 from app.irsystem.models.helpers import NumpyEncoder as NumpyEncoder
 import numpy as np
+import pandas as pd
 
 project_name = "Catdog"
 net_id = "Tricia Park: tp294, Jarrett Coleman: jjc368, Hali Shin: hbs59, Matteo Savarese: mgs249, Junlin Yi: jy683"
 
 @irsystem.route('/', methods=['GET'])
 def search():
+
+	dogs = pd.read_csv("data/dogs.csv")
+	cats = pd.read_csv("data/cats.csv")
+	# make_vector(request.args)
+	# render_results(results)
+
+	# print(request.args)
+
 	query = request.args.get('apartment')
 	if not query:
 		data = []
@@ -35,4 +44,34 @@ def cosine(inVector, isDog, k):
 	return [x[0] for x in toReturn[:k]]
 
 
+def make_vector(traits):
+	"""
+	Input: traits (dictionary of integer traits that user inputs, different based on dog or cat)
+	Example: [('apartment', '3'), ('novice', '3'), ('sensitivity', '3'), ('alone', '3'), ('cold', '3'), ('hot', '3'), ('family-dog', '3'), ('kids-dog', '3'), ('dog-friendly', '3'), ('strangers', '3'), ('shedding-dog', '3'), ('drool', '3'), ('groom-dog', '3'), ('health-dog', '3'), ('weight-gain', '3'), ('size', '3'), ('train', '3'), ('intelligence-dog', '3'), ('mouthiness', '3'), ('prey', '3'), ('noise', '3'), ('wander', '3'), ('energy', '3'), ('intensity', '3'), ('exercise', '3'), ('playful', '3')]
+	
+	Output: vector (list of ints, different based on dog or cat)
+	Example: [3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3]
 
+	The "dog-selected" or "cat-selected" field will be in the input traits 
+	depending on if the dog form or if the cat form was selected
+	"""
+	output = []
+	if request.args.get('dog-selected') is not None:
+		# process input for dog form
+		output = [int(x[1]) for x in traits]
+	elif request.args.get('cat-selected') is not None:
+		# process input for cat form
+		output = [int(x[1]) for x in traits]
+	return output
+
+def render_results(results):
+	"""
+	Input: results (list of top k breeds)
+	Example: ["breed1", "breed2", "breed3"]
+
+	Output: render_template(?)
+	"""
+	output_message = "Your top " + str(len(results)) + " breeds are: "
+# 	for i in range(len(results)):
+# 		output_message += str(i + 1) + ": " + results[i] + "\n"
+	return render_template('search.html', name=project_name, netid=net_id, output_message=output_message, data=results)
