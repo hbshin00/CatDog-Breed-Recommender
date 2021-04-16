@@ -53,5 +53,7 @@ def render_results(results):
 
 	Output: render_template(?)
 	"""
-	# return render_template('search.html', name=project_name, netid=net_id, output_message=output_message, data=data)
-	raise NotImplementedError()
+	output_message = "Your top " + str(len(results)) + " breeds are: "
+# 	for i in range(len(results)):
+# 		output_message += str(i + 1) + ": " + results[i] + "\n"
+	return render_template('search.html', name=project_name, netid=net_id, output_message=output_message, data=results)
