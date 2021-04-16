@@ -40,10 +40,10 @@ def make_vector(traits):
 	output = []
 	if request.args.get('dog-selected') is not None:
 		# process input for dog form
-		raise NotImplementedError()
+		output = [int(x[1]) for x in traits]
 	elif request.args.get('cat-selected') is not None:
 		# process input for cat form
-		raise NotImplementedError()
+		output = [int(x[1]) for x in traits]
 	return output
 
 def render_results(results):
