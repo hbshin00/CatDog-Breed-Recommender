@@ -27,7 +27,7 @@ def cosine(inVector, isDog, k):
 
 	for row in vectors:
 		#TODO: make vector be the relevant parts of the database row
-		vector = row[3:15]
+		vector = np.array(row[3:15])
 		cosine = np.dot(inVector,vector)/(np.linalg.norm(inVector)*np.linalg.norm(vector))
 		#TODO: return tuple of cosine and breed name
 		toReturn.append((row[0],cosine))
