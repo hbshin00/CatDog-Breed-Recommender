@@ -75,6 +75,6 @@ def render_results(results):
 	Output: render_template(?)
 	"""
 	output_message = "Your top " + str(len(results)) + " breeds are: "
-# 	for i in range(len(results)):
-# 		output_message += str(i + 1) + ": " + results[i] + "\n"
+	rel_breeds = df.loc[df['breed] == some_value]
+	data = list(df.to_records(index=False))
 	return render_template('search.html', name=project_name, netid=net_id, output_message=output_message, data=results)
