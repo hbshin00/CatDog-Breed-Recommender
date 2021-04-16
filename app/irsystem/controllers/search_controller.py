@@ -31,6 +31,7 @@ def search():
 def cosine(inVector, k):
 	#TODO: make vectors a property of catslist and dogslist or convert
 	vectors = cats.to_numpy()
+
 	if request.args.get('dog-selected') is not None:
 		vectors = dogs.to_numpy()
 
@@ -39,10 +40,14 @@ def cosine(inVector, k):
 	for row in vectors:
 		#makes vector be the relevant parts of the database row
 		vector = (row[4:])
+		if len(vector) != len(inVector):
+			raise Exception("Vector lengths do not match")
 		cosine = np.dot(inVector,vector)/(np.linalg.norm(inVector)*np.linalg.norm(vector))
 		#returns tuple of cosine and breed name
 		toReturn.append((row[0],cosine))
+
 	toReturn = (sorted(toReturn, key = lambda x: -x[1]))
+
 	#returns list of top k breed names sorted by cosine score
 	return [x[0] for x in toReturn[:k]]
 
