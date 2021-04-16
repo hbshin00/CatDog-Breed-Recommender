@@ -6,6 +6,8 @@ import pandas as pd
 
 project_name = "Catdog"
 net_id = "Tricia Park: tp294, Jarrett Coleman: jjc368, Hali Shin: hbs59, Matteo Savarese: mgs249, Junlin Yi: jy683"
+dogs = None
+cats = None
 
 @irsystem.route('/', methods=['GET'])
 def search():
@@ -26,21 +28,22 @@ def search():
 		data = range(5)
 	return render_template('search.html', name=project_name, netid=net_id, output_message=output_message, data=data)
 
-def cosine(inVector, isDog, k):
+def cosine(inVector, k):
 	#TODO: make vectors a property of catslist and dogslist or convert
-	vectors = CatsList.vectors
-	if isDog:
-		vectors = DogsList.vectors
+	vectors = cats.to_numpy()
+	if request.args.get('dog-selected') is not None:
+		vectors = dogs.to_numpy()
 
 	toReturn = []
 
 	for row in vectors:
-		#TODO: make vector be the relevant parts of the database row
-		vector = np.array(row[3:15])
+		#makes vector be the relevant parts of the database row
+		vector = (row[4:])
 		cosine = np.dot(inVector,vector)/(np.linalg.norm(inVector)*np.linalg.norm(vector))
-		#TODO: return tuple of cosine and breed name
+		#returns tuple of cosine and breed name
 		toReturn.append((row[0],cosine))
 	toReturn = (sorted(toReturn, key = lambda x: -x[1]))
+	#returns list of top k breed names sorted by cosine score
 	return [x[0] for x in toReturn[:k]]
 
 
