@@ -59,6 +59,7 @@ def make_vector(traits):
 	
 	Output: vector (list of ints, different based on dog or cat)
 	Example: [3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3]
+	output must be in order that traits appear in dataset/website
 
 	The "dog-selected" or "cat-selected" field will be in the input traits 
 	depending on if the dog form or if the cat form was selected
@@ -66,10 +67,10 @@ def make_vector(traits):
 	output = []
 	if request.args.get('dog-selected') is not None:
 		# process input for dog form
-		output = [int(x[1]) for x in traits]
+		output = [int(x[1]) for x in traits] #this may include some extra input from the dog-selected/cat-selected fields, may be better to get each input manually with .get(input)
 	elif request.args.get('cat-selected') is not None:
 		# process input for cat form
-		output = [int(x[1]) for x in traits]
+		output = [int(x[1]) for x in traits] #same as above, reference "traits" input for names of fields
 	return output
 
 def render_results(results):
@@ -80,6 +81,10 @@ def render_results(results):
 	Output: render_template(?)
 	"""
 	output_message = "Your top " + str(len(results)) + " breeds are: "
-	rel_breeds = df.loc[df['breed] == some_value]
-	data = list(df.to_records(index=False))
-	return render_template('search.html', name=project_name, netid=net_id, output_message=output_message, data=results)
+	data = []
+	for i in results:
+		rel_breeds = df.loc[df['breed'] == i]
+		entry = list(rel_breeds.to_records(index=False))
+		entry.insert(0, i)
+		data.append(entry)
+	return render_template('search.html', name=project_name, netid=net_id, output_message=output_message, data=data)
