@@ -15,10 +15,10 @@ def search():
 	cats = pd.read_csv("data/cats.csv")
 	
 	# v = make_vector(request.args)
-	v = np.zeros(26)
+	v = (dogs.to_numpy()[0][6:])
 	results = cosine(v,5,dogs,cats)
+	print(results)
 	render_results(results,dogs,cats)
-	print(request.args)
 	print("hello")
 
 	query = request.args.get('apartment')
@@ -43,7 +43,6 @@ def cosine(inVector, k, dogs, cats):
 	for row in vectors:
 		#makes vector be the relevant parts of the database row
 		vector = (row[6:])
-		print(row[1])
 		if len(vector) != len(inVector):
 			raise Exception("Vector lengths do not match")
 		
