@@ -1,4 +1,4 @@
-from . import *  
+from . import *
 from app.irsystem.models.helpers import *
 from app.irsystem.models.helpers import NumpyEncoder as NumpyEncoder
 import numpy as np
@@ -54,23 +54,44 @@ def cosine(inVector, k):
 
 def make_vector(traits):
 	"""
-	Input: traits (dictionary of integer traits that user inputs, different based on dog or cat)
-	Example: [('apartment', '3'), ('novice', '3'), ('sensitivity', '3'), ('alone', '3'), ('cold', '3'), ('hot', '3'), ('family-dog', '3'), ('kids-dog', '3'), ('dog-friendly', '3'), ('strangers', '3'), ('shedding-dog', '3'), ('drool', '3'), ('groom-dog', '3'), ('health-dog', '3'), ('weight-gain', '3'), ('size', '3'), ('train', '3'), ('intelligence-dog', '3'), ('mouthiness', '3'), ('prey', '3'), ('noise', '3'), ('wander', '3'), ('energy', '3'), ('intensity', '3'), ('exercise', '3'), ('playful', '3')]
-	
+	Input: traits (dictionary of integer traits that user inputs,
+        different based on dog or cat)
+	Example: {'apartment': '3', 'novice': '3', 'sensitivity': '3',
+        'alone': '3', 'cold': '3', 'hot': '3', 'family-dog': '3',
+        'kids-dog': '3', 'dog-friendly': '3', 'strangers': '3',
+        'shedding-dog': '3', 'drool': '3', 'groom-dog': '3',
+        'health-dog': '3', 'weight-gain': '3', 'size': '3',
+        'train': '3', 'intelligence-dog': '3', 'mouthiness': '3',
+        'prey': '3', 'noise': '3', 'wander': '3', 'energy': '3',
+        'intensity': '3', 'exercise': '3', 'playful': '3'}
+
 	Output: vector (list of ints, different based on dog or cat)
 	Example: [3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3]
 	output must be in order that traits appear in dataset/website
 
-	The "dog-selected" or "cat-selected" field will be in the input traits 
+	The "dog-selected" or "cat-selected" field will be in the input traits
 	depending on if the dog form or if the cat form was selected
 	"""
 	output = []
-	if request.args.get('dog-selected') is not None:
+	if traits.get('dog-selected') is not None:
+        dog_traits = ['apartment','novice','sensitivity','alone','cold','hot',
+            'family-dog','kids-dog','dog-friendly','strangers','shedding-dog',
+            'drool','groom','health-dog','weight-gain','size','train',
+            'intelligence-dog','mouthiness','prey','noise','wander','energy',
+            'intensity','exercise','playful']
+        for trait in dog_traits:
+            output.append(traits.get(trait))
 		# process input for dog form
-		output = [int(x[1]) for x in traits] #this may include some extra input from the dog-selected/cat-selected fields, may be better to get each input manually with .get(input)
-	elif request.args.get('cat-selected') is not None:
+		#output = [int(x[1]) for x in traits] #this may include some extra input from the dog-selected/cat-selected fields, may be better to get each input manually with .get(input)
+	elif traits.get('cat-selected') is not None:
+        cat_traits = ['family-cat','shedding-cat','health-cat','kids-cat',
+            'groom-cat','intelligence-cat','pet-friendly']
+        for trait in cat_traits:
+            output.append(traits.get(trait))
 		# process input for cat form
-		output = [int(x[1]) for x in traits] #same as above, reference "traits" input for names of fields
+		#output = [int(x[1]) for x in traits] #same as above, reference "traits" input for names of fields
+    else:
+        failwith
 	return output
 
 def render_results(results):
