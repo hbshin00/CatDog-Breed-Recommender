@@ -99,8 +99,8 @@ def render_results(results):
 
     data = []
     for i in results:
-    	rel_breeds = df.loc[df['breed'] == i]
-    	entry = list(rel_breeds.to_records(index=False))
-    	entry.insert(0, i)
-    	data.append(entry)
+        rel_breeds = df.loc[df['breed'] == i]
+        entry = list(rel_breeds.to_records(index=False))
+        entry.insert(0, i)
+        data.append(entry)
     return render_template('search.html', name=project_name, netid=net_id, output_message=output_message, data=data)
