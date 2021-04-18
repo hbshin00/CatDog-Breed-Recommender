@@ -14,9 +14,9 @@ def search():
 
 	dogs = pd.read_csv("data/dogs.csv")
 	cats = pd.read_csv("data/cats.csv")
-	# make_vector(request.args)
+	# v = make_vector(request.args)
+	# results = cosine(v,5)
 	# render_results(results)
-
 	# print(request.args)
 
 	query = request.args.get('apartment')
