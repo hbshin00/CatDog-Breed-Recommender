@@ -6,18 +6,20 @@ import pandas as pd
 
 project_name = "Catdog"
 net_id = "Tricia Park: tp294, Jarrett Coleman: jjc368, Hali Shin: hbs59, Matteo Savarese: mgs249, Junlin Yi: jy683"
-dogs = None
-cats = None
+
 
 @irsystem.route('/', methods=['GET'])
 def search():
 
 	dogs = pd.read_csv("data/dogs.csv")
 	cats = pd.read_csv("data/cats.csv")
+	
 	# v = make_vector(request.args)
-	# results = cosine(v,5)
-	# render_results(results)
-	# print(request.args)
+	v = np.zeros(26)
+	results = cosine(v,5,dogs,cats)
+	render_results(results,dogs,cats)
+	print(request.args)
+	print("hello")
 
 	query = request.args.get('apartment')
 	if not query:
@@ -28,23 +30,28 @@ def search():
 		data = range(5)
 	return render_template('search.html', name=project_name, netid=net_id, output_message=output_message, data=data)
 
-def cosine(inVector, k):
+def cosine(inVector, k, dogs, cats):
 	#TODO: make vectors a property of catslist and dogslist or convert
-	vectors = cats.to_numpy()
-
+	vectors = None
 	if request.args.get('dog-selected') is not None:
 		vectors = dogs.to_numpy()
-
+	else:
+		vectors = cats.to_numpy()
+		
 	toReturn = []
 
 	for row in vectors:
 		#makes vector be the relevant parts of the database row
-		vector = (row[4:])
+		vector = (row[6:])
+		print(row[1])
 		if len(vector) != len(inVector):
 			raise Exception("Vector lengths do not match")
-		cosine = np.dot(inVector,vector)/(np.linalg.norm(inVector)*np.linalg.norm(vector))
+		
+		cosine = 0
+		if np.linalg.norm(inVector) != 0 and np.linalg.norm(vector) != 0:
+			cosine = np.dot(inVector,vector)/(np.linalg.norm(inVector)*np.linalg.norm(vector))
 		#returns tuple of cosine and breed name
-		toReturn.append((row[0],cosine))
+		toReturn.append((row[1],cosine))
 
 	toReturn = (sorted(toReturn, key = lambda x: -x[1]))
 
@@ -73,13 +80,20 @@ def make_vector(traits):
 		output = [int(x[1]) for x in traits] #same as above, reference "traits" input for names of fields
 	return output
 
-def render_results(results):
+def render_results(results, dogs, cats):
 	"""
 	Input: results (list of top k breeds)
 	Example: ["breed1", "breed2", "breed3"]
 
 	Output: render_template(?)
 	"""
+
+	df = None
+	if request.args.get('dog-selected') is not None:
+		df = dogs
+	else:
+		df = cats
+
 	output_message = "Your top " + str(len(results)) + " breeds are: "
 	data = []
 	for i in results:
