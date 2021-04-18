@@ -12,51 +12,51 @@ cats = None
 @irsystem.route('/', methods=['GET'])
 def search():
 
-	dogs = pd.read_csv("data/dogs.csv")
-	cats = pd.read_csv("data/cats.csv")
-	# make_vector(request.args)
-	# render_results(results)
+    dogs = pd.read_csv("data/dogs.csv")
+    cats = pd.read_csv("data/cats.csv")
+    # make_vector(request.args)
+    # render_results(results)
 
-	# print(request.args)
+    # print(request.args)
 
-	query = request.args.get('apartment')
-	if not query:
-		data = []
-		output_message = ''
-	else:
-		output_message = "Your search: " + query
-		data = range(5)
-	return render_template('search.html', name=project_name, netid=net_id, output_message=output_message, data=data)
+    query = request.args.get('apartment')
+    if not query:
+        data = []
+        output_message = ''
+    else:
+        output_message = "Your search: " + query
+        data = range(5)
+    return render_template('search.html', name=project_name, netid=net_id, output_message=output_message, data=data)
 
 def cosine(inVector, k):
-	#TODO: make vectors a property of catslist and dogslist or convert
-	vectors = cats.to_numpy()
+    #TODO: make vectors a property of catslist and dogslist or convert
+    vectors = cats.to_numpy()
 
-	if request.args.get('dog-selected') is not None:
-		vectors = dogs.to_numpy()
+    if request.args.get('dog-selected') is not None:
+        vectors = dogs.to_numpy()
 
-	toReturn = []
+    toReturn = []
 
-	for row in vectors:
-		#makes vector be the relevant parts of the database row
-		vector = (row[4:])
-		if len(vector) != len(inVector):
-			raise Exception("Vector lengths do not match")
-		cosine = np.dot(inVector,vector)/(np.linalg.norm(inVector)*np.linalg.norm(vector))
-		#returns tuple of cosine and breed name
-		toReturn.append((row[0],cosine))
+    for row in vectors:
+        #makes vector be the relevant parts of the database row
+        vector = (row[4:])
+        if len(vector) != len(inVector):
+            raise Exception("Vector lengths do not match")
+        cosine = np.dot(inVector,vector)/(np.linalg.norm(inVector)*np.linalg.norm(vector))
+        #returns tuple of cosine and breed name
+        toReturn.append((row[0],cosine))
 
-	toReturn = (sorted(toReturn, key = lambda x: -x[1]))
+    toReturn = (sorted(toReturn, key = lambda x: -x[1]))
 
-	#returns list of top k breed names sorted by cosine score
-	return [x[0] for x in toReturn[:k]]
+    #returns list of top k breed names sorted by cosine score
+    return [x[0] for x in toReturn[:k]]
 
 
 def make_vector(traits):
-	"""
-	Input: traits (dictionary of integer traits that user inputs,
+    """
+    Input: traits (dictionary of integer traits that user inputs,
         different based on dog or cat)
-	Example: {'apartment': '3', 'novice': '3', 'sensitivity': '3',
+    Example: {'apartment': '3', 'novice': '3', 'sensitivity': '3',
         'alone': '3', 'cold': '3', 'hot': '3', 'family-dog': '3',
         'kids-dog': '3', 'dog-friendly': '3', 'strangers': '3',
         'shedding-dog': '3', 'drool': '3', 'groom-dog': '3',
@@ -65,47 +65,42 @@ def make_vector(traits):
         'prey': '3', 'noise': '3', 'wander': '3', 'energy': '3',
         'intensity': '3', 'exercise': '3', 'playful': '3'}
 
-	Output: vector (list of ints, different based on dog or cat)
-	Example: [3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3]
-	output must be in order that traits appear in dataset/website
+    Output: vector (list of ints, different based on dog or cat)
+    Example: [3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3]
+    output must be in order that traits appear in dataset/website
 
-	The "dog-selected" or "cat-selected" field will be in the input traits
-	depending on if the dog form or if the cat form was selected
-	"""
-	output = []
-	if traits.get('dog-selected') is not None:
-        dog_traits = ['apartment','novice','sensitivity','alone','cold','hot',
+    The "dog-selected" or "cat-selected" field will be in the input traits
+    depending on if the dog form or if the cat form was selected
+    """
+    output = []
+    if traits.get('dog-selected') is not None:
+        traits_lst = ['apartment','novice','sensitivity','alone','cold','hot',
             'family-dog','kids-dog','dog-friendly','strangers','shedding-dog',
-            'drool','groom','health-dog','weight-gain','size','train',
+            'drool','groom-dog','health-dog','weight-gain','size','train',
             'intelligence-dog','mouthiness','prey','noise','wander','energy',
             'intensity','exercise','playful']
-        for trait in dog_traits:
-            output.append(traits.get(trait))
-		# process input for dog form
-		#output = [int(x[1]) for x in traits] #this may include some extra input from the dog-selected/cat-selected fields, may be better to get each input manually with .get(input)
-	elif traits.get('cat-selected') is not None:
-        cat_traits = ['family-cat','shedding-cat','health-cat','kids-cat',
+    elif traits.get('cat-selected') is not None:
+        traits_lst = ['family-cat','shedding-cat','health-cat','kids-cat',
             'groom-cat','intelligence-cat','pet-friendly']
-        for trait in cat_traits:
-            output.append(traits.get(trait))
-		# process input for cat form
-		#output = [int(x[1]) for x in traits] #same as above, reference "traits" input for names of fields
-    else:
-        failwith
-	return output
+    for trait in traits_lst:
+        int_str = traits.get(trait)
+        int_int = int(int_str)
+        output.append(int_int)
+    return output
 
 def render_results(results):
-	"""
-	Input: results (list of top k breeds)
-	Example: ["breed1", "breed2", "breed3"]
+    """
+    Input: results (list of top k breeds)
+    Example: ["breed1", "breed2", "breed3"]
 
-	Output: render_template(?)
-	"""
-	output_message = "Your top " + str(len(results)) + " breeds are: "
-	data = []
-	for i in results:
-		rel_breeds = df.loc[df['breed'] == i]
-		entry = list(rel_breeds.to_records(index=False))
-		entry.insert(0, i)
-		data.append(entry)
-	return render_template('search.html', name=project_name, netid=net_id, output_message=output_message, data=data)
+    Output: render_template(?)
+    """
+    output_message = "Your top " + str(len(results)) + " breeds are: "
+
+    data = []
+    for i in results:
+    	rel_breeds = df.loc[df['breed'] == i]
+    	entry = list(rel_breeds.to_records(index=False))
+    	entry.insert(0, i)
+    	data.append(entry)
+    return render_template('search.html', name=project_name, netid=net_id, output_message=output_message, data=data)
