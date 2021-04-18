@@ -82,6 +82,8 @@ def make_vector(traits):
     elif traits.get('cat-selected') is not None:
         traits_lst = ['family-cat','shedding-cat','health-cat','kids-cat',
             'groom-cat','intelligence-cat','pet-friendly']
+    else:
+        raise Exception("Neither dog nor cat is selected")
     for trait in traits_lst:
         int_str = traits.get(trait)
         int_int = int(int_str)
