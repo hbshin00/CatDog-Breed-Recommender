@@ -15,20 +15,19 @@ def search():
 	cats = pd.read_csv("data/cats.csv")
 	
 	# v = make_vector(request.args)
-	v = (dogs.to_numpy()[0][6:])
+	v = (cats.to_numpy()[0][6:])
 	results = cosine(v,5,dogs,cats)
 	print(results)
-	render_results(results,dogs,cats)
-	print("hello")
+	return render_results(results,dogs,cats)
 
-	query = request.args.get('apartment')
-	if not query:
-		data = []
-		output_message = ''
-	else:
-		output_message = "Your search: " + query
-		data = range(5)
-	return render_template('search.html', name=project_name, netid=net_id, output_message=output_message, data=data)
+	# query = request.args.get('apartment')
+	# if not query:
+	# 	data = []
+	# 	output_message = ''
+	# else:
+	# 	output_message = "Your search: " + query
+	# 	data = range(5)
+	# return render_template('search.html', name=project_name, netid=net_id, output_message=output_message, data=data)
 
 def cosine(inVector, k, dogs, cats):
 	#TODO: make vectors a property of catslist and dogslist or convert
@@ -97,7 +96,9 @@ def render_results(results, dogs, cats):
 	data = []
 	for i in results:
 		rel_breeds = df.loc[df['breed'] == i]
+		entry = [rel_breeds["intro"]]
 		entry = list(rel_breeds.to_records(index=False))
 		entry.insert(0, i)
-		data.append(entry)
+		data.append([entry[1][1], entry[1][3], entry[1][5], entry[1][4]])
+		data.append([])
 	return render_template('search.html', name=project_name, netid=net_id, output_message=output_message, data=data)
