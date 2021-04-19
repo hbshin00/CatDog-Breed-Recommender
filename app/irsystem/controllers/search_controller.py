@@ -46,8 +46,8 @@ def cosine(inVector, k, dogs, cats):
 	else:
 		vectors = cats.to_numpy()
 
-	print(len(vector))
-	print(len(inVector))
+	# print(len(vector))
+	# print(len(inVector))
 
 	toReturn = []
 
