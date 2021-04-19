@@ -46,6 +46,9 @@ def cosine(inVector, k, dogs, cats):
 	else:
 		vectors = cats.to_numpy()
 
+	print(len(vector))
+	print(len(inVector))
+
 	toReturn = []
 
 	for row in vectors:
@@ -96,7 +99,7 @@ def make_vector(traits):
 			'intelligence-dog','mouthiness','prey','noise','wander','energy',
 			'intensity','exercise','playful']
 	elif traits.get('cat-selected') is not None:
-		traits_lst = ['family-cat','shedding-cat','health-cat','kids-cat',
+		traits_lst = ['family-cat','shedding-cat','health-cat','playful-cat','kids-cat',
 			'groom-cat','intelligence-cat','pet-friendly']
 	else:
 		raise Exception("Neither dog nor cat is selected")
