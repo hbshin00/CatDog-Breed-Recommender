@@ -1,4 +1,4 @@
-from . import *  
+from . import *
 from app.irsystem.models.helpers import *
 from app.irsystem.models.helpers import NumpyEncoder as NumpyEncoder
 import numpy as np
@@ -11,22 +11,31 @@ net_id = "Tricia Park: tp294, Jarrett Coleman: jjc368, Hali Shin: hbs59, Matteo 
 @irsystem.route('/', methods=['GET'])
 def search():
 
-	dogs = pd.read_csv("data/dogs.csv")
-	cats = pd.read_csv("data/cats.csv")
+	if request.args.get('dog-selected') != None or request.args.get('cat-selected') != None:
+		dogs = pd.read_csv("data/dogs.csv")
+		cats = pd.read_csv("data/cats.csv")
+
+		v = make_vector(request.args)
+		# v = (cats.to_numpy()[0][6:])
+		results = cosine(v,5,dogs,cats)
+		# print(len(results))
+		# print(results)
+		return render_results(results,dogs,cats)
+		# print("hello")
 	
-	# v = make_vector(request.args)
-	v = (cats.to_numpy()[0][6:])
-	results = cosine(v,5,dogs,cats)
-	print(results)
-	return render_results(results,dogs,cats)
+	else:
+		data = []
+		output_message = ''
+		return render_template('search.html', name=project_name, netid=net_id, output_message=output_message, data=data)
+
 
 	# query = request.args.get('apartment')
 	# if not query:
-	# 	data = []
-	# 	output_message = ''
+	#     data = []
+	#     output_message = ''
 	# else:
-	# 	output_message = "Your search: " + query
-	# 	data = range(5)
+	#     output_message = "Your search: " + query
+	#     data = range(5)
 	# return render_template('search.html', name=project_name, netid=net_id, output_message=output_message, data=data)
 
 def cosine(inVector, k, dogs, cats):
@@ -36,15 +45,17 @@ def cosine(inVector, k, dogs, cats):
 		vectors = dogs.to_numpy()
 	else:
 		vectors = cats.to_numpy()
-		
+
 	toReturn = []
 
 	for row in vectors:
 		#makes vector be the relevant parts of the database row
 		vector = (row[6:])
+		# print(len(vector))
+		# print(len(inVector))
 		if len(vector) != len(inVector):
 			raise Exception("Vector lengths do not match")
-		
+
 		cosine = 0
 		if np.linalg.norm(inVector) != 0 and np.linalg.norm(vector) != 0:
 			cosine = np.dot(inVector,vector)/(np.linalg.norm(inVector)*np.linalg.norm(vector))
@@ -59,23 +70,40 @@ def cosine(inVector, k, dogs, cats):
 
 def make_vector(traits):
 	"""
-	Input: traits (dictionary of integer traits that user inputs, different based on dog or cat)
-	Example: [('apartment', '3'), ('novice', '3'), ('sensitivity', '3'), ('alone', '3'), ('cold', '3'), ('hot', '3'), ('family-dog', '3'), ('kids-dog', '3'), ('dog-friendly', '3'), ('strangers', '3'), ('shedding-dog', '3'), ('drool', '3'), ('groom-dog', '3'), ('health-dog', '3'), ('weight-gain', '3'), ('size', '3'), ('train', '3'), ('intelligence-dog', '3'), ('mouthiness', '3'), ('prey', '3'), ('noise', '3'), ('wander', '3'), ('energy', '3'), ('intensity', '3'), ('exercise', '3'), ('playful', '3')]
-	
+	Input: traits (dictionary of integer traits that user inputs,
+		different based on dog or cat)
+	Example: {'apartment': '3', 'novice': '3', 'sensitivity': '3',
+		'alone': '3', 'cold': '3', 'hot': '3', 'family-dog': '3',
+		'kids-dog': '3', 'dog-friendly': '3', 'strangers': '3',
+		'shedding-dog': '3', 'drool': '3', 'groom-dog': '3',
+		'health-dog': '3', 'weight-gain': '3', 'size': '3',
+		'train': '3', 'intelligence-dog': '3', 'mouthiness': '3',
+		'prey': '3', 'noise': '3', 'wander': '3', 'energy': '3',
+		'intensity': '3', 'exercise': '3', 'playful': '3'}
+
 	Output: vector (list of ints, different based on dog or cat)
 	Example: [3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3]
 	output must be in order that traits appear in dataset/website
 
-	The "dog-selected" or "cat-selected" field will be in the input traits 
+	The "dog-selected" or "cat-selected" field will be in the input traits
 	depending on if the dog form or if the cat form was selected
 	"""
 	output = []
-	if request.args.get('dog-selected') is not None:
-		# process input for dog form
-		output = [int(x[1]) for x in traits] #this may include some extra input from the dog-selected/cat-selected fields, may be better to get each input manually with .get(input)
-	elif request.args.get('cat-selected') is not None:
-		# process input for cat form
-		output = [int(x[1]) for x in traits] #same as above, reference "traits" input for names of fields
+	if traits.get('dog-selected') is not None:
+		traits_lst = ['apartment','novice','sensitivity','alone','cold','hot',
+			'family-dog','kids-dog','dog-friendly','strangers','shedding-dog',
+			'drool','groom-dog','health-dog','weight-gain','size','train',
+			'intelligence-dog','mouthiness','prey','noise','wander','energy',
+			'intensity','exercise','playful']
+	elif traits.get('cat-selected') is not None:
+		traits_lst = ['family-cat','shedding-cat','health-cat','kids-cat',
+			'groom-cat','intelligence-cat','pet-friendly']
+	else:
+		raise Exception("Neither dog nor cat is selected")
+	for trait in traits_lst:
+		int_str = traits.get(trait)
+		int_int = int(int_str)
+		output.append(int_int)
 	return output
 
 def render_results(results, dogs, cats):
