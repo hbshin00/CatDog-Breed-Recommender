@@ -38,11 +38,15 @@ titles = []
 for thing in titles_raw:
     titles.append(thing.get_text())
 
+# breed-data-item js-accordion-item item-expandable-content
+
 intros = []
 stars = []
+descriptions = []
 for URL in URLs:
     page = requests.get(URL)
     soup = BeautifulSoup(page.content, 'html.parser')
+    descriptions.append(soup.find("li", class_="breed-data-item js-accordion-item item-expandable-content").get_text())
     intros.append(soup.find("div", class_='breeds-single-intro').get_text())
     stars_raw = soup.find_all("div", class_='characteristic-star-block')
     star = []
@@ -56,7 +60,8 @@ panda = pd.DataFrame({
     "breed": breeds,
     "imgs": imgs,
     "urls": URLs,
-    "intro": intros
+    "intro": intros,
+    "description": descriptions
 })
 for i in range(len(titles)):
     panda[titles[i]] = [int(stars[j][i]) if i < len(stars[j]) else -100 for j in range(len(stars))]
