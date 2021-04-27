@@ -84,12 +84,10 @@
                 <input type="range" id="shedding-cat" name="shedding-cat" min="1" max="5">
                 <p>General health:</p>
                 <input type="range" id="health-cat" name="health-cat" min="1" max="5">
-                <p>Potential for playfulness:</p>
-                <input type="range" id="playful-cat" name="playful-cat" min="1" max="5">
                 <p>Kid-friendly:</p>
                 <input type="range" id="kids-cat" name="kids-cat" min="1" max="5">
                 <p>Easy to groom:</p>
-                <input type="range" id="groom-caat" name="groom-cat" min="1" max="5">
+                <input type="range" id="groom-cat" name="groom-cat" min="1" max="5">
                 <p>Intelligence:</p>
                 <input type="range" id="intelligence-cat" name="intelligence-cat" min="1" max="5">
                 <p>Pet-friendly:</p>
@@ -121,9 +119,9 @@
                 <span style="color: #34A853; ">0</span>
                 <span style="color: #EA4335; ">0</span>
             </h1>
-            
+
             <br><br>
-             
+
             <div class="form-group">
                 <input id="input" type="text" name="search" class="form-control" placeholder="Your Input">
 
@@ -138,7 +136,7 @@
         <form class="form-inline global-search">
         {% if data %}
             <h1>{{output_message}}</h1>
-            {% for d in data %}  
+            {% for d in data %}
                 <br>
                 <p>{{d}}</p>
             {% endfor %}
