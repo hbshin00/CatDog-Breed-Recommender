@@ -1,6 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 import pandas as pd
+from sklearn.feature_extraction.text import TfidfVectorizer
 
 link = "https://cattime.com/cat-breeds"
 pg = requests.get(link)
@@ -32,7 +33,11 @@ descriptions = []
 for URL in URLs:
     page = requests.get(URL)
     soup = BeautifulSoup(page.content, 'html.parser')
-    descriptions.append(soup.find("li", class_="breed-data-item js-accordion-item item-expandable-content").get_text())
+    des = soup.find_all("li", class_="breed-data-item js-accordion-item item-expandable-content")
+    text = ""
+    for d in des:
+        text += " " + d.get_text()
+    descriptions.append(text)
     intros.append(soup.find("div", class_='breeds-single-intro').get_text())
     stars_raw = soup.find_all("div", class_='characteristic-star-block')
     star = []
