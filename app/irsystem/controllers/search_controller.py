@@ -18,7 +18,7 @@ def search():
 
 		v = make_vector(request.args)
 		# v = (cats.to_numpy()[0][6:])
-		results = sim(v,5,dogs,cats)
+		results = sim(v,request.args.get('physical'),5,dogs,cats)
 		# print(len(results))
 		# print(results)
 		return render_results(results,dogs,cats)
