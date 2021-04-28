@@ -6,7 +6,7 @@ import numpy as np
 import pandas as pd
 
 project_name = "Catdog"
-net_id = "Tricia Park: tp294, Jarrett Coleman: jjc368, Hali Shin: hbs59, Matteo Savarese: mgs249, Junlin Yi: jy683"
+net_id = "Jarrett Coleman: jjc368, Tricia Park: tp294, Matteo Savarese: mgs249, Hali Shin: hbs59, Junlin Yi: jy683"
 
 
 @irsystem.route('/', methods=['GET'])
@@ -23,7 +23,7 @@ def search():
 		# print(results)
 		return render_results(results,dogs,cats)
 		# print("hello")
-	
+
 	else:
 		data = []
 		output_message = ''
@@ -82,14 +82,14 @@ def sim(inVector, intext, k, dogs, cats):
 		textSim = 0
 		if np.linalg.norm(intextVector) != 0 and np.linalg.norm(textVector) != 0:
 			textSim = np.dot(intextVector,textVector)/np.linalg.norm(intextVector)/np.linalg.norm(textVector)
-		
+
 		#returns tuple of similarity and breed name
 		ranking.append((row[1],similarity+rankShift))
 		textRank.append((row[1],textSim))
 
 	ranking = (sorted(ranking, key = lambda x: x[1]))
 	textRank = (sorted(textRank, key = lambda x: -x[1]))
-	
+
 	for i in range(len(ranking)):
 		if ranking[i][0] in toReturn:
 			toReturn[ranking[i][0]] = (toReturn[ranking[i][0]] + i)/2 + rankShift[ranking[i][0]]
