@@ -1,27 +1,26 @@
 <html>
     <head>
+        <link rel="icon" type="image/png" sizes="32x32" href="https://image.flaticon.com/icons/png/512/12/12638.png" />
         <link rel="stylesheet" href="/static/bootstrap.min.css">
         <link rel="stylesheet" href="/static/main.css">
-        <link rel="stylesheet" href="style.css">
-        <style type ="text/css" >
-            .footer {
-            color: rgb(102, 102, 102);
-            position: fixed;
-            text-align: center;
-            bottom: 0px;
-            width: 100%;
-            font-size: 8px;
-            font-family: 'Raleway', sans-serif;
-            font-weight: 500;
-            }
-        </style>
+        <link rel="stylesheet" href="/static/style.css">
+        <title>Catdog</title>
     </head>
+
     <body>
-        <h1>Catdog Breed Recommender</h1>
+        <h1 class="header">
+                Catdog Breed Recommender
+        </h1>
+
+        <h4 class="subtitle">
+            Are you looking for a dog or cat?
+        </h4>
+        <br><br>
         <div id="catdog-form">
-            <p>Select dog or cat:</p>
-            <button id="dog-button" class="btn btn-info"> Dog </button>
-            <button id="cat-button" class="btn btn-info"> Cat </button>
+            <div class = "flex-parent jc-center">
+                <button id="dog-button" class="btn btn-info"> Dog </button>
+                <button id="cat-button" class="btn btn-info"> Cat </button>
+            </div>
             <form id="dog-form">
                 <h2>Dog Trait Selector</h2>
                 <p>Desired physical traits:</p>
@@ -129,17 +128,13 @@
                 <span style="color: #34A853; ">0</span>
                 <span style="color: #EA4335; ">0</span>
             </h1>
-
             <br><br>
-
             <div class="form-group">
                 <input id="input" type="text" name="search" class="form-control" placeholder="Your Input">
-
                 <input id="dog" type="radio" name="radio" value="Dog">
                 <label for="dog">Radio Test1</label>
                 <input id="cat" type="radio" name="radio" value="Cat">
                 <label for="cat">Radio Test2</label>
-
             </div>
             <button type="submit" class="btn btn-info"> Go! </button>
         </form> -->
@@ -157,6 +152,5 @@
             <p>Project "{{ name }}", by: {{ netid }}</p>
         </div>
     </body>
-
 
 </html>

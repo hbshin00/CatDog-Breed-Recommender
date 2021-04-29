@@ -5,25 +5,25 @@ body {
 
 .header {
       color: rgb(102, 102, 102);
-      text-align: center;
-      font-weight: bold;
-      font-size: 75px;
-      font-family: 'Raleway', sans-serif;
-      font-weight: 500;
+      text-align: center !important;
+      font-weight: bold !important;
+      font-size: 75px !important;
+      font-family: 'Raleway', sans-serif !important;
+      font-weight: 500 !important;
 }
 
 .subtitle {
     color: rgb(105, 105, 105);
-    text-align: center;
+    text-align: center !important;
     font-size: 125%;
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Raleway', sans-serif !important;
 }
 
 #catdog-form {
       margin: auto;
-      padding-right: 200px;
-      padding-left: 200px;
-      background-color: #FFD9B3;
+      padding-right: 200px !important;
+      padding-left: 200px !important;
+      background-color: #FFD9B3 !important;
 }
 
 .footer {
@@ -33,28 +33,28 @@ body {
       bottom: 0px;
       width: 100%;
       font-size: 8px;
-      font-family: 'Raleway', sans-serif;
-      font-weight: 500;
+      font-family: 'Raleway', sans-serif !important;
+      font-weight: 500 !important;
 }
 
 button {
-    color: rgb(255, 217, 179)
+    color: rgb(255, 217, 179) !important;
     padding: 2%;
     border-radius: 5%;
     border: none;
     margin: 2%;
     width: 15%;
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Raleway', sans-serif !important;
 }
 
 .flex-parent {
-    display: flex;
+    display: flex !important;
 }
 
 .jc-center {
-    justify-content: center;
+    justify-content: center !important;
 }
 
 button.margin-right {
-    margin-right: 20px
+    margin-right: 20px !important;
 }
