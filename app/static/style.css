@@ -1,15 +1,14 @@
 body {
-  /* background-image: url("https://media.istockphoto.com/vectors/paw-print-background-vector-id1160966866");*/
-    background-color: rgb(255, 217, 179);
+    background-color: rgb(255, 217, 179) !important;
 }
 
 .header {
-      color: rgb(102, 102, 102);
-      text-align: center !important;
-      font-weight: bold !important;
-      font-size: 75px !important;
-      font-family: 'system-ui' !important;
-      font-weight: 500 !important;
+    color: rgb(102, 102, 102);
+    text-align: center !important;
+    font-weight: bold !important;
+    font-size: 75px !important;
+    font-family: 'system-ui' !important;
+    font-weight: 500 !important;
 }
 
 .subtitle {
@@ -46,6 +45,12 @@ button {
     margin: 2%;
     width: 15%;
     font-family: 'system-ui' !important;
+}
+
+body {
+padding-top: 0%;
+padding-bottom: 15px;
+font-family: 'system-ui';
 }
 
 .flex-parent {
