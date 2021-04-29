@@ -2,13 +2,20 @@ body {
     background-color: rgb(255, 227, 201) !important;
 }
 
-.header {
+.header h1 {
     color: rgb(102, 102, 102);
     text-align: center !important;
     font-weight: bold !important;
     font-size: 75px !important;
     font-family: 'system-ui' !important;
     font-weight: 500 !important;
+}
+
+.header img {
+    float: right;
+    width: 75px;
+    height: 75px;
+    background: rgb(255, 227, 201);
 }
 
 .subtitle {
