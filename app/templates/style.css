@@ -1,12 +1,14 @@
-h1{
-    background-color: #FFD9B3;
+body {
+  /* background-image: linear-gradient(to bottom, #db849e, rgb(252, 238, 162), rgb(252, 247, 221)); */
+  background-image: linear-gradient(to bottom,  rgb(252, 247, 221),white);
+/* OG: rgb(252, 247, 221) to white */
 }
 
-#catdog-form{
+/* #catdog-form{
     padding-right: 200px;
     padding-left: 200px;
     background-color: #FFD9B3;
-}
+} */
 
 .footer {
     color: rgb(102, 102, 102);
