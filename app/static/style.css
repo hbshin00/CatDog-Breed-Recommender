@@ -1,7 +1,6 @@
 body {
-  background-image: url("https://cdn.hovia.com/app/uploads/Grey-and-White-Dog-Paw-Print-Pattern-Wallpaper-Mural-Plain-820x532.jpg")
-/*   background-image: linear-gradient(to bottom,  rgb(252, 247, 221),white); */
-/* OG: rgb(252, 247, 221) to white */
+/*   background-image: url("https://cdn.hovia.com/app/uploads/Grey-and-White-Dog-Paw-Print-Pattern-Wallpaper-Mural-Plain-820x532.jpg") */
+  background-image: linear-gradient(to bottom,  rgb(252, 247, 221),white);
 }
 
   .header {
