@@ -54,14 +54,6 @@ body {
     cursor: pointer;
 }
 
-.slider::-moz-range-thumb {
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background: #04AA6D;
-    cursor: pointer;
-}
-
 .footer {
       color: rgb(102, 102, 102);
       position: fixed;
