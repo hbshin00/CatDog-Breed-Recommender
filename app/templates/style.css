@@ -4,26 +4,35 @@ body {
 /* OG: rgb(252, 247, 221) to white */
 }
 
-/* #catdog-form{
-    padding-right: 200px;
-    padding-left: 200px;
-    background-color: #FFD9B3;
-} */
+  .header {
+      color: rgb(102, 102, 102);
+      /* color: white; */
+      font-weight: bold;
+      font-size: 75px;
+      font-family: 'Raleway', sans-serif;
+      font-weight: 500;
+    }
 
-.footer {
-    color: rgb(102, 102, 102);
-  /* color: 255 217 179; */
-    font-size: 10px;
-    font-family: 'Raleway', sans-serif;
-    font-weight: 500;
-}
+  /* #catdog-form{
+      padding-right: 200px;
+      padding-left: 200px;
+      background-color: #FFD9B3;
+  } */
 
-button {
-    color: rgb(255, 217, 179)
-    padding: 2%;
-    border-radius: 5%;
-    border: none;
-    margin: 2%;
-    width: 15%;
-    font-family: 'Raleway', sans-serif;
-}
+  .footer {
+      color: rgb(102, 102, 102);
+    /* color: 255 217 179; */
+      font-size: 10px;
+      font-family: 'Raleway', sans-serif;
+      font-weight: 500;
+  }
+
+  button {
+      color: rgb(255, 217, 179)
+      padding: 2%;
+      border-radius: 5%;
+      border: none;
+      margin: 2%;
+      width: 15%;
+      font-family: 'Raleway', sans-serif;
+  }
