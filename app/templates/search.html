@@ -3,6 +3,14 @@
         <link rel="stylesheet" href="/static/bootstrap.min.css">
         <link rel="stylesheet" href="/static/main.css">
         <link rel="stylesheet" href="style.css">
+        <style type ="text/css" >
+            .footer {
+            position: fixed;
+            text-align: center;
+            bottom: 0px;
+            width: 100%;
+            }
+        </style>
     </head>
     <body>
         <h1>Catdog Breed Recommender</h1>
@@ -138,12 +146,12 @@
             {% endfor %}
         {% endif %}
         </form>
-    </body>
 
-    <footer>
-        <div class="bottomleft">
+        <div class = "footer">
             <p>Project Name: {{ name }}</p>
             <p>Student Names: {{ netid }}</p>
         </div>
+    </body>
+
 
 </html>
