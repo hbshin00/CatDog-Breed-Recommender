@@ -10,7 +10,7 @@
             text-align: center;
             bottom: 0px;
             width: 100%;
-            font-size: 10px;
+            font-size: 8px;
             font-family: 'Raleway', sans-serif;
             font-weight: 500;
             }
@@ -24,9 +24,9 @@
             <button id="cat-button" class="btn btn-info"> Cat </button>
             <form id="dog-form">
                 <h2>Dog Trait Selector</h2>
-                <p>Left side is undesired, right side is desired.</p>
                 <p>Desired physical traits:</p>
                 <input type="text" id="physical-dog" name="physical">
+                <p>Left side is undesired, right side is desired.</p>
                 <p>Adapts well to apartment living:</p>
                 <input type="range" id="apartment" name="apartment" min="1" max="5">
                 <p>Good for novice owners:</p>
@@ -67,7 +67,7 @@
                 <input type="range" id="mouthiness" name="mouthiness" min="1" max="5">
                 <p>Prey drive:</p>
                 <input type="range" id="prey" name="prey" min="1" max="5">
-                <p>Tendnecy to bark or howl:</p>
+                <p>Tendency to bark or howl:</p>
                 <input type="range" id="noise" name="noise" min="1" max="5">
                 <p>Wanderlust potential:</p>
                 <input type="range" id="wander" name="wander" min="1" max="5">
@@ -83,9 +83,9 @@
             </form>
             <form id="cat-form">
                 <h2>Cat Trait Selector</h2>
-                <p>Left side is don't want, right side is want</p>
                 <p>Desired physical traits:</p>
                 <input type="text" id="physical-cat" name="physical">
+                <p>Left side is undesired, right side is desired.</p>
                 <p>Affectionate with family:</p>
                 <input type="range" id="family-cat" name="family-cat" min="1" max="5">
                 <p>Amount of shedding:</p>
@@ -154,8 +154,7 @@
         </form>
 
         <div class = "footer">
-            <p>Project Name: {{ name }}</p>
-            <p>Student Names: {{ netid }}</p>
+            <p>Project Name: {{ name }}   Student Names: {{ netid }}</p>
         </div>
     </body>
 
