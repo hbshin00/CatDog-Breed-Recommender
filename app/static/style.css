@@ -11,12 +11,12 @@ body {
     font-weight: 500 !important;
 }
 
-.header img {
+/*.header img {
     float: right;
     width: 75px;
     height: 75px;
     background: rgb(255, 227, 201);
-}
+}*/
 
 .subtitle {
     color: rgb(105, 105, 105);
