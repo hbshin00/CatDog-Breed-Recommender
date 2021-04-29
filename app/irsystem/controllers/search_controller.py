@@ -23,7 +23,7 @@ def search():
 		# print(results)
 		return render_results(results,dogs,cats)
 		# print("hello")
-	
+
 	else:
 		data = []
 		output_message = ''
@@ -85,14 +85,14 @@ def sim(inVector, intext, k, dogs, cats):
 		textSim = 0
 		if np.linalg.norm(intextVector) != 0 and np.linalg.norm(textVector) != 0:
 			textSim = np.dot(intextVector,textVector)/np.linalg.norm(intextVector)/np.linalg.norm(textVector)
-		
+
 		#returns tuple of similarity and breed name
 		ranking.append((row[1],similarity))
 		textRank.append((row[1],textSim))
 
 	ranking = (sorted(ranking, key = lambda x: x[1]))
 	textRank = (sorted(textRank, key = lambda x: -x[1]))
-	
+
 	for i in range(len(ranking)):
 		if ranking[i][0] in toReturn:
 			toReturn[ranking[i][0]] = (toReturn[ranking[i][0]] + i)/2 + rankShift[ranking[i][0]]
@@ -168,4 +168,4 @@ def render_results(results, dogs, cats):
 		entry.insert(0, i)
 		data.append([entry[1][1], entry[1][3], entry[1][5], entry[1][4]])
 		data.append([])
-	return render_template('search.html', name=project_name, netid=net_id, output_message=output_message, data=data)
+	return render_template('results.html', name=project_name, netid=net_id, output_message=output_message, data=data)
