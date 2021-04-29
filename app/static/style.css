@@ -8,7 +8,7 @@ body {
       text-align: center !important;
       font-weight: bold !important;
       font-size: 75px !important;
-      font-family: 'Raleway', sans-serif !important;
+      font-family: 'system-ui' !important;
       font-weight: 500 !important;
 }
 
@@ -16,7 +16,7 @@ body {
     color: rgb(105, 105, 105);
     text-align: center !important;
     font-size: 125%;
-    font-family: 'Raleway', sans-serif !important;
+    font-family: 'system-ui' !important;
 }
 
 #catdog-form {
@@ -33,7 +33,7 @@ body {
       bottom: 0px;
       width: 100%;
       font-size: 8px;
-      font-family: 'Raleway', sans-serif !important;
+      font-family: 'system-ui' !important;
       font-weight: 500 !important;
 }
 
@@ -44,7 +44,7 @@ button {
     border: none;
     margin: 2%;
     width: 15%;
-    font-family: 'Raleway', sans-serif !important;
+    font-family: 'system-ui' !important;
 }
 
 .flex-parent {
