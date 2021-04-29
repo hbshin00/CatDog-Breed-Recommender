@@ -52,7 +52,7 @@ button {
 body {
 padding-top: 0%;
 padding-bottom: 15px;
-font-family: 'system-ui';
+font-family: 'system-ui' !important;
 }
 
 .flex-parent {
