@@ -39,14 +39,14 @@ body {
 
 button {
     color: rgb(255, 227, 201) !important;
-    background-color: #FFA74A;
+    background-color: #FFA74A !important;
     padding: 2%;
     border-radius: 5%;
     border: none;
     margin: 2%;
     width: 15%;
     font-family: 'system-ui' !important;
-    font-size: 25px;
+    font-size: 25px !important;
 }
 
 body {
