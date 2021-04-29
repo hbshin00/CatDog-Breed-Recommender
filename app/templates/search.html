@@ -1,15 +1,22 @@
 <html>
     <head>
+        <link rel="icon" type="image/png" sizes="32x32" href="https://image.flaticon.com/icons/png/512/12/12638.png" />
         <link rel="stylesheet" href="/static/bootstrap.min.css">
         <link rel="stylesheet" href="/static/main.css">
         <link rel="stylesheet" href="/static/style.css">
+        <title>Catdog</title>
     </head>
+    
     <body>
-        <h1>Catdog Breed Recommender</h1>
-        <div id="catdog-form">
-            <p>Select dog or cat:</p>
-            <button id="dog-button" class="btn btn-info"> Dog </button>
-            <button id="cat-button" class="btn btn-info"> Cat </button>
+        <form class="form-inline global-search" id="question" name="questionform">
+            <h1 class="header">
+                Catdog Breed Recommender
+            </h1>
+            <div id="catdog-form">
+                <p>Select dog or cat:</p>
+                <button id="dog-button" class="btn btn-info"> Dog </button>
+                <button id="cat-button" class="btn btn-info"> Cat </button>
+        </form>
             <form id="dog-form">
                 <h2>Dog Trait Selector</h2>
                 <p>Desired physical traits:</p>
