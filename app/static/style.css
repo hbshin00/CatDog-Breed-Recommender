@@ -3,30 +3,30 @@ body {
 /*   background-image: linear-gradient(to bottom,  rgb(252, 247, 221),white); */
 }
 
-  .header {
+.header {
       color: rgb(102, 102, 102);
       text-align: center;
       font-weight: bold;
       font-size: 75px;
       font-family: 'Raleway', sans-serif;
       font-weight: 500;
-    }
+}
 
-  .subtitle {
+.subtitle {
     color: rgb(105, 105, 105);
     text-align: center;
     font-size: 125%;
     font-family: 'Raleway', sans-serif;
-  }
+}
 
-  #catdog-form {
+#catdog-form {
       margin: auto;
       padding-right: 200px;
       padding-left: 200px;
       background-color: #FFD9B3;
-  }
+}
 
-  .footer {
+.footer {
       color: rgb(102, 102, 102);
       position: fixed;
       text-align: center;
@@ -35,9 +35,9 @@ body {
       font-size: 8px;
       font-family: 'Raleway', sans-serif;
       font-weight: 500;
-  }
+}
 
-  button {
+button {
     color: rgb(255, 217, 179)
     padding: 2%;
     border-radius: 5%;
@@ -47,4 +47,14 @@ body {
     font-family: 'Raleway', sans-serif;
 }
 
+.flex-parent {
+    display: flex;
+}
 
+.jc-center {
+    justify-content: center;
+}
+
+button.margin-right {
+    margin-right: 20px
+}
