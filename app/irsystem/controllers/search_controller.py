@@ -6,7 +6,7 @@ import numpy as np
 import pandas as pd
 
 project_name = "Catdog"
-net_id = "Jarrett Coleman: jjc368, Tricia Park: tp294, Matteo Savarese: mgs249, Hali Shin: hbs59, Junlin Yi: jy633"
+net_id = "Tricia Park: tp294, Jarrett Coleman: jjc368, Hali Shin: hbs59, Matteo Savarese: mgs249, Junlin Yi: jy683"
 
 
 @irsystem.route('/', methods=['GET'])
@@ -23,7 +23,7 @@ def search():
 		# print(results)
 		return render_results(results,dogs,cats)
 		# print("hello")
-
+	
 	else:
 		data = []
 		output_message = ''
@@ -45,7 +45,8 @@ def makeTFIDF(csv, input):
     max_df=0.8,
     min_df=10
 	)
-	descriptions = csv["descriptions"].append(input)
+	descriptions = csv["description"].tolist()
+	descriptions.append(input)
 	return vectorizer.fit_transform(descriptions).toarray()
 
 def sim(inVector, intext, k, dogs, cats):
@@ -54,10 +55,10 @@ def sim(inVector, intext, k, dogs, cats):
 	matrix = None
 	if request.args.get('dog-selected') is not None:
 		vectors = dogs.to_numpy()
-		matrix = makeTFIDF(dogs,intextVector)
+		matrix = makeTFIDF(dogs, intext)
 	else:
 		vectors = cats.to_numpy()
-		matrix = makeTFIDF(cats,intextVector)
+		matrix = makeTFIDF(cats, intext)
 	intextVector = matrix[-1]
 
 	toReturn = {}
@@ -70,6 +71,8 @@ def sim(inVector, intext, k, dogs, cats):
 		vector = (row[7:])
 		textVector = matrix[i]
 		rank = row[2]
+		# print(i)
+		# print(rank)
 		#divide rank into 8 groups, then turn shift into float based on max value
 		rankShift[row[1]] = 1-float(int(rank*8/200))/200
 
@@ -82,26 +85,26 @@ def sim(inVector, intext, k, dogs, cats):
 		textSim = 0
 		if np.linalg.norm(intextVector) != 0 and np.linalg.norm(textVector) != 0:
 			textSim = np.dot(intextVector,textVector)/np.linalg.norm(intextVector)/np.linalg.norm(textVector)
-
+		
 		#returns tuple of similarity and breed name
-		ranking.append((row[1],similarity+rankShift))
+		ranking.append((row[1],similarity))
 		textRank.append((row[1],textSim))
 
 	ranking = (sorted(ranking, key = lambda x: x[1]))
 	textRank = (sorted(textRank, key = lambda x: -x[1]))
-
+	
 	for i in range(len(ranking)):
 		if ranking[i][0] in toReturn:
 			toReturn[ranking[i][0]] = (toReturn[ranking[i][0]] + i)/2 + rankShift[ranking[i][0]]
 		else:
-			toReturn[ranking[i]] = i
+			toReturn[ranking[i][0]] = i
 		if textRank[i][0] in toReturn:
 			toReturn[textRank[i][0]] = (toReturn[textRank[i][0]] + i)/2 + rankShift[textRank[i][0]]
 		else:
 			toReturn[textRank[i][0]] = i
 	toReturnSorted = [k for k,v in sorted(toReturn.items(),key = lambda x: x[1])]
 	#returns list of top k breed names sorted by similarity score
-	return [x[0] for x in toReturnSorted[:k]]
+	return [x for x in toReturnSorted[:k]]
 
 
 
@@ -150,7 +153,6 @@ def render_results(results, dogs, cats):
 
 	Output: render_template(?)
 	"""
-
 	df = None
 	if request.args.get('dog-selected') is not None:
 		df = dogs
