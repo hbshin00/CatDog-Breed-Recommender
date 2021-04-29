@@ -11,6 +11,7 @@ text-align:center;
 body {
 padding-top: 0%;
 padding-bottom: 15px;
+font-family: 'system-ui';
 }
 .global-search {
 text-align:center;

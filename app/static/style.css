@@ -1,6 +1,6 @@
 body {
-  background-image: url("https://media.istockphoto.com/vectors/paw-print-background-vector-id1160966866");
-/*   background-color: rgb(255, 217, 179); */
+  /* background-image: url("https://media.istockphoto.com/vectors/paw-print-background-vector-id1160966866");*/
+    background-color: rgb(255, 217, 179);
 }
 
 .header {
@@ -24,6 +24,7 @@ body {
       padding-right: 200px !important;
       padding-left: 200px !important;
       background-color: #FFD9B3 !important;
+      font-family: 'system-ui' !important;
 }
 
 .footer {
