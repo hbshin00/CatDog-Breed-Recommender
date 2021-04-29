@@ -12,11 +12,17 @@ body {
       font-weight: 500;
     }
 
-  /* #catdog-form{
+  .subtitle {
+    color: rgb(105, 105, 105);
+    font-size: 125%;
+    font-family: 'Raleway', sans-serif;
+  }
+
+  #catdog-form{
       padding-right: 200px;
       padding-left: 200px;
       background-color: #FFD9B3;
-  } */
+  }
 
   .footer {
       color: rgb(102, 102, 102);
