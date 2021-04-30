@@ -124,6 +124,26 @@
             </script>
         </div>
 
+        <div class = "outputs">
+            {% if data %}
+            <div class="container justify-content-center" style="width: 80%;">
+                <div class="breeds">
+                    {% for i in range(len(results)) %}
+                    <div class="single-breed">
+                        <img class="breed-img" src="{{ data[i][1] }}" alt="image" />
+                        <div class="breed-text">
+                            <h5 class="breed-name"> {{ data[i][0] }} </h5>
+                            <p class="breed-desc">
+                                Rating: {{ data[i][2] }}
+                                <!--<span class="book-rating" data-source="{{ data[i]['average_rating'] }}"></span>-->
+                            </p>
+                            <div class="d-flex justify-content-between align-items-center"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <!-- <form class="form-inline global-search">
             <h1 style="font-size: 55px; font-family:Futura; color: #4285F4">
                 C

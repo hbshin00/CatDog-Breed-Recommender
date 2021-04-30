@@ -96,3 +96,13 @@ font-family: 'system-ui' !important;
 button.margin-right {
     margin-right: 20px !important;
 }
+
+.breed_name {
+    font-size: 25px;
+    font-family: 'system-ui';
+}
+
+.breed-desc {
+    font-size: 15px;
+    font-family: 'system-ui';
+}
