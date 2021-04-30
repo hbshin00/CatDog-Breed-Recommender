@@ -7,7 +7,10 @@ import pandas as pd
 
 project_name = "Catdog"
 net_id = "Tricia Park: tp294, Jarrett Coleman: jjc368, Hali Shin: hbs59, Matteo Savarese: mgs249, Junlin Yi: jy683"
-
+rocchioText = ''
+rocchioVector = None
+rocchioRel = []
+rocchioNonRel = []
 
 @irsystem.route('/', methods=['GET'])
 def search():
@@ -17,13 +20,15 @@ def search():
 		cats = pd.read_csv("data/cats.csv")
 
 		v = make_vector(request.args)
-		# v = (cats.to_numpy()[0][6:])
+		rocchioVector = v
+		rocchioText = request.args.get('physical')
 		results = sim(v,request.args.get('physical'),5,dogs,cats)
-		# print(len(results))
-		# print(results)
 		return render_results(results,dogs,cats)
-		# print("hello")
-
+	elif request.args.get('rocchio-selected')!= None:
+		v = rocchio(rocchioVector,rocchioRel,rocchioNonRel)
+		t = rocchioText
+		results = sim(v,t,5,dogs,cats)
+		return render_results(results,dogs,cats)
 	else:
 		data = []
 		output_message = ''
@@ -38,6 +43,40 @@ def search():
 	#     output_message = "Your search: " + query
 	#     data = range(5)
 	# return render_template('search.html', name=project_name, netid=net_id, output_message=output_message, data=data)
+
+def rocchio(input,rel, nonrel):
+	#used these from assignment 5
+	a = .3
+	b = .3
+	c = .8
+	relSum = None
+	nonrelSum = None
+	bterm = None
+	cterm = None
+
+	if len(rel) != 0:
+		relSum = np.zeros(len(rel[0]))
+		nonrelSum = np.zeros(len(rel[0]))
+		bterm = np.zeros(len(rel[0]))
+		cterm = np.zeros(len(rel[0]))
+	else:
+		relSum = np.zeros(len(nonrel[0]))
+		nonrelSum = np.zeros(len(nonrel[0]))
+		bterm = np.zeros(len(nonrel[0]))
+		cterm = np.zeros(len(nonrel[0]))
+	
+	for r in rel:
+		relSum += r
+	for nr in nonrel:
+		nonrelSum += nr
+
+	if len(rel) != 0:
+        bTerm = b*relSum/len(rel)
+    if len(nonrel) != 0:
+        cTerm = c*nonrelSum/len(rel)
+	
+	toReturn = a*input + bterm - cterm
+	return np.clip(toReturn,0,None)
 
 def makeTFIDF(csv, input):
 	vectorizer = TfidfVectorizer(
