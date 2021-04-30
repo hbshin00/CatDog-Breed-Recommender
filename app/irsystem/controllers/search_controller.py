@@ -6,7 +6,7 @@ import numpy as np
 import pandas as pd
 
 project_name = "Catdog"
-net_id = "Tricia Park: tp294, Jarrett Coleman: jjc368, Hali Shin: hbs59, Matteo Savarese: mgs249, Junlin Yi: jy633"
+net_id = "Tricia Park: tp294, Jarrett Coleman: jjc368, Hali Shin: hbs59, Matteo Savarese: mgs249, Junlin Yi: jy683"
 
 
 @irsystem.route('/', methods=['GET'])
@@ -120,11 +120,9 @@ def make_vector(traits):
 		'train': '3', 'intelligence-dog': '3', 'mouthiness': '3',
 		'prey': '3', 'noise': '3', 'wander': '3', 'energy': '3',
 		'intensity': '3', 'exercise': '3', 'playful': '3'}
-
 	Output: vector (list of ints, different based on dog or cat)
 	Example: [3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3]
 	output must be in order that traits appear in dataset/website
-
 	The "dog-selected" or "cat-selected" field will be in the input traits
 	depending on if the dog form or if the cat form was selected
 	"""
@@ -150,7 +148,6 @@ def render_results(results, dogs, cats):
 	"""
 	Input: results (list of top k breeds)
 	Example: ["breed1", "breed2", "breed3"]
-
 	Output: render_template(?)
 	"""
 	df = None
