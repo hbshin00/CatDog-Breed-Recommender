@@ -71,9 +71,9 @@ def rocchio(input,rel, nonrel):
 		nonrelSum += nr
 
 	if len(rel) != 0:
-        bTerm = b*relSum/len(rel)
-    if len(nonrel) != 0:
-        cTerm = c*nonrelSum/len(rel)
+		bTerm = b*relSum/len(rel)
+	if len(nonrel) != 0:
+		cTerm = c*nonrelSum/len(rel)
 	
 	toReturn = a*input + bterm - cterm
 	return np.clip(toReturn,0,None)
