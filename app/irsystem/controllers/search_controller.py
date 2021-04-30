@@ -165,4 +165,4 @@ def render_results(results, dogs, cats):
 		entry.insert(0, i)
 		data.append([entry[1][1], entry[1][3], entry[1][5], entry[1][4]])
 		data.append([])
-	return render_template('results.html', name=project_name, netid=net_id, output_message=output_message, data=data)
+	return render_template('search.html', name=project_name, netid=net_id, output_message=output_message, data=data)
