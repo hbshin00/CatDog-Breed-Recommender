@@ -125,6 +125,9 @@
         </div>
 
         {% if data %}
+        <br>
+        <br>
+        <br>
         <div class="results">
             {% for i in data %}
                 <div class="result">
@@ -135,6 +138,14 @@
                     <p class="breed-desc">
                         {{i[2]}}
                     </p>
+                    <br>
+                    <div class="vote circle">
+                        <div class="increment up"></div>
+                        <div class="increment down"></div>
+
+                        <div class="count">8</div>
+                    </div>
+                    <br>
                     <br>
                 </div>
             {% endfor %}
