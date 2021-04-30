@@ -129,6 +129,7 @@
         <br>
         <br>
         <div class="results">
+            var num = 0
             {% for i in data %}
                 <div class="result">
                     <img class="breed-img" src="i[1]" alt="image" />
@@ -140,17 +141,18 @@
                     </p>
                     <br>
                     <label class="container">Relevant
-                      <input type="radio" checked="checked" name="radio" value="relevant">
+                      <input type="radio" checked="checked" name="radio{num}" value="relevant">
                       <span class="checkmark"></span>
                     </label>
                     <br>
                     <label class="container">Irrelevant
-                      <input type="radio" checked="checked" name="radio" value="irrelevant">
+                      <input type="radio" checked="checked" name="radio{num}" value="irrelevant">
                       <span class="checkmark"></span>
                     </label>
                     <br>
                     <br>
                 </div>
+                num = num + 1
             {% endfor %}
         </div>
         {% endif %}
