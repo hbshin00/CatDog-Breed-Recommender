@@ -129,6 +129,7 @@
             <div class="container justify-content-center" style="width: 80%;">
                 <div class="breeds">
                     {% for i in range(len(results)) %}
+                    {% if i == 0}
                     <div class="single-breed">
                         <img class="breed-img" src="{{ data[i][1] }}" alt="image" />
                         <div class="breed-text">
@@ -140,6 +141,8 @@
                             <div class="d-flex justify-content-between align-items-center"></div>
                         </div>
                     </div>
+                    {% endif %}
+                    {% endfor %}
                 </div>
             </div>
         </div>
