@@ -39,6 +39,40 @@ def search():
 	#     data = range(5)
 	# return render_template('search.html', name=project_name, netid=net_id, output_message=output_message, data=data)
 
+def rocchio(input,rel, nonrel):
+	#used these from assignment 5
+	a = .3
+	b = .3
+	c = .8
+	relSum = None
+	nonrelSum = None
+	bterm = None
+	cterm = None
+
+	if len(rel) != 0:
+		relSum = np.zeros(len(rel[0]))
+		nonrelSum = np.zeros(len(rel[0]))
+		bterm = np.zeros(len(rel[0]))
+		cterm = np.zeros(len(rel[0]))
+	else:
+		relSum = np.zeros(len(nonrel[0]))
+		nonrelSum = np.zeros(len(nonrel[0]))
+		bterm = np.zeros(len(nonrel[0]))
+		cterm = np.zeros(len(nonrel[0]))
+	
+	for r in rel:
+		relSum += r
+	for nr in nonrel:
+		nonrelSum += nr
+
+	if len(rel) != 0:
+        bTerm = b*relSum/len(rel)
+    if len(nonrel) != 0:
+        cTerm = c*nonrelSum/len(rel)
+	
+	toReturn = a*input + bterm - cterm
+	return np.clip(toReturn,0,None)
+
 def makeTFIDF(csv, input):
 	vectorizer = TfidfVectorizer(
     stop_words="english",
