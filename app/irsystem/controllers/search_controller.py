@@ -15,7 +15,7 @@ rocchioNonRel = []
 @irsystem.route('/', methods=['GET'])
 def search():
 
-	if request.args.get('dog-selected') != None or request.args.get('cat-selected') != None:
+	if request.args.get('dog-selected') != None or request.args.get('cat-selected') != None or request.args.get('rocchio-selected') != None:
 		dogs = pd.read_csv("data/dogs.csv")
 		cats = pd.read_csv("data/cats.csv")
 
