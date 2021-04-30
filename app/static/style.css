@@ -94,3 +94,20 @@ font-family: 'system-ui' !important;
 button.margin-right {
     margin-right: 20px !important;
 }
+
+.breed-img {
+    height: 25px;
+}
+
+.breed-name {
+    text-align: center !important;
+    font-size: 25px !important;
+    font-family: 'system-ui' !important;
+    font-weight: bold !important;
+}
+
+.breed-desc {
+    text-align: center !important;
+    font-size: 15px !important;
+    font-family: 'system-ui' !important;
+}
