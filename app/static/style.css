@@ -106,3 +106,8 @@ button.margin-right {
     font-size: 15px;
     font-family: 'system-ui';
 }
+
+.breed-img {
+    height: 25px;
+    width: 25px;
+}
