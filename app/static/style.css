@@ -116,4 +116,6 @@ button.margin-right {
     text-align: center !important;
     font-size: 15px !important;
     font-family: 'system-ui' !important;
+    padding-right: 200px !important;
+    padding-left: 200px !important;
 }
