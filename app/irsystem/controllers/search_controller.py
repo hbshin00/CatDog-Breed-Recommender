@@ -6,7 +6,7 @@ import numpy as np
 import pandas as pd
 
 project_name = "Catdog"
-net_id = "Tricia Park: tp294, Jarrett Coleman: jjc368, Hali Shin: hbs59, Matteo Savarese: mgs249, Junlin Yi: jy683"
+net_id = "Tricia Park: tp294, Jarrett Coleman: jjc368, Hali Shin: hbs59, Matteo Savarese: mgs249, Junlin Yi: jy633"
 
 
 @irsystem.route('/', methods=['GET'])
