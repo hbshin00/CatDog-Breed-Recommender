@@ -7,7 +7,10 @@ import pandas as pd
 
 project_name = "Catdog"
 net_id = "Tricia Park: tp294, Jarrett Coleman: jjc368, Hali Shin: hbs59, Matteo Savarese: mgs249, Junlin Yi: jy683"
-
+rocchioText = ''
+rocchioVector = None
+rocchioRel = []
+rocchioNonRel = []
 
 @irsystem.route('/', methods=['GET'])
 def search():
@@ -17,13 +20,15 @@ def search():
 		cats = pd.read_csv("data/cats.csv")
 
 		v = make_vector(request.args)
-		# v = (cats.to_numpy()[0][6:])
+		rocchioVector = v
+		rocchioText = request.args.get('physical')
 		results = sim(v,request.args.get('physical'),5,dogs,cats)
-		# print(len(results))
-		# print(results)
 		return render_results(results,dogs,cats)
-		# print("hello")
-
+	elif request.args.get('rocchio-selected')!= None:
+		v = rocchio(rocchioVector,rocchioRel,rocchioNonRel)
+		t = rocchioText
+		results = sim(v,t,5,dogs,cats)
+		return render_results(results,dogs,cats)
 	else:
 		data = []
 		output_message = ''
