@@ -46,8 +46,12 @@ def search():
 				rocchioNonRel.append(toappend)
 		
 		v = rocchio(rocchioVector,rocchioRel,rocchioNonRel)
+		global rocchioVector
+		rocchioVector = v
 		t = rocchioText
 		results = sim(v,t,5,dogs,cats)
+		global rocchioResults
+		rocchioResults = results
 		return render_results(results,dogs,cats)
 	else:
 		data = []
