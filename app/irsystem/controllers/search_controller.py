@@ -18,8 +18,8 @@ rocchioDF = None
 def search():
 	dogs = pd.read_csv("data/dogs.csv")
 	cats = pd.read_csv("data/cats.csv")
+	global rocchioDF
 	if request.args.get('dog-selected') != None or request.args.get('cat-selected') != None:
-		global rocchioDF
 		if request.args.get('dog-selected') is not None:
 			rocchioDF = dogs
 		else:
@@ -35,7 +35,6 @@ def search():
 		rocchioResults = results
 		return render_results(results,dogs,cats)
 	elif request.args.get('rocchio-selected') != None:
-		print("rocchio")
 		global rocchioRel
 		global rocchioNonRel
 		for i in range(5):
@@ -127,11 +126,6 @@ def sim(inVector, intext, k, dogs, cats):
 		rank = row[2]
 		#divide rank into 8 groups, then turn shift into float based on max value
 		rankShift[row[1]] = 1-float(int(rank*8/200))/200
-		print(i)
-		print(vector)
-		print("vector lengths")
-		print(len(vector))
-		print(len(inVector))
 		if len(vector) != len(inVector):
 			raise Exception("Vector lengths do not match")
 
