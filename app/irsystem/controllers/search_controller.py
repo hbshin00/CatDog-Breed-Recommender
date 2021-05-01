@@ -26,19 +26,19 @@ def search():
 		results = sim(v,request.args.get('physical'),5,dogs,cats)
 		rocchioResults = results
 		return render_results(results,dogs,cats)
-	elif request.args.get('rocchio-selected') != None:
-		print("rocchio")
-		for i in range(5):
-			upvote = request.args.get("radio"+i)
-			if upvote == "relevant":
-				rocchioRel.append(rocchioResults[i])
-				print("relevant")
-			else:
-				rocchioNonRel.append(rocchioResults[i])
-		v = rocchio(rocchioVector,rocchioRel,rocchioNonRel)
-		t = rocchioText
-		results = sim(v,t,5,dogs,cats)
-		return render_results(results,dogs,cats)
+	# elif request.args.get('rocchio-selected') != None:
+	# 	print("rocchio")
+	# 	for i in range(5):
+	# 		upvote = request.args.get("radio"+i)
+	# 		if upvote == "relevant":
+	# 			rocchioRel.append(rocchioResults[i])
+	# 			print("relevant")
+	# 		else:
+	# 			rocchioNonRel.append(rocchioResults[i])
+	# 	v = rocchio(rocchioVector,rocchioRel,rocchioNonRel)
+	# 	t = rocchioText
+	# 	results = sim(v,t,5,dogs,cats)
+	# 	return render_results(results,dogs,cats)
 	else:
 		data = []
 		output_message = ''
