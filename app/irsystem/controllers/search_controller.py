@@ -12,29 +12,40 @@ rocchioVector = None
 rocchioRel = []
 rocchioNonRel = []
 rocchioResults = []
+rocchioDF = None
 
 @irsystem.route('/', methods=['GET'])
 def search():
-	print("search")
+	dogs = pd.read_csv("data/dogs.csv")
+	cats = pd.read_csv("data/cats.csv")
 	if request.args.get('dog-selected') != None or request.args.get('cat-selected') != None:
-		dogs = pd.read_csv("data/dogs.csv")
-		cats = pd.read_csv("data/cats.csv")
-
+		global rocchioDF
+		if request.args.get('dog-selected') is not None:
+			rocchioDF = dogs
+		else:
+			rocchioDF = cats
+		
 		v = make_vector(request.args)
+		global rocchioVector
 		rocchioVector = v
+		global rocchioText
 		rocchioText = request.args.get('physical')
 		results = sim(v,request.args.get('physical'),5,dogs,cats)
+		global rocchioResults
 		rocchioResults = results
 		return render_results(results,dogs,cats)
 	elif request.args.get('rocchio-selected') != None:
 		print("rocchio")
+		global rocchioRel
+		global rocchioNonRel
 		for i in range(5):
-			upvote = request.args.get("radio"+i)
+			upvote = request.args.get("radio"+str(i))
 			if upvote == "relevant":
-				rocchioRel.append(rocchioResults[i])
-				print("relevant")
+				rocchioRel.append(rocchioDF.loc[rocchioDF['breed'] == rocchioResults[i]].to_numpy()[0][7:])
 			else:
-				rocchioNonRel.append(rocchioResults[i])
+				toappend = rocchioDF.loc[rocchioDF['breed'] == rocchioResults[i]].to_numpy()[0][7:]
+				rocchioNonRel.append(toappend)
+		
 		v = rocchio(rocchioVector,rocchioRel,rocchioNonRel)
 		t = rocchioText
 		results = sim(v,t,5,dogs,cats)
@@ -76,15 +87,14 @@ def rocchio(input,rel, nonrel):
 		cterm = np.zeros(len(nonrel[0]))
 
 	for r in rel:
-		relSum += r
+		relSum = r + relSum
 	for nr in nonrel:
-		nonrelSum += nr
+		nonrelSum = nr + nonrelSum
 
 	if len(rel) != 0:
 		bTerm = b*relSum/len(rel)
 	if len(nonrel) != 0:
-		cTerm = c*nonrelSum/len(rel)
-
+		cTerm = c*nonrelSum/len(nonrel)
 	toReturn = a*input + bterm - cterm
 	return np.clip(toReturn,0,None)
 
@@ -100,14 +110,9 @@ def makeTFIDF(csv, input):
 
 def sim(inVector, intext, k, dogs, cats):
 	#TODO: make vectors a property of catslist and dogslist or convert
-	vectors = None
-	matrix = None
-	if request.args.get('dog-selected') is not None:
-		vectors = dogs.to_numpy()
-		matrix = makeTFIDF(dogs, intext)
-	else:
-		vectors = cats.to_numpy()
-		matrix = makeTFIDF(cats, intext)
+	global rocchioDF
+	vectors = rocchioDF.to_numpy()
+	matrix = makeTFIDF(rocchioDF, intext)
 	intextVector = matrix[-1]
 
 	toReturn = {}
@@ -120,13 +125,13 @@ def sim(inVector, intext, k, dogs, cats):
 		vector = (row[7:])
 		textVector = matrix[i]
 		rank = row[2]
-		# print(i)
-		# print(rank)
 		#divide rank into 8 groups, then turn shift into float based on max value
 		rankShift[row[1]] = 1-float(int(rank*8/200))/200
-
-		# print(len(vector))
-		# print(len(inVector))
+		print(i)
+		print(vector)
+		print("vector lengths")
+		print(len(vector))
+		print(len(inVector))
 		if len(vector) != len(inVector):
 			raise Exception("Vector lengths do not match")
 
@@ -191,7 +196,7 @@ def make_vector(traits):
 		int_str = traits.get(trait)
 		int_int = int(int_str)
 		output.append(int_int)
-	return output
+	return np.array(output)
 
 def render_results(results, dogs, cats):
 	"""
@@ -199,16 +204,12 @@ def render_results(results, dogs, cats):
 	Example: ["breed1", "breed2", "breed3"]
 	Output: render_template(?)
 	"""
-	df = None
-	if request.args.get('dog-selected') is not None:
-		df = dogs
-	else:
-		df = cats
+	
 
 	output_message = "Your top " + str(len(results)) + " breeds are: "
 	data = []
 	for i in results:
-		rel_breeds = df.loc[df['breed'] == i]
+		rel_breeds = rocchioDF.loc[rocchioDF['breed'] == i]
 		entry = [rel_breeds["intro"]]
 		entry = list(rel_breeds.to_records(index=False))
 		entry.insert(0, i)
