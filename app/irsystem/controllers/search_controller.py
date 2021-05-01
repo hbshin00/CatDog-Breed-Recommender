@@ -11,10 +11,11 @@ rocchioText = ''
 rocchioVector = None
 rocchioRel = []
 rocchioNonRel = []
+rocchioResults = []
 
 @irsystem.route('/', methods=['GET'])
 def search():
-
+	print("search")
 	if request.args.get('dog-selected') != None or request.args.get('cat-selected') != None:
 		dogs = pd.read_csv("data/dogs.csv")
 		cats = pd.read_csv("data/cats.csv")
@@ -23,8 +24,17 @@ def search():
 		rocchioVector = v
 		rocchioText = request.args.get('physical')
 		results = sim(v,request.args.get('physical'),5,dogs,cats)
+		rocchioResults = results
 		return render_results(results,dogs,cats)
-	elif request.args.get('rocchio-selected')!= None:
+	elif request.args.get('rocchio-selected') != None:
+		print("rocchio")
+		for i in range(5):
+			upvote = request.args.get("radio"+i)
+			if upvote == "relevant":
+				rocchioRel.append(rocchioResults[i])
+				print("relevant")
+			else:
+				rocchioNonRel.append(rocchioResults[i])
 		v = rocchio(rocchioVector,rocchioRel,rocchioNonRel)
 		t = rocchioText
 		results = sim(v,t,5,dogs,cats)
