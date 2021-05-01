@@ -19,6 +19,12 @@ def search():
 	dogs = pd.read_csv("data/dogs.csv")
 	cats = pd.read_csv("data/cats.csv")
 	global rocchioDF
+	global rocchioResults
+	global rocchioVector
+	global rocchioRel
+	global rocchioNonRel
+	global rocchioVector
+	global rocchioText
 	if request.args.get('dog-selected') != None or request.args.get('cat-selected') != None:
 		if request.args.get('dog-selected') is not None:
 			rocchioDF = dogs
@@ -26,17 +32,12 @@ def search():
 			rocchioDF = cats
 		
 		v = make_vector(request.args)
-		global rocchioVector
 		rocchioVector = v
-		global rocchioText
 		rocchioText = request.args.get('physical')
 		results = sim(v,request.args.get('physical'),5,dogs,cats)
-		global rocchioResults
 		rocchioResults = results
 		return render_results(results,dogs,cats)
 	elif request.args.get('rocchio-selected') != None:
-		global rocchioRel
-		global rocchioNonRel
 		for i in range(5):
 			upvote = request.args.get("radio"+str(i))
 			if upvote == "relevant":
@@ -46,11 +47,9 @@ def search():
 				rocchioNonRel.append(toappend)
 		
 		v = rocchio(rocchioVector,rocchioRel,rocchioNonRel)
-		global rocchioVector
 		rocchioVector = v
 		t = rocchioText
 		results = sim(v,t,5,dogs,cats)
-		global rocchioResults
 		rocchioResults = results
 		return render_results(results,dogs,cats)
 	else:
