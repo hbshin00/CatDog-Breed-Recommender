@@ -51,7 +51,12 @@ for URL in URLs:
     for d in des:
         text += " " + d.get_text()
     descriptions.append(text)
-    intros.append(soup.find("div", class_='breeds-single-intro').get_text())
+    parent_intro = soup.find("div", class_='breeds-single-intro')
+    temporary = parent_intro.find_all("p")
+    intro = ""
+    for i in temporary:
+        intro += i.get_text()
+    intros.append(intro)
     stars_raw = soup.find_all("div", class_='characteristic-star-block')
     star = []
     for i in range(len(stars_raw)):
