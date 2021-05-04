@@ -114,9 +114,15 @@ button.margin-right {
     text-align: center;
 }
 
+<<<<<<< HEAD
 .result {
     display: inline;
 }
+=======
+/* .result {
+    display: inline;	
+} */
+>>>>>>> bbd9f87a60912b9c4f82935c4e4e2e5857647a51
 
 .breed-img {
     margin-left: auto;
