@@ -25,13 +25,15 @@ body {
     font-family: 'system-ui' !important;
 }
 
-.form-box {
+/*.form-box {
     border: 3px solid rgb(255, 150, 38) !important;
     border-radius: 25px;
     padding: 50px;
-}
+}*/
 
 #catdog-form {
+    border: 15px solid rgb(255, 150, 38) !important;
+    border-radius: 25px;
     text-align: center !important;
     margin: auto;
     padding-right: 200px !important;
