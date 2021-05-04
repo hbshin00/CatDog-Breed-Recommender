@@ -24,6 +24,8 @@
             </div>
             <form id="dog-form">
                 <h2>Dog Trait Selector</h2>
+                <p>If you already have a cat, please enter the breed:</p>
+                <input type="text" id="existing-cat" name="existing-cat" placeholder="E.g. American Bobtail">
                 <p>Desired physical traits:</p>
                 <input type="text" id="physical-dog" name="physical" placeholder="E.g. white, small">
                 <p>Left side is undesired, right side is desired.</p>
@@ -35,60 +37,102 @@
                 </div>
                 <p>Good for novice owners:</p>
                 <div class = "slidecontainer">
+                    <label for="left end" class="pull-left">Not a lot of space</label>
+                    <label for="right end" class="pull-right">Lots of space</label>
                     <input type="range" id="novice" name="novice" min="1" max="5" value = "3" class="slider">
                 </div>
                 <p>Sensitivity:</p>
+                <label for="left end" class="pull-left">Not a lot of space</label>
+                <label for="right end" class="pull-right">Lots of space</label>
                 <input type="range" id="sensitivity" name="sensitivity" min="1" max="5">
                 <p>Tolerates being alone:</p>
+                <label for="left end" class="pull-left">Not a lot of space</label>
+                <label for="right end" class="pull-right">Lots of space</label>
                 <input type="range" id="alone" name="alone" min="1" max="5">
                 <p>Tolerates cold weather:</p>
+                <label for="left end" class="pull-left">Not a lot of space</label>
+                <label for="right end" class="pull-right">Lots of space</label>
                 <input type="range" id="cold" name="cold" min="1" max="5">
                 <p>Tolerates hot weather:</p>
+                <label for="left end" class="pull-left">Not a lot of space</label>
+                <label for="right end" class="pull-right">Lots of space</label>
                 <input type="range" id="hot" name="hot" min="1" max="5">
                 <p>Affectionate with family:</p>
+                <label for="left end" class="pull-left">Not a lot of space</label>
+                <label for="right end" class="pull-right">Lots of space</label>
                 <input type="range" id="family-dog" name="family-dog" min="1" max="5">
                 <p>Kid-friendly:</p>
+                <label for="left end" class="pull-left">Not a lot of space</label>
+                <label for="right end" class="pull-right">Lots of space</label>
                 <input type="range" id="kids-dog" name="kids-dog" min="1" max="5">
                 <p>Dog-friendly:</p>
+                <label for="left end" class="pull-left">Not a lot of space</label>
+                <label for="right end" class="pull-right">Lots of space</label>
                 <input type="range" id="dog-friendly" name="dog-friendly" min="1" max="5">
                 <p>Friendly towards strangers:</p>
+                <label for="left end" class="pull-left">Not a lot of space</label>
+                <label for="right end" class="pull-right">Lots of space</label>
                 <input type="range" id="strangers" name="strangers" min="1" max="5">
                 <p>Amount of shedding:</p>
+                <label for="left end" class="pull-left">Not a lot of space</label>
+                <label for="right end" class="pull-right">Lots of space</label>
                 <input type="range" id="shedding-dog" name="shedding-dog" min="1" max="5">
                 <p>Drooling potential:</p>
+                <label for="left end" class="pull-left">Not a lot of space</label>
+                <label for="right end" class="pull-right">Lots of space</label>
                 <input type="range" id="drool" name="drool" min="1" max="5">
                 <p>Easy to groom:</p>
+                <label for="left end" class="pull-left">Not a lot of space</label>
+                <label for="right end" class="pull-right">Lots of space</label>
                 <input type="range" id="groom-dog" name="groom-dog" min="1" max="5">
                 <p>General health:</p>
                 <input type="range" id="health-dog" name="health-dog" min="1" max="5">
                 <p>Potential for weight gain:</p>
                 <input type="range" id="weight-gain" name="weight-gain" min="1" max="5">
                 <p>Size:</p>
+                <label for="left end" class="pull-left">Not a lot of space</label>
+                <label for="right end" class="pull-right">Lots of space</label>
                 <input type="range" id="size" name="size" min="1" max="5">
                 <p>Easy to train:</p>
+                <label for="left end" class="pull-left">Not a lot of space</label>
+                <label for="right end" class="pull-right">Lots of space</label>
                 <input type="range" id="train" name="train" min="1" max="5">
                 <p>Intelligence:</p>
+                <label for="left end" class="pull-left">Not a lot of space</label>
+                <label for="right end" class="pull-right">Lots of space</label>
                 <input type="range" id="intelligence-dog" name="intelligence-dog" min="1" max="5">
                 <p>Potential for mouthiness:</p>
                 <input type="range" id="mouthiness" name="mouthiness" min="1" max="5">
                 <p>Prey drive:</p>
                 <input type="range" id="prey" name="prey" min="1" max="5">
                 <p>Tendency to bark or howl:</p>
+                <label for="left end" class="pull-left">Not a lot of space</label>
+                <label for="right end" class="pull-right">Lots of space</label>
                 <input type="range" id="noise" name="noise" min="1" max="5">
                 <p>Wanderlust potential:</p>
                 <input type="range" id="wander" name="wander" min="1" max="5">
                 <p>Energy level:</p>
+                <label for="left end" class="pull-left">Not a lot of space</label>
+                <label for="right end" class="pull-right">Lots of space</label>
                 <input type="range" id="energy" name="energy" min="1" max="5">
                 <p>Intensity:</p>
+                <label for="left end" class="pull-left">Not a lot of space</label>
+                <label for="right end" class="pull-right">Lots of space</label>
                 <input type="range" id="intensity" name="intensity" min="1" max="5">
                 <p>Exercise needs:</p>
+                <label for="left end" class="pull-left">Not a lot of space</label>
+                <label for="right end" class="pull-right">Lots of space</label>
                 <input type="range" id="exercise" name="exercise" min="1" max="5">
                 <p>Potential for playfulness:</p>
+                <label for="left end" class="pull-left">Not a lot of space</label>
+                <label for="right end" class="pull-right">Lots of space</label>
                 <input type="range" id="playful" name="playful" min="1" max="5">
                 <button type="submit" name="dog-selected" class="btn btn-info"> Submit </button>
             </form>
             <form id="cat-form">
                 <h2>Cat Trait Selector</h2>
+                <p>If you already have a dog, please enter the breed:</p>
+                <input type="text" id="existing-dog" name="existing-dog" placeholder="E.g. Australian Shepherd">
                 <p>Desired physical traits:</p>
                 <input type="text" id="physical-cat" name="physical" placeholder="E.g. white, small">
                 <p>Left side is undesired, right side is desired.</p>
@@ -139,6 +183,9 @@
                 <p class="breed-desc">
                     {{data[0][2]}}
                 </p>
+                <p class="breed-compatability">
+                    Compatability with your pet: {{data[0][4] * 100}}%
+                </p>
                 <br>
                 <label class="container">Relevant
                   <input type="radio" checked="checked" name="radio0" value="relevant">
@@ -159,6 +206,9 @@
                 </h2>
                 <p class="breed-desc">
                     {{data[1][2]}}
+                </p>
+                <p class="breed-compatability">
+                    Compatability with your pet: {{data[1][4] * 100}}%
                 </p>
                 <br>
                 <label class="container">Relevant
@@ -181,6 +231,9 @@
                 <p class="breed-desc">
                     {{data[2][2]}}
                 </p>
+                <p class="breed-compatability">
+                    Compatability with your pet: {{data[2][4] * 100}}%
+                </p>
                 <br>
                 <label class="container">Relevant
                   <input type="radio" checked="checked" name="radio2" value="relevant">
@@ -202,6 +255,9 @@
                 <p class="breed-desc">
                     {{data[3][2]}}
                 </p>
+                <p class="breed-compatability">
+                    Compatability with your pet: {{data[3][4] * 100}}%
+                </p>
                 <br>
                 <label class="container">Relevant
                   <input type="radio" checked="checked" name="radio3" value="relevant">
@@ -222,6 +278,9 @@
                 </h2>
                 <p class="breed-desc">
                     {{data[4][2]}}
+                </p>
+                <p class="breed-compatability">
+                    Compatability with your pet: {{data[4][4] * 100}}%
                 </p>
                 <br>
                 <label class="container">Relevant

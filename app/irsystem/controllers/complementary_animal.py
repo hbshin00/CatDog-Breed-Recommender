@@ -1,11 +1,11 @@
-from . import *
+# from . import *
 import numpy as np
 import pandas as pd
 import pickle
 
-df1 = pd.read_csv("dogs.csv")
+df1 = pd.read_csv("data/dogs.csv")
 dog_data = df1.values.tolist()
-df2 = pd.read_csv("cats.csv")
+df2 = pd.read_csv("data/cats.csv")
 cat_data = df2.values.tolist()
 
 dog_vectors = []
@@ -47,8 +47,11 @@ for i in range(num_dogs):
         sim = (32-c)/32
         good_companion_matrix[i,j] = sim
 
-with open("good_companion_matrix.pickle","wb") as fp:
-    pickle.dump(good_companion_matrix, fp)
+df = pd.DataFrame(good_companion_matrix)
+df.to_csv('data/matrix.csv')
+
+# with open("good_companion_matrix.pickle","wb") as fp:
+#     pickle.dump(good_companion_matrix, fp)
 
 # pickle.load rb
 
