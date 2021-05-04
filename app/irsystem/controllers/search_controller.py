@@ -40,9 +40,7 @@ def search():
 			otherDF = dogs
 			dog_or_cat = "cat"
 		v = make_vector(request.args)
-		rocchioVector = v
-		print("initial setting of vector")
-		print(rocchioVector)
+		rocchioVector = ValidationError
 		rocchioText = request.args.get('physical')
 		results = sim(v,request.args.get('physical'),5,dogs,cats)
 		rocchioResults = results
@@ -66,8 +64,6 @@ def search():
 		v = rocchio(rocchioVector,rocchioRel,rocchioNonRel)
 		# v = np.random.rand(len(v))*5
 		rocchioVector = v
-		print("rocchio setting of vector")
-		print(rocchioVector)
 		t = rocchioText
 		results = sim(v,t,5,dogs,cats)
 		rocchioResults = results
@@ -117,10 +113,6 @@ def rocchio(input,rel, nonrel):
 		bterm = b*relSum/len(rel)
 	if len(nonrel) != 0:
 		cterm = c*nonrelSum/len(nonrel)
-	print("bterm")
-	print(bterm)
-	print("cterm")
-	print(cterm)
 	toReturn = a*input + bterm - cterm
 	return np.clip(toReturn,1,5,None)
 
@@ -232,11 +224,12 @@ def render_results(results):
 		rel_breeds = rocchioDF.loc[rocchioDF['breed'] == i]
 		entry = list(rel_breeds.to_records(index=False))
 		entry.insert(0, i)
-		compatability = 1
+		compatability = ""
 		if prevExisting != "none":
 			rel_index = rocchioDF.index[rocchioDF["breed"] == i][0]
 			index = otherDF.index[otherDF["breed"].str.strip() == prevExisting.strip()]
-			companion = companion_matrix[index[0]]
-			compatability = companion[rel_index]
+			if len(index) == 1:
+				companion = companion_matrix[index[0]]
+				compatability = "Compatability with your pet: " + str(companion[rel_index]*100) + "%"
 		data.append([entry[1][1], entry[1][3], entry[1][5], entry[1][4], compatability])
 	return render_template('search.html', name=project_name, netid=net_id, output_message=output_message, data=data)
