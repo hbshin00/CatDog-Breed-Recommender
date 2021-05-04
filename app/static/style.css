@@ -109,7 +109,7 @@ label {
     font-weight: 500 !important;
 }
 
-button {
+.btn {
     color: rgb(255, 230, 204) !important;
     background-color: rgb(255, 150, 38) !important;
     padding: 2%;
@@ -119,6 +119,12 @@ button {
     width: 15%;
     font-family: 'system-ui' !important;
     font-size: 25px !important;
+    transition-duration: 0.2s;
+}
+
+.btn:hover {
+    background-color: rgb(255, 181, 102) !important;
+    color: rgb(255, 230, 204) !important;
 }
 
 body {
