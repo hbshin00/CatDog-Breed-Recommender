@@ -50,6 +50,10 @@ label {
     font-size: 10px !important;
 }
 
+.text-input {
+    width: 250px !important;
+}
+
 .row {
     display: flex;
 }
