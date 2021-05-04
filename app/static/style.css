@@ -55,19 +55,20 @@ body {
 }
 
 .footer {
-      color: rgb(102, 102, 102);
-      position: fixed;
-      text-align: center;
-      bottom: 0px;
-      width: 100%;
-      font-size: 8px;
-      font-family: 'system-ui' !important;
-      font-weight: 500 !important;
+    background-color: rgb(255, 227, 201) !important;
+    color: rgb(102, 102, 102);
+    position: fixed;
+    text-align: center;
+    bottom: 0px;
+    width: 100%;
+    font-size: 8px;
+    font-family: 'system-ui' !important;
+    font-weight: 500 !important;
 }
 
 button {
     color: rgb(255, 227, 201) !important;
-    background-color: rgb(214, 108, 9) !important;
+    background-color: rgb(156, 74, 26) !important;
     padding: 2%;
     border-radius: 5%;
     border: none !important;
