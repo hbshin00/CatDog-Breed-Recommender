@@ -126,7 +126,7 @@
                     </div>
                     <br> <br> <br>
                     <div class = "row">
-                        <div class = "column">
+                        <div class = "dog-column">
                             <p>How much space do you have?</p>
                             <div class = "slidecontainer">
                                 <label for="left end" class="pull-left">Not a lot of space</label>
@@ -179,7 +179,7 @@
                             <label for="right end" class="pull-right">Lots of space</label>
                             <input type="range" id="strangers" name="strangers" min="1" max="5">-->
                         </div>
-                        <div class = "column">
+                        <div class = "dog-column">
                             <p>How tolerant are you of shedding?</p>
                             <label for="left end" class="pull-left">Not tolerant at all</label>
                             <label for="right end" class="pull-right">Extremely tolerant</label>
@@ -247,7 +247,7 @@
                         </div>
                     </div>
                     <button type="submit" name="dog-selected" class="btn btn-info"> Submit </button>
-                    <br> <br> <br>
+                    <br>
                 </form>
                 <form id="cat-form">
                     <br>
@@ -507,38 +507,47 @@
                         <p>For any questions marked with an asterisk (*), you can leave the slider in the center to indicate no preference.
                     </div>
                     <br> <br> <br>
-                    <p>Affectionate with family:</p>
-                    <label for="left end" class="pull-left">Hardly any</label>
-                    <label for="right end" class="pull-right">A whole lot</label>
-                    <input type="range" id="family-cat" name="family-cat" min="1" max="5">
-                    <p>Amount of shedding:</p>
-                    <label for="left end" class="pull-left">Hardly any</label>
-                    <label for="right end" class="pull-right">A whole lot</label>
-                    <input type="range" id="shedding-cat" name="shedding-cat" min="1" max="5">
-                    <p>General health:</p>
-                    <input type="range" id="health-cat" name="health-cat" min="1" max="5">
-                    <p>Potential for playfulness:</p>
-                    <label for="left end" class="pull-left">Hardly any</label>
-                    <label for="right end" class="pull-right">A whole lot</label>
-                    <input type="range" id="playful-cat" name="playful-cat" min="1" max="5">
-                    <p>Kid-friendly:</p>
-                    <label for="left end" class="pull-left">Hardly any</label>
-                    <label for="right end" class="pull-right">A whole lot</label>
-                    <input type="range" id="kids-cat" name="kids-cat" min="1" max="5">
-                    <p>Easy to groom:</p>
-                    <label for="left end" class="pull-left">Hardly any</label>
-                    <label for="right end" class="pull-right">A whole lot</label>
-                    <input type="range" id="groom-cat" name="groom-cat" min="1" max="5">
-                    <p>Intelligence:</p>
-                    <label for="left end" class="pull-left">Hardly any</label>
-                    <label for="right end" class="pull-right">A whole lot</label>
-                    <input type="range" id="intelligence-cat" name="intelligence-cat" min="1" max="5">
-                    <p>Pet-friendly:</p>
-                    <label for="left end" class="pull-left">Hardly any</label>
-                    <label for="right end" class="pull-right">A whole lot</label>
-                    <input type="range" id="pet-friendly" name="pet-friendly" min="1" max="5">
+                    <div class = "cat-column">
+                        <p>How affectionate would you like your cat to be?</p>
+                        <label for="left end" class="pull-left">Hardly any</label>
+                        <label for="right end" class="pull-right">A whole lot</label>
+                        <input type="range" id="family-cat" name="family-cat" min="1" max="5">
+                        <br>
+                        <p>How intelligent would you like your cat to be?</p>
+                        <label for="left end" class="pull-left">Hardly any</label>
+                        <label for="right end" class="pull-right">A whole lot</label>
+                        <input type="range" id="intelligence-cat" name="intelligence-cat" min="1" max="5">
+                        <br>
+                        <p>How playful would you like your cat to be?</p>
+                        <label for="left end" class="pull-left">Hardly any</label>
+                        <label for="right end" class="pull-right">A whole lot</label>
+                        <input type="range" id="playful-cat" name="playful-cat" min="1" max="5">
+                        <br>
+                        <p>groom</p>
+                        <label for="left end" class="pull-left">Hardly any</label>
+                        <label for="right end" class="pull-right">A whole lot</label>
+                        <input type="range" id="groom-cat" name="groom-cat" min="1" max="5">
+                        <br>
+                        <p>How tolerant are you of shedding?</p>
+                        <label for="left end" class="pull-left">Hardly any</label>
+                        <label for="right end" class="pull-right">A whole lot</label>
+                        <input type="range" id="shedding-cat" name="shedding-cat" min="1" max="5">
+                        <br>
+                        <p>General health: (WILL BE REMOVED)</p>
+                        <input type="range" id="health-cat" name="health-cat" min="1" max="5">
+                        <p>Will this cat be around children?</p>
+                        <label for="left end" class="pull-left">Hardly any</label>
+                        <label for="right end" class="pull-right">A whole lot</label>
+                        <input type="range" id="kids-cat" name="kids-cat" min="1" max="5">
+                        <br>
+                        <p>Will this cat be around other pets?</p>
+                        <label for="left end" class="pull-left">Hardly any</label>
+                        <label for="right end" class="pull-right">A whole lot</label>
+                        <input type="range" id="pet-friendly" name="pet-friendly" min="1" max="5">
+                    </div>
 
                     <button type="submit" name="cat-selected" class="btn btn-info"> Submit </button>
+                    <br>
                 </form>
             </div>
 
