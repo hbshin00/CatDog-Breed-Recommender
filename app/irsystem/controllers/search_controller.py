@@ -33,8 +33,6 @@ def search():
 		
 		v = make_vector(request.args)
 		rocchioVector = v
-		print("initial setting of vector")
-		print(rocchioVector)
 		rocchioText = request.args.get('physical')
 		results = sim(v,request.args.get('physical'),5,dogs,cats)
 		rocchioResults = results
@@ -53,8 +51,6 @@ def search():
 		v = rocchio(rocchioVector,rocchioRel,rocchioNonRel)
 		# v = np.random.rand(len(v))*5
 		rocchioVector = v
-		print("rocchio setting of vector")
-		print(rocchioVector)
 		t = rocchioText
 		results = sim(v,t,5,dogs,cats)
 		rocchioResults = results
@@ -104,10 +100,6 @@ def rocchio(input,rel, nonrel):
 		bterm = b*relSum/len(rel)
 	if len(nonrel) != 0:
 		cterm = c*nonrelSum/len(nonrel)
-	print("bterm")
-	print(bterm)
-	print("cterm")
-	print(cterm)
 	toReturn = a*input + bterm - cterm
 	return np.clip(toReturn,1,5,None)
 
