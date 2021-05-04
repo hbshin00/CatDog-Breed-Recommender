@@ -112,11 +112,11 @@ label {
 .btn {
     color: rgb(255, 230, 204) !important;
     background-color: rgb(255, 150, 38) !important;
-    padding: 2%;
-    border-radius: 5%;
+    padding: 2% !important;
+    border-radius: 5% !important;
     border: none !important;
-    margin: 2%;
-    width: 15%;
+    margin: 2% !important;
+    width: 15% !important;
     font-family: 'system-ui' !important;
     font-size: 25px !important;
     transition-duration: 0.2s;
