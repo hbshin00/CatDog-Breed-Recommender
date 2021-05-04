@@ -105,6 +105,10 @@ button.margin-right {
     text-align: center;
 }
 
+.result {
+    display: inline;	
+}
+
 .breed-img {
     margin-left: auto;
     margin-right: auto;
