@@ -51,8 +51,10 @@ label {
 }
 
 .text-input {
-    width: 250px !important;
+    width: 400px !important;
     text-align: center !important;
+    margin-left: 500px;
+    margin-right: 500px;
 }
 
 .row {
