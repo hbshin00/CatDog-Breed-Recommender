@@ -26,10 +26,9 @@ body {
 }
 
 .form-box {
-    background-color: rgb(255, 230, 204) !important;
-    border: 3px rgb(255, 150, 38) !important;
+    border: 3px solid rgb(255, 150, 38) !important;
     border-radius: 25px;
-    padding: 20px;
+    padding: 50px;
 }
 
 #catdog-form {
@@ -37,7 +36,7 @@ body {
     margin: auto;
     padding-right: 200px !important;
     padding-left: 200px !important;
-    background-color: rgb(255, 211, 163) !important;
+    background-color: rgb(255, 230, 204) !important;
     font-family: 'system-ui' !important;
 }
 
