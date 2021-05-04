@@ -17,505 +17,507 @@
             Are you looking for a dog or cat?
         </h4>
         <br><br>
-        <div id="catdog-form">
-            <div class = "flex-parent jc-center">
-                <button id="dog-button" class="btn btn-info"> Dog </button>
-                <button id="cat-button" class="btn btn-info"> Cat </button>
-            </div>
-            <br>
-            <br>
-            <form id="dog-form">
-                <h2>Dog Trait Selector</h2>
-                <br>
-                <p>If you already have a cat, please enter the breed:</p>
-                <input type="text" id="existing-cat" name="existing-cat" placeholder="E.g. American Bobtail" list="cat-list">
-                <datalist id="cat-list">
-                    <option id='Abyssinian'>Abyssinian</option>
-                    <option id='Aegean'>Aegean</option>
-                    <option id='American Bobtail'>American Bobtail</option>
-                    <option id='American Curl'>American Curl</option>
-                    <option id='American Shorthair'>American Shorthair</option>
-                    <option id='American Wirehair'>American Wirehair</option>
-                    <option id='Aphrodite Giant'>Aphrodite Giant</option>
-                    <option id='Arabian Mau'>Arabian Mau</option>
-                    <option id='Asian'>Asian</option>
-                    <option id='Australian Mist'>Australian Mist</option>
-                    <option id='Balinese'>Balinese</option>
-                    <option id='Bambino'>Bambino</option>
-                    <option id='Bengal Cats'>Bengal Cats</option>
-                    <option id='Birman'>Birman</option>
-                    <option id='Bombay'>Bombay</option>
-                    <option id='Brazilian Shorthair'>Brazilian Shorthair</option>
-                    <option id='British Longhair'>British Longhair</option>
-                    <option id='British Shorthair'>British Shorthair</option>
-                    <option id='Burmese'>Burmese</option>
-                    <option id='Burmilla'>Burmilla</option>
-                    <option id='California Spangled'>California Spangled</option>
-                    <option id='Chantilly-Tiffany'>Chantilly-Tiffany</option>
-                    <option id='Chartreux'>Chartreux</option>
-                    <option id='Chausie'>Chausie</option>
-                    <option id='Chinese Li Hua'>Chinese Li Hua</option>
-                    <option id='Colorpoint Shorthair'>Colorpoint Shorthair</option>
-                    <option id='Cornish Rex'>Cornish Rex</option>
-                    <option id='Cymric'>Cymric</option>
-                    <option id='Cyprus'>Cyprus</option>
-                    <option id='Desert Lynx'>Desert Lynx</option>
-                    <option id='Devon Rex'>Devon Rex</option>
-                    <option id='Donskoy'>Donskoy</option>
-                    <option id='Egyptian Mau'>Egyptian Mau</option>
-                    <option id='European Burmese'>European Burmese</option>
-                    <option id='European Shorthair'>European Shorthair</option>
-                    <option id='Exotic'>Exotic</option>
-                    <option id='Foldex'>Foldex</option>
-                    <option id='German Rex'>German Rex</option>
-                    <option id='Havana Brown'>Havana Brown</option>
-                    <option id='Highlander'>Highlander</option>
-                    <option id='Himalayan'>Himalayan</option>
-                    <option id='Japanese Bobtail'>Japanese Bobtail</option>
-                    <option id='Javanese'>Javanese</option>
-                    <option id='Khao Manee'>Khao Manee</option>
-                    <option id='Korat'>Korat</option>
-                    <option id='Kurilian Bobtail'>Kurilian Bobtail</option>
-                    <option id='LaPerm'>LaPerm</option>
-                    <option id='Lykoi'>Lykoi</option>
-                    <option id='Maine Coon'>Maine Coon</option>
-                    <option id='Manx'>Manx</option>
-                    <option id='Mekong Bobtail'>Mekong Bobtail</option>
-                    <option id='Napoleon'>Napoleon</option>
-                    <option id='Nebelung'>Nebelung</option>
-                    <option id='Norwegian Forest'>Norwegian Forest</option>
-                    <option id='Ocicat'>Ocicat</option>
-                    <option id='Oriental Bicolor'>Oriental Bicolor</option>
-                    <option id='Oriental'>Oriental</option>
-                    <option id='Persian'>Persian</option>
-                    <option id='Peterbald'>Peterbald</option>
-                    <option id='Pixie-Bob'>Pixie-Bob</option>
-                    <option id='Ragamuffin'>Ragamuffin</option>
-                    <option id='Ragdoll Cats'>Ragdoll Cats</option>
-                    <option id='Russian Blue'>Russian Blue</option>
-                    <option id='Savannah'>Savannah</option>
-                    <option id='Scottish Fold'>Scottish Fold</option>
-                    <option id='Selkirk Rex'>Selkirk Rex</option>
-                    <option id='Serengeti'>Serengeti</option>
-                    <option id='Siamese Cat'>Siamese Cat</option>
-                    <option id='Siberian'>Siberian</option>
-                    <option id='Singapura'>Singapura</option>
-                    <option id='Snowshoe'>Snowshoe</option>
-                    <option id='Sokoke'>Sokoke</option>
-                    <option id='Somali'>Somali</option>
-                    <option id='Sphynx'>Sphynx</option>
-                    <option id='Thai'>Thai</option>
-                    <option id='Thai Lilac'>Thai Lilac</option>
-                    <option id='Tonkinese'>Tonkinese</option>
-                    <option id='Toyger'>Toyger</option>
-                    <option id='Turkish Angora'>Turkish Angora</option>
-                    <option id='Turkish Van'>Turkish Van</option>
-                    <option id='Ukrainian Levkoy'>Ukrainian Levkoy</option>
-                </datalist>
-                <br>
-                <br>
-                <p>Desired physical traits:</p>
-                <input type="text" id="physical-dog" name="physical" placeholder="E.g. white, small">
-                <br>
-                <br>
-                <br>
-                <div class = instructions>
-                    <p>For the following questions, please use the slider to indicate your preference.</p>
-                    <p>For any questions marked with an asterisk (*), you can leave the slider in the center to indicate no preference.
+        <div class = "form-box">
+            <div id="catdog-form">
+                <div class = "flex-parent jc-center">
+                    <button id="dog-button" class="btn btn-info"> Dog </button>
+                    <button id="cat-button" class="btn btn-info"> Cat </button>
                 </div>
-                <!--<br>-->
-                <div class = "row">
-                    <div class = "column">
-                        <p>How much space do you have?</p>
-                        <div class = "slidecontainer">
+                <br>
+                <br>
+                <form id="dog-form">
+                    <h2>Dog Trait Selector</h2>
+                    <br>
+                    <p>If you already have a cat, please enter the breed:</p>
+                    <input type="text" id="existing-cat" name="existing-cat" placeholder="E.g. American Bobtail" list="cat-list">
+                    <datalist id="cat-list">
+                        <option id='Abyssinian'>Abyssinian</option>
+                        <option id='Aegean'>Aegean</option>
+                        <option id='American Bobtail'>American Bobtail</option>
+                        <option id='American Curl'>American Curl</option>
+                        <option id='American Shorthair'>American Shorthair</option>
+                        <option id='American Wirehair'>American Wirehair</option>
+                        <option id='Aphrodite Giant'>Aphrodite Giant</option>
+                        <option id='Arabian Mau'>Arabian Mau</option>
+                        <option id='Asian'>Asian</option>
+                        <option id='Australian Mist'>Australian Mist</option>
+                        <option id='Balinese'>Balinese</option>
+                        <option id='Bambino'>Bambino</option>
+                        <option id='Bengal Cats'>Bengal Cats</option>
+                        <option id='Birman'>Birman</option>
+                        <option id='Bombay'>Bombay</option>
+                        <option id='Brazilian Shorthair'>Brazilian Shorthair</option>
+                        <option id='British Longhair'>British Longhair</option>
+                        <option id='British Shorthair'>British Shorthair</option>
+                        <option id='Burmese'>Burmese</option>
+                        <option id='Burmilla'>Burmilla</option>
+                        <option id='California Spangled'>California Spangled</option>
+                        <option id='Chantilly-Tiffany'>Chantilly-Tiffany</option>
+                        <option id='Chartreux'>Chartreux</option>
+                        <option id='Chausie'>Chausie</option>
+                        <option id='Chinese Li Hua'>Chinese Li Hua</option>
+                        <option id='Colorpoint Shorthair'>Colorpoint Shorthair</option>
+                        <option id='Cornish Rex'>Cornish Rex</option>
+                        <option id='Cymric'>Cymric</option>
+                        <option id='Cyprus'>Cyprus</option>
+                        <option id='Desert Lynx'>Desert Lynx</option>
+                        <option id='Devon Rex'>Devon Rex</option>
+                        <option id='Donskoy'>Donskoy</option>
+                        <option id='Egyptian Mau'>Egyptian Mau</option>
+                        <option id='European Burmese'>European Burmese</option>
+                        <option id='European Shorthair'>European Shorthair</option>
+                        <option id='Exotic'>Exotic</option>
+                        <option id='Foldex'>Foldex</option>
+                        <option id='German Rex'>German Rex</option>
+                        <option id='Havana Brown'>Havana Brown</option>
+                        <option id='Highlander'>Highlander</option>
+                        <option id='Himalayan'>Himalayan</option>
+                        <option id='Japanese Bobtail'>Japanese Bobtail</option>
+                        <option id='Javanese'>Javanese</option>
+                        <option id='Khao Manee'>Khao Manee</option>
+                        <option id='Korat'>Korat</option>
+                        <option id='Kurilian Bobtail'>Kurilian Bobtail</option>
+                        <option id='LaPerm'>LaPerm</option>
+                        <option id='Lykoi'>Lykoi</option>
+                        <option id='Maine Coon'>Maine Coon</option>
+                        <option id='Manx'>Manx</option>
+                        <option id='Mekong Bobtail'>Mekong Bobtail</option>
+                        <option id='Napoleon'>Napoleon</option>
+                        <option id='Nebelung'>Nebelung</option>
+                        <option id='Norwegian Forest'>Norwegian Forest</option>
+                        <option id='Ocicat'>Ocicat</option>
+                        <option id='Oriental Bicolor'>Oriental Bicolor</option>
+                        <option id='Oriental'>Oriental</option>
+                        <option id='Persian'>Persian</option>
+                        <option id='Peterbald'>Peterbald</option>
+                        <option id='Pixie-Bob'>Pixie-Bob</option>
+                        <option id='Ragamuffin'>Ragamuffin</option>
+                        <option id='Ragdoll Cats'>Ragdoll Cats</option>
+                        <option id='Russian Blue'>Russian Blue</option>
+                        <option id='Savannah'>Savannah</option>
+                        <option id='Scottish Fold'>Scottish Fold</option>
+                        <option id='Selkirk Rex'>Selkirk Rex</option>
+                        <option id='Serengeti'>Serengeti</option>
+                        <option id='Siamese Cat'>Siamese Cat</option>
+                        <option id='Siberian'>Siberian</option>
+                        <option id='Singapura'>Singapura</option>
+                        <option id='Snowshoe'>Snowshoe</option>
+                        <option id='Sokoke'>Sokoke</option>
+                        <option id='Somali'>Somali</option>
+                        <option id='Sphynx'>Sphynx</option>
+                        <option id='Thai'>Thai</option>
+                        <option id='Thai Lilac'>Thai Lilac</option>
+                        <option id='Tonkinese'>Tonkinese</option>
+                        <option id='Toyger'>Toyger</option>
+                        <option id='Turkish Angora'>Turkish Angora</option>
+                        <option id='Turkish Van'>Turkish Van</option>
+                        <option id='Ukrainian Levkoy'>Ukrainian Levkoy</option>
+                    </datalist>
+                    <br>
+                    <br>
+                    <p>Desired physical traits:</p>
+                    <input type="text" id="physical-dog" name="physical" placeholder="E.g. white, small">
+                    <br>
+                    <br>
+                    <br>
+                    <div class = instructions>
+                        <p>For the following questions, please use the slider to indicate your preference.</p>
+                        <p>For any questions marked with an asterisk (*), you can leave the slider in the center to indicate no preference.
+                    </div>
+                    <!--<br>-->
+                    <div class = "row">
+                        <div class = "column">
+                            <p>How much space do you have?</p>
+                            <div class = "slidecontainer">
+                                <label for="left end" class="pull-left">Not a lot of space</label>
+                                <label for="right end" class="pull-right">Lots of space</label>
+                                <input type="range" id="apartment" name="apartment" min="1" max="5" value = "3" class="slider">
+                            </div>
+                            <br>
+                            <p>How experienced of a dog owner are you?</p>
+                            <div class = "slidecontainer">
+                                <label for="left end" class="pull-left">Novice</label>
+                                <label for="right end" class="pull-right">Expert</label>
+                                <input type="range" id="novice" name="novice" min="1" max="5" value = "3" class="slider">
+                            </div>
+                            <br>
+                            <!--<p>Sensitivity:</p>
                             <label for="left end" class="pull-left">Not a lot of space</label>
                             <label for="right end" class="pull-right">Lots of space</label>
-                            <input type="range" id="apartment" name="apartment" min="1" max="5" value = "3" class="slider">
+                            <input type="range" id="sensitivity" name="sensitivity" min="1" max="5">-->
+                            <p>Will your dog be alone often/for long periods of time?</p>
+                            <label for="left end" class="pull-left">Not at all</label>
+                            <label for="right end" class="pull-right">Very frequently</label>
+                            <input type="range" id="alone" name="alone" min="1" max="5">
+                            <br>
+                            <p>How cold does your environment get?</p>
+                            <label for="left end" class="pull-left">Not cold at all</label>
+                            <label for="right end" class="pull-right">Extremely cold</label>
+                            <input type="range" id="cold" name="cold" min="1" max="5">
+                            <br>
+                            <p>How warm does your environment get?</p>
+                            <label for="left end" class="pull-left">Not warm at all</label>
+                            <label for="right end" class="pull-right">Extremely hot</label>
+                            <input type="range" id="hot" name="hot" min="1" max="5">
+                            <br>
+                            <p>How affectionate would you like your dog to be?*</p>
+                            <label for="left end" class="pull-left">Not affectionate</label>
+                            <label for="right end" class="pull-right">Extremely affectionate</label>
+                            <input type="range" id="family-dog" name="family-dog" min="1" max="5">
+                            <br>
+                            <p>Will this dog be around children?</p>
+                            <label for="left end" class="pull-left">Never/Very rarely</label>
+                            <label for="right end" class="pull-right">All the time</label>
+                            <input type="range" id="kids-dog" name="kids-dog" min="1" max="5">
+                            <br>
+                            <p>Will this dog be around other dogs?</p>
+                            <label for="left end" class="pull-left">Never/Very rarely</label>
+                            <label for="right end" class="pull-right">All the time</label>
+                            <input type="range" id="dog-friendly" name="dog-friendly" min="1" max="5">
+                            <!--<p>Friendly towards strangers:</p>
+                            <label for="left end" class="pull-left">Not a lot of space</label>
+                            <label for="right end" class="pull-right">Lots of space</label>
+                            <input type="range" id="strangers" name="strangers" min="1" max="5">-->
                         </div>
-                        <br>
-                        <p>How experienced of a dog owner are you?</p>
-                        <div class = "slidecontainer">
-                            <label for="left end" class="pull-left">Novice</label>
-                            <label for="right end" class="pull-right">Expert</label>
-                            <input type="range" id="novice" name="novice" min="1" max="5" value = "3" class="slider">
+                        <div class = "column">
+                            <p>How tolerant are you of shedding?</p>
+                            <label for="left end" class="pull-left">Not tolerant at all</label>
+                            <label for="right end" class="pull-right">Extremely tolerant</label>
+                            <input type="range" id="shedding-dog" name="shedding-dog" min="1" max="5">
+                            <br>
+                            <p>How tolerant are you of drooling?</p>
+                            <label for="left end" class="pull-left">Not tolerant at all</label>
+                            <label for="right end" class="pull-right">Extremely tolerant</label>
+                            <input type="range" id="drool" name="drool" min="1" max="5">
+                            <!--<p>Easy to groom:</p>
+                            <label for="left end" class="pull-left">Not a lot of space</label>
+                            <label for="right end" class="pull-right">Lots of space</label>
+                            <input type="range" id="groom-dog" name="groom-dog" min="1" max="5">
+                            <p>General health:</p>
+                            <input type="range" id="health-dog" name="health-dog" min="1" max="5">
+                            <p>Potential for weight gain:</p>
+                            <input type="range" id="weight-gain" name="weight-gain" min="1" max="5">-->
+                            <br>
+                            <p>How tolerant are you of barking/howling?</p>
+                            <label for="left end" class="pull-left">Not tolerant at all</label>
+                            <label for="right end" class="pull-right">Extremely tolerant</label>
+                            <input type="range" id="noise" name="noise" min="1" max="5">
+                            <br>
+                            <p>How big of a dog do you want?*</p>
+                            <!--<div class = clarifying-note>
+                                <p>(Please leave the slider in the center if you do not have a preference.)</p>
+                            </div>-->
+                            <label for="left end" class="pull-left">Small</label>
+                            <label for="right end" class="pull-right">Big</label>
+                            <input type="range" id="size" name="size" min="1" max="5">
+                            <br>
+                            <p>How trainable of a dog do you want?*</p>
+                            <label for="left end" class="pull-left">Potty-trained is plenty</label>
+                            <label for="right end" class="pull-right">Dog show caliber</label>
+                            <input type="range" id="train" name="train" min="1" max="5">
+                            <br>
+                            <p>How intelligent of a dog do you want?*</p>
+                            <label for="left end" class="pull-left">Sharp as a marble</label>
+                            <label for="right end" class="pull-right">Extremely intelligent</label>
+                            <input type="range" id="intelligence-dog" name="intelligence-dog" min="1" max="5">
+                            <!--<p>Potential for mouthiness:</p>
+                            <input type="range" id="mouthiness" name="mouthiness" min="1" max="5">
+                            <p>Prey drive:</p>
+                            <input type="range" id="prey" name="prey" min="1" max="5">-->
+                            <!--<p>Wanderlust potential:</p>
+                            <input type="range" id="wander" name="wander" min="1" max="5">
+                            <p>Energy level:</p>
+                            <label for="left end" class="pull-left">Not a lot of space</label>
+                            <label for="right end" class="pull-right">Lots of space</label>
+                            <input type="range" id="energy" name="energy" min="1" max="5">
+                            <p>Intensity:</p>
+                            <label for="left end" class="pull-left">Not a lot of space</label>
+                            <label for="right end" class="pull-right">Lots of space</label>
+                            <input type="range" id="intensity" name="intensity" min="1" max="5">-->
+                            <br>
+                            <p>How much time will you dedicate to exercising your dog?</p>
+                            <label for="left end" class="pull-left">Hardly any</label>
+                            <label for="right end" class="pull-right">A whole lot</label>
+                            <input type="range" id="exercise" name="exercise" min="1" max="5">
+                            <br>
+                            <p>How much time do you expect to spend playing with your dog?</p>
+                            <label for="left end" class="pull-left">Hardly any</label>
+                            <label for="right end" class="pull-right">A whole lot</label>
+                            <input type="range" id="playful" name="playful" min="1" max="5">
                         </div>
-                        <br>
-                        <!--<p>Sensitivity:</p>
-                        <label for="left end" class="pull-left">Not a lot of space</label>
-                        <label for="right end" class="pull-right">Lots of space</label>
-                        <input type="range" id="sensitivity" name="sensitivity" min="1" max="5">-->
-                        <p>Will your dog be alone often/for long periods of time?</p>
-                        <label for="left end" class="pull-left">Not at all</label>
-                        <label for="right end" class="pull-right">Very frequently</label>
-                        <input type="range" id="alone" name="alone" min="1" max="5">
-                        <br>
-                        <p>How cold does your environment get?</p>
-                        <label for="left end" class="pull-left">Not cold at all</label>
-                        <label for="right end" class="pull-right">Extremely cold</label>
-                        <input type="range" id="cold" name="cold" min="1" max="5">
-                        <br>
-                        <p>How warm does your environment get?</p>
-                        <label for="left end" class="pull-left">Not warm at all</label>
-                        <label for="right end" class="pull-right">Extremely hot</label>
-                        <input type="range" id="hot" name="hot" min="1" max="5">
-                        <br>
-                        <p>How affectionate would you like your dog to be?*</p>
-                        <label for="left end" class="pull-left">Not affectionate</label>
-                        <label for="right end" class="pull-right">Extremely affectionate</label>
-                        <input type="range" id="family-dog" name="family-dog" min="1" max="5">
-                        <br>
-                        <p>Will this dog be around children?</p>
-                        <label for="left end" class="pull-left">Never/Very rarely</label>
-                        <label for="right end" class="pull-right">All the time</label>
-                        <input type="range" id="kids-dog" name="kids-dog" min="1" max="5">
-                        <br>
-                        <p>Will this dog be around other dogs?</p>
-                        <label for="left end" class="pull-left">Never/Very rarely</label>
-                        <label for="right end" class="pull-right">All the time</label>
-                        <input type="range" id="dog-friendly" name="dog-friendly" min="1" max="5">
-                        <!--<p>Friendly towards strangers:</p>
-                        <label for="left end" class="pull-left">Not a lot of space</label>
-                        <label for="right end" class="pull-right">Lots of space</label>
-                        <input type="range" id="strangers" name="strangers" min="1" max="5">-->
                     </div>
-                    <div class = "column">
-                        <p>How tolerant are you of shedding?</p>
-                        <label for="left end" class="pull-left">Not tolerant at all</label>
-                        <label for="right end" class="pull-right">Extremely tolerant</label>
-                        <input type="range" id="shedding-dog" name="shedding-dog" min="1" max="5">
-                        <br>
-                        <p>How tolerant are you of drooling?</p>
-                        <label for="left end" class="pull-left">Not tolerant at all</label>
-                        <label for="right end" class="pull-right">Extremely tolerant</label>
-                        <input type="range" id="drool" name="drool" min="1" max="5">
-                        <!--<p>Easy to groom:</p>
-                        <label for="left end" class="pull-left">Not a lot of space</label>
-                        <label for="right end" class="pull-right">Lots of space</label>
-                        <input type="range" id="groom-dog" name="groom-dog" min="1" max="5">
-                        <p>General health:</p>
-                        <input type="range" id="health-dog" name="health-dog" min="1" max="5">
-                        <p>Potential for weight gain:</p>
-                        <input type="range" id="weight-gain" name="weight-gain" min="1" max="5">-->
-                        <br>
-                        <p>How tolerant are you of barking/howling?</p>
-                        <label for="left end" class="pull-left">Not tolerant at all</label>
-                        <label for="right end" class="pull-right">Extremely tolerant</label>
-                        <input type="range" id="noise" name="noise" min="1" max="5">
-                        <br>
-                        <p>How big of a dog do you want?*</p>
-                        <!--<div class = clarifying-note>
-                            <p>(Please leave the slider in the center if you do not have a preference.)</p>
-                        </div>-->
-                        <label for="left end" class="pull-left">Small</label>
-                        <label for="right end" class="pull-right">Big</label>
-                        <input type="range" id="size" name="size" min="1" max="5">
-                        <br>
-                        <p>How trainable of a dog do you want?*</p>
-                        <label for="left end" class="pull-left">Potty-trained is plenty</label>
-                        <label for="right end" class="pull-right">Dog show caliber</label>
-                        <input type="range" id="train" name="train" min="1" max="5">
-                        <br>
-                        <p>How intelligent of a dog do you want?*</p>
-                        <label for="left end" class="pull-left">Sharp as a marble</label>
-                        <label for="right end" class="pull-right">Extremely intelligent</label>
-                        <input type="range" id="intelligence-dog" name="intelligence-dog" min="1" max="5">
-                        <!--<p>Potential for mouthiness:</p>
-                        <input type="range" id="mouthiness" name="mouthiness" min="1" max="5">
-                        <p>Prey drive:</p>
-                        <input type="range" id="prey" name="prey" min="1" max="5">-->
-                        <!--<p>Wanderlust potential:</p>
-                        <input type="range" id="wander" name="wander" min="1" max="5">
-                        <p>Energy level:</p>
-                        <label for="left end" class="pull-left">Not a lot of space</label>
-                        <label for="right end" class="pull-right">Lots of space</label>
-                        <input type="range" id="energy" name="energy" min="1" max="5">
-                        <p>Intensity:</p>
-                        <label for="left end" class="pull-left">Not a lot of space</label>
-                        <label for="right end" class="pull-right">Lots of space</label>
-                        <input type="range" id="intensity" name="intensity" min="1" max="5">-->
-                        <br>
-                        <p>How much time will you dedicate to exercising your dog?</p>
-                        <label for="left end" class="pull-left">Hardly any</label>
-                        <label for="right end" class="pull-right">A whole lot</label>
-                        <input type="range" id="exercise" name="exercise" min="1" max="5">
-                        <br>
-                        <p>How much time do you expect to spend playing with your dog?</p>
-                        <label for="left end" class="pull-left">Hardly any</label>
-                        <label for="right end" class="pull-right">A whole lot</label>
-                        <input type="range" id="playful" name="playful" min="1" max="5">
-                    </div>
-                </div>
-                <button type="submit" name="dog-selected" class="btn btn-info"> Submit </button>
-            </form>
-            <form id="cat-form">
-                <h2>Cat Trait Selector</h2>
-                <p>If you already have a dog, please enter the breed:</p>
-                <input type="text" id="existing-dog" name="existing-dog" placeholder="E.g. Australian Shepherd" list="dog-list">
-                <datalist id="dog-list">
-                    <option id=' Affenpinscher '> Affenpinscher </option>
-                    <option id=' Afghan Hound '> Afghan Hound </option>
-                    <option id=' Airedale Terrier '> Airedale Terrier </option>
-                    <option id=' Akbash '> Akbash </option>
-                    <option id=' Akita '> Akita </option>
-                    <option id=' Alaskan Klee Kai '> Alaskan Klee Kai </option>
-                    <option id=' Alaskan Malamute '> Alaskan Malamute </option>
-                    <option id=' American Bulldog '> American Bulldog </option>
-                    <option id=' American English Coonhound '> American English Coonhound </option>
-                    <option id=' American Eskimo Dog '> American Eskimo Dog </option>
-                    <option id=' American Foxhound '> American Foxhound </option>
-                    <option id=' American Hairless Terrier '> American Hairless Terrier </option>
-                    <option id=' American Leopard Hound '> American Leopard Hound </option>
-                    <option id=' American Pit Bull Terrier '> American Pit Bull Terrier </option>
-                    <option id=' American Staffordshire Terrier '> American Staffordshire Terrier </option>
-                    <option id=' American Water Spaniel '> American Water Spaniel </option>
-                    <option id=' Anatolian Shepherd Dog '> Anatolian Shepherd Dog </option>
-                    <option id=' Appenzeller Sennenhunde '> Appenzeller Sennenhunde </option>
-                    <option id=' Australian Cattle Dog '> Australian Cattle Dog </option>
-                    <option id=' Australian Kelpie '> Australian Kelpie </option>
-                    <option id=' Australian Shepherd '> Australian Shepherd </option>
-                    <option id=' Australian Stumpy Tail Cattle Dog '> Australian Stumpy Tail Cattle Dog </option>
-                    <option id=' Australian Terrier '> Australian Terrier </option>
-                    <option id=' Azawakh '> Azawakh </option>
-                    <option id=' Barbet '> Barbet </option>
-                    <option id=' Basset Fauve de Bretagne '> Basset Fauve de Bretagne </option>
-                    <option id=' Basset Hound '> Basset Hound </option>
-                    <option id=' Bavarian Mountain Scent Hound '> Bavarian Mountain Scent Hound </option>
-                    <option id=' Beagle '> Beagle </option>
-                    <option id=' Bearded Collie '> Bearded Collie </option>
-                    <option id=' Bedlington Terrier '> Bedlington Terrier </option>
-                    <option id=' Belgian Malinois '> Belgian Malinois </option>
-                    <option id=' Belgian Sheepdog '> Belgian Sheepdog </option>
-                    <option id=' Belgian Tervuren '> Belgian Tervuren </option>
-                    <option id=' Bergamasco Sheepdog '> Bergamasco Sheepdog </option>
-                    <option id=' Berger Picard '> Berger Picard </option>
-                    <option id=' Bernese Mountain Dog '> Bernese Mountain Dog </option>
-                    <option id=' Bichon Frise '> Bichon Frise </option>
-                    <option id=' Biewer Terrier '> Biewer Terrier </option>
-                    <option id=' Black and Tan Coonhound '> Black and Tan Coonhound </option>
-                    <option id=' Black Mouth Cur '> Black Mouth Cur </option>
-                    <option id=' Black Russian Terrier '> Black Russian Terrier </option>
-                    <option id=' Bloodhound '> Bloodhound </option>
-                    <option id=' Bluetick Coonhound '> Bluetick Coonhound </option>
-                    <option id=' Boerboel '> Boerboel </option>
-                    <option id=' Bohemian Shepherd '> Bohemian Shepherd </option>
-                    <option id=' Bolognese '> Bolognese </option>
-                    <option id=' Border Collie '> Border Collie </option>
-                    <option id=' Border Terrier '> Border Terrier </option>
-                    <option id=' Borzoi '> Borzoi </option>
-                    <option id=' Boston Terrier '> Boston Terrier </option>
-                    <option id=' Bouvier des Flandres '> Bouvier des Flandres </option>
-                    <option id=' Boxer '> Boxer </option>
-                    <option id=' Boykin Spaniel '> Boykin Spaniel </option>
-                    <option id=' Bracco Italiano '> Bracco Italiano </option>
-                    <option id=' Braque du Bourbonnais '> Braque du Bourbonnais </option>
-                    <option id=' Briard '> Briard </option>
-                    <option id=' Brittany '> Brittany </option>
-                    <option id=' Broholmer '> Broholmer </option>
-                    <option id=' Brussels Griffon '> Brussels Griffon </option>
-                    <option id=' Bull Terrier '> Bull Terrier </option>
-                    <option id=' Bulldog '> Bulldog </option>
-                    <option id=' Bullmastiff '> Bullmastiff </option>
-                    <option id=' Cairn Terrier '> Cairn Terrier </option>
-                    <option id=' Canaan Dog '> Canaan Dog </option>
-                    <option id=' Cane Corso '> Cane Corso </option>
-                    <option id=' Cardigan Welsh Corgi '> Cardigan Welsh Corgi </option>
-                    <option id=' Carolina Dog '> Carolina Dog </option>
-                    <option id=' Catahoula Leopard Dog '> Catahoula Leopard Dog </option>
-                    <option id=' Caucasian Shepherd Dog '> Caucasian Shepherd Dog </option>
-                    <option id=' Cavalier King Charles Spaniel '> Cavalier King Charles Spaniel </option>
-                    <option id=' Central Asian Shepherd Dog '> Central Asian Shepherd Dog </option>
-                    <option id=' Cesky Terrier '> Cesky Terrier </option>
-                    <option id=' Chesapeake Bay Retriever '> Chesapeake Bay Retriever </option>
-                    <option id=' Chihuahua '> Chihuahua </option>
-                    <option id=' Chinese Crested '> Chinese Crested </option>
-                    <option id=' Chinese Shar-Pei '> Chinese Shar-Pei </option>
-                    <option id=' Chinook '> Chinook </option>
-                    <option id=' Chow Chow '> Chow Chow </option>
-                    <option id=' Cirneco dell‚ÄôEtna '> Cirneco dell‚ÄôEtna </option>
-                    <option id=' Clumber Spaniel '> Clumber Spaniel </option>
-                    <option id=' Cocker Spaniel '> Cocker Spaniel </option>
-                    <option id=' Collie '> Collie </option>
-                    <option id=' Coton de Tulear '> Coton de Tulear </option>
-                    <option id=' Croatian Sheepdog '> Croatian Sheepdog </option>
-                    <option id=' Curly-Coated Retriever '> Curly-Coated Retriever </option>
-                    <option id=' Dachshund '> Dachshund </option>
-                    <option id=' Dalmatian '> Dalmatian </option>
-                    <option id=' Dandie Dinmont Terrier '> Dandie Dinmont Terrier </option>
-                    <option id=' Danish-Swedish Farmdog '> Danish-Swedish Farmdog </option>
-                    <option id=' Deutscher Wachtelhund '> Deutscher Wachtelhund </option>
-                    <option id=' Doberman Pinscher '> Doberman Pinscher </option>
-                    <option id=' Dogo Argentino '> Dogo Argentino </option>
-                    <option id=' Dogue de Bordeaux '> Dogue de Bordeaux </option>
-                    <option id=' Drentsche Patrijshond '> Drentsche Patrijshond </option>
-                    <option id=' Drever '> Drever </option>
-                    <option id=' Dutch Shepherd '> Dutch Shepherd </option>
-                    <option id=' English Cocker Spaniel '> English Cocker Spaniel </option>
-                    <option id=' English Foxhound '> English Foxhound </option>
-                    <option id=' English Setter '> English Setter </option>
-                    <option id=' English Springer Spaniel '> English Springer Spaniel </option>
-                    <option id=' English Toy Spaniel '> English Toy Spaniel </option>
-                    <option id=' Entlebucher Mountain Dog '> Entlebucher Mountain Dog </option>
-                    <option id=' Estrela Mountain Dog '> Estrela Mountain Dog </option>
-                    <option id=' Eurasier '> Eurasier </option>
-                    <option id=' Field Spaniel '> Field Spaniel </option>
-                    <option id=' Fila Brasileiro '> Fila Brasileiro </option>
-                    <option id=' Finnish Lapphund '> Finnish Lapphund </option>
-                    <option id=' Finnish Spitz '> Finnish Spitz </option>
-                    <option id=' Flat-Coated Retriever '> Flat-Coated Retriever </option>
-                    <option id=' Fox Terrier '> Fox Terrier </option>
-                    <option id=' French Bulldog '> French Bulldog </option>
-                    <option id=' French Spaniel '> French Spaniel </option>
-                    <option id=' German Longhaired Pointer '> German Longhaired Pointer </option>
-                    <option id=' German Pinscher '> German Pinscher </option>
-                    <option id=' German Shepherd Dog '> German Shepherd Dog </option>
-                    <option id=' German Shorthaired Pointer '> German Shorthaired Pointer </option>
-                    <option id=' German Spitz '> German Spitz </option>
-                    <option id=' German Wirehaired Pointer '> German Wirehaired Pointer </option>
-                    <option id=' Giant Schnauzer '> Giant Schnauzer </option>
-                    <option id=' Glen of Imaal Terrier '> Glen of Imaal Terrier </option>
-                    <option id=' Golden Retriever '> Golden Retriever </option>
-                    <option id=' Gordon Setter '> Gordon Setter </option>
-                    <option id=' Great Dane '> Great Dane </option>
-                    <option id=' Great Pyrenees '> Great Pyrenees </option>
-                    <option id=' Greater Swiss Mountain Dog '> Greater Swiss Mountain Dog </option>
-                    <option id=' Greyhound '> Greyhound </option>
-                    <option id=' Hamiltonstovare '> Hamiltonstovare </option>
-                    <option id=' Hanoverian Scenthound '> Hanoverian Scenthound </option>
-                    <option id=' Harrier '> Harrier </option>
-                    <option id=' Havanese '> Havanese </option>
-                    <option id=' Hokkaido '> Hokkaido </option>
-                    <option id=' Hovawart '> Hovawart </option>
-                    <option id=' Ibizan Hound '> Ibizan Hound </option>
-                    <option id=' Icelandic Sheepdog '> Icelandic Sheepdog </option>
-                    <option id=' Irish Red And White Setter '> Irish Red And White Setter </option>
-                    <option id=' Irish Setter '> Irish Setter </option>
-                    <option id=' Irish Terrier '> Irish Terrier </option>
-                    <option id=' Irish Water Spaniel '> Irish Water Spaniel </option>
-                    <option id=' Irish Wolfhound '> Irish Wolfhound </option>
-                    <option id=' Italian Greyhound '> Italian Greyhound </option>
-                    <option id=' Jack Russell Terrier '> Jack Russell Terrier </option>
-                    <option id=' Japanese Chin '> Japanese Chin </option>
-                    <option id=' Japanese Spitz '> Japanese Spitz </option>
-                    <option id=' Kai Ken '> Kai Ken </option>
-                    <option id=' Keeshond '> Keeshond </option>
-                    <option id=' Kerry Blue Terrier '> Kerry Blue Terrier </option>
-                    <option id=' Kishu Ken '> Kishu Ken </option>
-                    <option id=' Komondor '> Komondor </option>
-                    <option id=' Kooikerhondje '> Kooikerhondje </option>
-                    <option id=' Korean Jindo Dog '> Korean Jindo Dog </option>
-                    <option id=' Kuvasz '> Kuvasz </option>
-                    <option id=' Labrador Retriever '> Labrador Retriever </option>
-                    <option id=' Lagotto Romagnolo '> Lagotto Romagnolo </option>
-                    <option id=' Lakeland Terrier '> Lakeland Terrier </option>
-                    <option id=' Lancashire Heeler '> Lancashire Heeler </option>
-                    <option id=' Leonberger '> Leonberger </option>
-                    <option id=' Lhasa Apso '> Lhasa Apso </option>
-                    <option id=' Lowchen '> Lowchen </option>
-                    <option id=' Maltese '> Maltese </option>
-                    <option id=' Manchester Terrier '> Manchester Terrier </option>
-                    <option id=' Maremma Sheepdog '> Maremma Sheepdog </option>
-                    <option id=' Mastiff '> Mastiff </option>
-                    <option id=' Miniature Pinscher '> Miniature Pinscher </option>
-                    <option id=' Mountain Cur '> Mountain Cur </option>
-                    <option id=' Mudi '> Mudi </option>
-                    <option id=' Neapolitan Mastiff '> Neapolitan Mastiff </option>
-                    <option id=' Newfoundland '> Newfoundland </option>
-                    <option id=' Norfolk Terrier '> Norfolk Terrier </option>
-                    <option id=' Norwegian Buhund '> Norwegian Buhund </option>
-                    <option id=' Norwegian Elkhound '> Norwegian Elkhound </option>
-                    <option id=' Norwegian Lundehund '> Norwegian Lundehund </option>
-                    <option id=' Norwich Terrier '> Norwich Terrier </option>
-                    <option id=' Nova Scotia Duck Tolling Retriever '> Nova Scotia Duck Tolling Retriever </option>
-                    <option id=' Old English Sheepdog '> Old English Sheepdog </option>
-                    <option id=' Otterhound '> Otterhound </option>
-                    <option id=' Papillon '> Papillon </option>
-                    <option id=' Patterdale Terrier '> Patterdale Terrier </option>
-                    <option id=' Pekingese '> Pekingese </option>
-                    <option id=' Pembroke Welsh Corgi '> Pembroke Welsh Corgi </option>
-                    <option id=' Petit Basset Griffon Vend√©en '> Petit Basset Griffon Vend√©en </option>
-                    <option id=' Pharaoh Hound '> Pharaoh Hound </option>
-                    <option id=' Plott '> Plott </option>
-                    <option id=' Pocket Beagle '> Pocket Beagle </option>
-                    <option id=' Pointer '> Pointer </option>
-                    <option id=' Pomeranian '> Pomeranian </option>
-                    <option id=' Portuguese Podengo Pequeno '> Portuguese Podengo Pequeno </option>
-                    <option id=' Portuguese Pointer '> Portuguese Pointer </option>
-                    <option id=' Portuguese Sheepdog '> Portuguese Sheepdog </option>
-                    <option id=' Portuguese Water Dog '> Portuguese Water Dog </option>
-                    <option id=' Pudelpointer '> Pudelpointer </option>
-                    <option id=' Pug '> Pug </option>
-                    <option id=' Puli '> Puli </option>
-                    <option id=' Pyrenean Mastiff '> Pyrenean Mastiff </option>
-                    <option id=' Pyrenean Shepherd '> Pyrenean Shepherd </option>
-                    <option id=' Rat Terrier '> Rat Terrier </option>
-                    <option id=' Redbone Coonhound '> Redbone Coonhound </option>
-                    <option id=' Rhodesian Ridgeback '> Rhodesian Ridgeback </option>
-                    <option id=' Rottweiler '> Rottweiler </option>
-                    <option id=' Saint Bernard '> Saint Bernard </option>
-                    <option id=' Saluki '> Saluki </option>
-                    <option id=' Samoyed '> Samoyed </option>
-                    <option id=' Schipperke '> Schipperke </option>
-                    <option id=' Scottish Deerhound '> Scottish Deerhound </option>
-                    <option id=' Scottish Terrier '> Scottish Terrier </option>
-                    <option id=' Sealyham Terrier '> Sealyham Terrier </option>
-                    <option id=' Shetland Sheepdog '> Shetland Sheepdog </option>
-                    <option id=' Shiba Inu '> Shiba Inu </option>
-                    <option id=' Shih Tzu '> Shih Tzu </option>
-                    <option id=' Shikoku '> Shikoku </option>
-                    <option id=' Shiloh Shepherd '> Shiloh Shepherd </option>
-                    <option id=' Siberian Husky '> Siberian Husky </option>
-                    <option id=' Silken Windhound '> Silken Windhound </option>
-                    <option id=' Silky Terrier '> Silky Terrier </option>
-                    <option id=' Skye Terrier '> Skye Terrier </option>
-                    <option id=' Sloughi '> Sloughi </option>
-                    <option id=' Small Munsterlander Pointer '> Small Munsterlander Pointer </option>
-                    <option id=' Soft Coated Wheaten Terrier '> Soft Coated Wheaten Terrier </option>
-                    <option id=' Spanish Mastiff '> Spanish Mastiff </option>
-                    <option id=' Spinone Italiano '> Spinone Italiano </option>
-                    <option id=' Stabyhoun '> Stabyhoun </option>
-                    <option id=' Staffordshire Bull Terrier '> Staffordshire Bull Terrier </option>
-                    <option id=' Standard Schnauzer '> Standard Schnauzer </option>
-                    <option id=' Sussex Spaniel '> Sussex Spaniel </option>
-                    <option id=' Swedish Lapphund '> Swedish Lapphund </option>
-                    <option id=' Swedish Vallhund '> Swedish Vallhund </option>
-                    <option id=' Taiwan Dog '> Taiwan Dog </option>
-                    <option id=' Tibetan Mastiff '> Tibetan Mastiff </option>
-                    <option id=' Tibetan Spaniel '> Tibetan Spaniel </option>
-                    <option id=' Toy Fox Terrier '> Toy Fox Terrier </option>
-                    <option id=' Transylvanian Hound '> Transylvanian Hound </option>
-                    <option id=' Treeing Tennessee Brindle '> Treeing Tennessee Brindle </option>
-                    <option id=' Treeing Walker Coonhound '> Treeing Walker Coonhound </option>
-                    <option id=' Vizsla '> Vizsla </option>
-                    <option id=' Weimaraner '> Weimaraner </option>
-                    <option id=' Welsh Springer Spaniel '> Welsh Springer Spaniel </option>
-                    <option id=' Welsh Terrier '> Welsh Terrier </option>
-                    <option id=' West Highland White Terrier '> West Highland White Terrier </option>
-                    <option id=' Whippet '> Whippet </option>
-                    <option id=' Wirehaired Pointing Griffon '> Wirehaired Pointing Griffon </option>
-                    <option id=' Xoloitzcuintli '> Xoloitzcuintli </option>
-                </datalist>
-                <p>Desired physical traits:</p>
-                <input type="text" id="physical-cat" name="physical" placeholder="E.g. white, small">
-                <p>Left side is undesired, right side is desired.</p>
-                <p>Affectionate with family:</p>
-                <input type="range" id="family-cat" name="family-cat" min="1" max="5">
-                <p>Amount of shedding:</p>
-                <input type="range" id="shedding-cat" name="shedding-cat" min="1" max="5">
-                <p>General health:</p>
-                <input type="range" id="health-cat" name="health-cat" min="1" max="5">
-                <p>Potential for playfulness:</p>
-                <input type="range" id="playful-cat" name="playful-cat" min="1" max="5">
-                <p>Kid-friendly:</p>
-                <input type="range" id="kids-cat" name="kids-cat" min="1" max="5">
-                <p>Easy to groom:</p>
-                <input type="range" id="groom-cat" name="groom-cat" min="1" max="5">
-                <p>Intelligence:</p>
-                <input type="range" id="intelligence-cat" name="intelligence-cat" min="1" max="5">
-                <p>Pet-friendly:</p>
-                <input type="range" id="pet-friendly" name="pet-friendly" min="1" max="5">
+                    <button type="submit" name="dog-selected" class="btn btn-info"> Submit </button>
+                </form>
+                <form id="cat-form">
+                    <h2>Cat Trait Selector</h2>
+                    <p>If you already have a dog, please enter the breed:</p>
+                    <input type="text" id="existing-dog" name="existing-dog" placeholder="E.g. Australian Shepherd" list="dog-list">
+                    <datalist id="dog-list">
+                        <option id=' Affenpinscher '> Affenpinscher </option>
+                        <option id=' Afghan Hound '> Afghan Hound </option>
+                        <option id=' Airedale Terrier '> Airedale Terrier </option>
+                        <option id=' Akbash '> Akbash </option>
+                        <option id=' Akita '> Akita </option>
+                        <option id=' Alaskan Klee Kai '> Alaskan Klee Kai </option>
+                        <option id=' Alaskan Malamute '> Alaskan Malamute </option>
+                        <option id=' American Bulldog '> American Bulldog </option>
+                        <option id=' American English Coonhound '> American English Coonhound </option>
+                        <option id=' American Eskimo Dog '> American Eskimo Dog </option>
+                        <option id=' American Foxhound '> American Foxhound </option>
+                        <option id=' American Hairless Terrier '> American Hairless Terrier </option>
+                        <option id=' American Leopard Hound '> American Leopard Hound </option>
+                        <option id=' American Pit Bull Terrier '> American Pit Bull Terrier </option>
+                        <option id=' American Staffordshire Terrier '> American Staffordshire Terrier </option>
+                        <option id=' American Water Spaniel '> American Water Spaniel </option>
+                        <option id=' Anatolian Shepherd Dog '> Anatolian Shepherd Dog </option>
+                        <option id=' Appenzeller Sennenhunde '> Appenzeller Sennenhunde </option>
+                        <option id=' Australian Cattle Dog '> Australian Cattle Dog </option>
+                        <option id=' Australian Kelpie '> Australian Kelpie </option>
+                        <option id=' Australian Shepherd '> Australian Shepherd </option>
+                        <option id=' Australian Stumpy Tail Cattle Dog '> Australian Stumpy Tail Cattle Dog </option>
+                        <option id=' Australian Terrier '> Australian Terrier </option>
+                        <option id=' Azawakh '> Azawakh </option>
+                        <option id=' Barbet '> Barbet </option>
+                        <option id=' Basset Fauve de Bretagne '> Basset Fauve de Bretagne </option>
+                        <option id=' Basset Hound '> Basset Hound </option>
+                        <option id=' Bavarian Mountain Scent Hound '> Bavarian Mountain Scent Hound </option>
+                        <option id=' Beagle '> Beagle </option>
+                        <option id=' Bearded Collie '> Bearded Collie </option>
+                        <option id=' Bedlington Terrier '> Bedlington Terrier </option>
+                        <option id=' Belgian Malinois '> Belgian Malinois </option>
+                        <option id=' Belgian Sheepdog '> Belgian Sheepdog </option>
+                        <option id=' Belgian Tervuren '> Belgian Tervuren </option>
+                        <option id=' Bergamasco Sheepdog '> Bergamasco Sheepdog </option>
+                        <option id=' Berger Picard '> Berger Picard </option>
+                        <option id=' Bernese Mountain Dog '> Bernese Mountain Dog </option>
+                        <option id=' Bichon Frise '> Bichon Frise </option>
+                        <option id=' Biewer Terrier '> Biewer Terrier </option>
+                        <option id=' Black and Tan Coonhound '> Black and Tan Coonhound </option>
+                        <option id=' Black Mouth Cur '> Black Mouth Cur </option>
+                        <option id=' Black Russian Terrier '> Black Russian Terrier </option>
+                        <option id=' Bloodhound '> Bloodhound </option>
+                        <option id=' Bluetick Coonhound '> Bluetick Coonhound </option>
+                        <option id=' Boerboel '> Boerboel </option>
+                        <option id=' Bohemian Shepherd '> Bohemian Shepherd </option>
+                        <option id=' Bolognese '> Bolognese </option>
+                        <option id=' Border Collie '> Border Collie </option>
+                        <option id=' Border Terrier '> Border Terrier </option>
+                        <option id=' Borzoi '> Borzoi </option>
+                        <option id=' Boston Terrier '> Boston Terrier </option>
+                        <option id=' Bouvier des Flandres '> Bouvier des Flandres </option>
+                        <option id=' Boxer '> Boxer </option>
+                        <option id=' Boykin Spaniel '> Boykin Spaniel </option>
+                        <option id=' Bracco Italiano '> Bracco Italiano </option>
+                        <option id=' Braque du Bourbonnais '> Braque du Bourbonnais </option>
+                        <option id=' Briard '> Briard </option>
+                        <option id=' Brittany '> Brittany </option>
+                        <option id=' Broholmer '> Broholmer </option>
+                        <option id=' Brussels Griffon '> Brussels Griffon </option>
+                        <option id=' Bull Terrier '> Bull Terrier </option>
+                        <option id=' Bulldog '> Bulldog </option>
+                        <option id=' Bullmastiff '> Bullmastiff </option>
+                        <option id=' Cairn Terrier '> Cairn Terrier </option>
+                        <option id=' Canaan Dog '> Canaan Dog </option>
+                        <option id=' Cane Corso '> Cane Corso </option>
+                        <option id=' Cardigan Welsh Corgi '> Cardigan Welsh Corgi </option>
+                        <option id=' Carolina Dog '> Carolina Dog </option>
+                        <option id=' Catahoula Leopard Dog '> Catahoula Leopard Dog </option>
+                        <option id=' Caucasian Shepherd Dog '> Caucasian Shepherd Dog </option>
+                        <option id=' Cavalier King Charles Spaniel '> Cavalier King Charles Spaniel </option>
+                        <option id=' Central Asian Shepherd Dog '> Central Asian Shepherd Dog </option>
+                        <option id=' Cesky Terrier '> Cesky Terrier </option>
+                        <option id=' Chesapeake Bay Retriever '> Chesapeake Bay Retriever </option>
+                        <option id=' Chihuahua '> Chihuahua </option>
+                        <option id=' Chinese Crested '> Chinese Crested </option>
+                        <option id=' Chinese Shar-Pei '> Chinese Shar-Pei </option>
+                        <option id=' Chinook '> Chinook </option>
+                        <option id=' Chow Chow '> Chow Chow </option>
+                        <option id=' Cirneco dell‚ÄôEtna '> Cirneco dell‚ÄôEtna </option>
+                        <option id=' Clumber Spaniel '> Clumber Spaniel </option>
+                        <option id=' Cocker Spaniel '> Cocker Spaniel </option>
+                        <option id=' Collie '> Collie </option>
+                        <option id=' Coton de Tulear '> Coton de Tulear </option>
+                        <option id=' Croatian Sheepdog '> Croatian Sheepdog </option>
+                        <option id=' Curly-Coated Retriever '> Curly-Coated Retriever </option>
+                        <option id=' Dachshund '> Dachshund </option>
+                        <option id=' Dalmatian '> Dalmatian </option>
+                        <option id=' Dandie Dinmont Terrier '> Dandie Dinmont Terrier </option>
+                        <option id=' Danish-Swedish Farmdog '> Danish-Swedish Farmdog </option>
+                        <option id=' Deutscher Wachtelhund '> Deutscher Wachtelhund </option>
+                        <option id=' Doberman Pinscher '> Doberman Pinscher </option>
+                        <option id=' Dogo Argentino '> Dogo Argentino </option>
+                        <option id=' Dogue de Bordeaux '> Dogue de Bordeaux </option>
+                        <option id=' Drentsche Patrijshond '> Drentsche Patrijshond </option>
+                        <option id=' Drever '> Drever </option>
+                        <option id=' Dutch Shepherd '> Dutch Shepherd </option>
+                        <option id=' English Cocker Spaniel '> English Cocker Spaniel </option>
+                        <option id=' English Foxhound '> English Foxhound </option>
+                        <option id=' English Setter '> English Setter </option>
+                        <option id=' English Springer Spaniel '> English Springer Spaniel </option>
+                        <option id=' English Toy Spaniel '> English Toy Spaniel </option>
+                        <option id=' Entlebucher Mountain Dog '> Entlebucher Mountain Dog </option>
+                        <option id=' Estrela Mountain Dog '> Estrela Mountain Dog </option>
+                        <option id=' Eurasier '> Eurasier </option>
+                        <option id=' Field Spaniel '> Field Spaniel </option>
+                        <option id=' Fila Brasileiro '> Fila Brasileiro </option>
+                        <option id=' Finnish Lapphund '> Finnish Lapphund </option>
+                        <option id=' Finnish Spitz '> Finnish Spitz </option>
+                        <option id=' Flat-Coated Retriever '> Flat-Coated Retriever </option>
+                        <option id=' Fox Terrier '> Fox Terrier </option>
+                        <option id=' French Bulldog '> French Bulldog </option>
+                        <option id=' French Spaniel '> French Spaniel </option>
+                        <option id=' German Longhaired Pointer '> German Longhaired Pointer </option>
+                        <option id=' German Pinscher '> German Pinscher </option>
+                        <option id=' German Shepherd Dog '> German Shepherd Dog </option>
+                        <option id=' German Shorthaired Pointer '> German Shorthaired Pointer </option>
+                        <option id=' German Spitz '> German Spitz </option>
+                        <option id=' German Wirehaired Pointer '> German Wirehaired Pointer </option>
+                        <option id=' Giant Schnauzer '> Giant Schnauzer </option>
+                        <option id=' Glen of Imaal Terrier '> Glen of Imaal Terrier </option>
+                        <option id=' Golden Retriever '> Golden Retriever </option>
+                        <option id=' Gordon Setter '> Gordon Setter </option>
+                        <option id=' Great Dane '> Great Dane </option>
+                        <option id=' Great Pyrenees '> Great Pyrenees </option>
+                        <option id=' Greater Swiss Mountain Dog '> Greater Swiss Mountain Dog </option>
+                        <option id=' Greyhound '> Greyhound </option>
+                        <option id=' Hamiltonstovare '> Hamiltonstovare </option>
+                        <option id=' Hanoverian Scenthound '> Hanoverian Scenthound </option>
+                        <option id=' Harrier '> Harrier </option>
+                        <option id=' Havanese '> Havanese </option>
+                        <option id=' Hokkaido '> Hokkaido </option>
+                        <option id=' Hovawart '> Hovawart </option>
+                        <option id=' Ibizan Hound '> Ibizan Hound </option>
+                        <option id=' Icelandic Sheepdog '> Icelandic Sheepdog </option>
+                        <option id=' Irish Red And White Setter '> Irish Red And White Setter </option>
+                        <option id=' Irish Setter '> Irish Setter </option>
+                        <option id=' Irish Terrier '> Irish Terrier </option>
+                        <option id=' Irish Water Spaniel '> Irish Water Spaniel </option>
+                        <option id=' Irish Wolfhound '> Irish Wolfhound </option>
+                        <option id=' Italian Greyhound '> Italian Greyhound </option>
+                        <option id=' Jack Russell Terrier '> Jack Russell Terrier </option>
+                        <option id=' Japanese Chin '> Japanese Chin </option>
+                        <option id=' Japanese Spitz '> Japanese Spitz </option>
+                        <option id=' Kai Ken '> Kai Ken </option>
+                        <option id=' Keeshond '> Keeshond </option>
+                        <option id=' Kerry Blue Terrier '> Kerry Blue Terrier </option>
+                        <option id=' Kishu Ken '> Kishu Ken </option>
+                        <option id=' Komondor '> Komondor </option>
+                        <option id=' Kooikerhondje '> Kooikerhondje </option>
+                        <option id=' Korean Jindo Dog '> Korean Jindo Dog </option>
+                        <option id=' Kuvasz '> Kuvasz </option>
+                        <option id=' Labrador Retriever '> Labrador Retriever </option>
+                        <option id=' Lagotto Romagnolo '> Lagotto Romagnolo </option>
+                        <option id=' Lakeland Terrier '> Lakeland Terrier </option>
+                        <option id=' Lancashire Heeler '> Lancashire Heeler </option>
+                        <option id=' Leonberger '> Leonberger </option>
+                        <option id=' Lhasa Apso '> Lhasa Apso </option>
+                        <option id=' Lowchen '> Lowchen </option>
+                        <option id=' Maltese '> Maltese </option>
+                        <option id=' Manchester Terrier '> Manchester Terrier </option>
+                        <option id=' Maremma Sheepdog '> Maremma Sheepdog </option>
+                        <option id=' Mastiff '> Mastiff </option>
+                        <option id=' Miniature Pinscher '> Miniature Pinscher </option>
+                        <option id=' Mountain Cur '> Mountain Cur </option>
+                        <option id=' Mudi '> Mudi </option>
+                        <option id=' Neapolitan Mastiff '> Neapolitan Mastiff </option>
+                        <option id=' Newfoundland '> Newfoundland </option>
+                        <option id=' Norfolk Terrier '> Norfolk Terrier </option>
+                        <option id=' Norwegian Buhund '> Norwegian Buhund </option>
+                        <option id=' Norwegian Elkhound '> Norwegian Elkhound </option>
+                        <option id=' Norwegian Lundehund '> Norwegian Lundehund </option>
+                        <option id=' Norwich Terrier '> Norwich Terrier </option>
+                        <option id=' Nova Scotia Duck Tolling Retriever '> Nova Scotia Duck Tolling Retriever </option>
+                        <option id=' Old English Sheepdog '> Old English Sheepdog </option>
+                        <option id=' Otterhound '> Otterhound </option>
+                        <option id=' Papillon '> Papillon </option>
+                        <option id=' Patterdale Terrier '> Patterdale Terrier </option>
+                        <option id=' Pekingese '> Pekingese </option>
+                        <option id=' Pembroke Welsh Corgi '> Pembroke Welsh Corgi </option>
+                        <option id=' Petit Basset Griffon Vend√©en '> Petit Basset Griffon Vend√©en </option>
+                        <option id=' Pharaoh Hound '> Pharaoh Hound </option>
+                        <option id=' Plott '> Plott </option>
+                        <option id=' Pocket Beagle '> Pocket Beagle </option>
+                        <option id=' Pointer '> Pointer </option>
+                        <option id=' Pomeranian '> Pomeranian </option>
+                        <option id=' Portuguese Podengo Pequeno '> Portuguese Podengo Pequeno </option>
+                        <option id=' Portuguese Pointer '> Portuguese Pointer </option>
+                        <option id=' Portuguese Sheepdog '> Portuguese Sheepdog </option>
+                        <option id=' Portuguese Water Dog '> Portuguese Water Dog </option>
+                        <option id=' Pudelpointer '> Pudelpointer </option>
+                        <option id=' Pug '> Pug </option>
+                        <option id=' Puli '> Puli </option>
+                        <option id=' Pyrenean Mastiff '> Pyrenean Mastiff </option>
+                        <option id=' Pyrenean Shepherd '> Pyrenean Shepherd </option>
+                        <option id=' Rat Terrier '> Rat Terrier </option>
+                        <option id=' Redbone Coonhound '> Redbone Coonhound </option>
+                        <option id=' Rhodesian Ridgeback '> Rhodesian Ridgeback </option>
+                        <option id=' Rottweiler '> Rottweiler </option>
+                        <option id=' Saint Bernard '> Saint Bernard </option>
+                        <option id=' Saluki '> Saluki </option>
+                        <option id=' Samoyed '> Samoyed </option>
+                        <option id=' Schipperke '> Schipperke </option>
+                        <option id=' Scottish Deerhound '> Scottish Deerhound </option>
+                        <option id=' Scottish Terrier '> Scottish Terrier </option>
+                        <option id=' Sealyham Terrier '> Sealyham Terrier </option>
+                        <option id=' Shetland Sheepdog '> Shetland Sheepdog </option>
+                        <option id=' Shiba Inu '> Shiba Inu </option>
+                        <option id=' Shih Tzu '> Shih Tzu </option>
+                        <option id=' Shikoku '> Shikoku </option>
+                        <option id=' Shiloh Shepherd '> Shiloh Shepherd </option>
+                        <option id=' Siberian Husky '> Siberian Husky </option>
+                        <option id=' Silken Windhound '> Silken Windhound </option>
+                        <option id=' Silky Terrier '> Silky Terrier </option>
+                        <option id=' Skye Terrier '> Skye Terrier </option>
+                        <option id=' Sloughi '> Sloughi </option>
+                        <option id=' Small Munsterlander Pointer '> Small Munsterlander Pointer </option>
+                        <option id=' Soft Coated Wheaten Terrier '> Soft Coated Wheaten Terrier </option>
+                        <option id=' Spanish Mastiff '> Spanish Mastiff </option>
+                        <option id=' Spinone Italiano '> Spinone Italiano </option>
+                        <option id=' Stabyhoun '> Stabyhoun </option>
+                        <option id=' Staffordshire Bull Terrier '> Staffordshire Bull Terrier </option>
+                        <option id=' Standard Schnauzer '> Standard Schnauzer </option>
+                        <option id=' Sussex Spaniel '> Sussex Spaniel </option>
+                        <option id=' Swedish Lapphund '> Swedish Lapphund </option>
+                        <option id=' Swedish Vallhund '> Swedish Vallhund </option>
+                        <option id=' Taiwan Dog '> Taiwan Dog </option>
+                        <option id=' Tibetan Mastiff '> Tibetan Mastiff </option>
+                        <option id=' Tibetan Spaniel '> Tibetan Spaniel </option>
+                        <option id=' Toy Fox Terrier '> Toy Fox Terrier </option>
+                        <option id=' Transylvanian Hound '> Transylvanian Hound </option>
+                        <option id=' Treeing Tennessee Brindle '> Treeing Tennessee Brindle </option>
+                        <option id=' Treeing Walker Coonhound '> Treeing Walker Coonhound </option>
+                        <option id=' Vizsla '> Vizsla </option>
+                        <option id=' Weimaraner '> Weimaraner </option>
+                        <option id=' Welsh Springer Spaniel '> Welsh Springer Spaniel </option>
+                        <option id=' Welsh Terrier '> Welsh Terrier </option>
+                        <option id=' West Highland White Terrier '> West Highland White Terrier </option>
+                        <option id=' Whippet '> Whippet </option>
+                        <option id=' Wirehaired Pointing Griffon '> Wirehaired Pointing Griffon </option>
+                        <option id=' Xoloitzcuintli '> Xoloitzcuintli </option>
+                    </datalist>
+                    <p>Desired physical traits:</p>
+                    <input type="text" id="physical-cat" name="physical" placeholder="E.g. white, small">
+                    <p>Left side is undesired, right side is desired.</p>
+                    <p>Affectionate with family:</p>
+                    <input type="range" id="family-cat" name="family-cat" min="1" max="5">
+                    <p>Amount of shedding:</p>
+                    <input type="range" id="shedding-cat" name="shedding-cat" min="1" max="5">
+                    <p>General health:</p>
+                    <input type="range" id="health-cat" name="health-cat" min="1" max="5">
+                    <p>Potential for playfulness:</p>
+                    <input type="range" id="playful-cat" name="playful-cat" min="1" max="5">
+                    <p>Kid-friendly:</p>
+                    <input type="range" id="kids-cat" name="kids-cat" min="1" max="5">
+                    <p>Easy to groom:</p>
+                    <input type="range" id="groom-cat" name="groom-cat" min="1" max="5">
+                    <p>Intelligence:</p>
+                    <input type="range" id="intelligence-cat" name="intelligence-cat" min="1" max="5">
+                    <p>Pet-friendly:</p>
+                    <input type="range" id="pet-friendly" name="pet-friendly" min="1" max="5">
 
-                <button type="submit" name="cat-selected" class="btn btn-info"> Submit </button>
-            </form>
+                    <button type="submit" name="cat-selected" class="btn btn-info"> Submit </button>
+                </form>
+            </div>
 
             <script>
                 document.getElementById('cat-form').style.display = 'none';
