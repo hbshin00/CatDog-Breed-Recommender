@@ -24,6 +24,8 @@
             </div>
             <form id="dog-form">
                 <h2>Dog Trait Selector</h2>
+                <p>If you already have a cat, please enter the breed:</p>
+                <input type="text" id="existing-cat" name="existing-cat" placeholder="E.g. American Bobtail">
                 <p>Desired physical traits:</p>
                 <input type="text" id="physical-dog" name="physical" placeholder="E.g. white, small">
                 <p>Left side is undesired, right side is desired.</p>
@@ -129,6 +131,8 @@
             </form>
             <form id="cat-form">
                 <h2>Cat Trait Selector</h2>
+                <p>If you already have a dog, please enter the breed:</p>
+                <input type="text" id="existing-dog" name="existing-dog" placeholder="E.g. Australian Shepherd">
                 <p>Desired physical traits:</p>
                 <input type="text" id="physical-cat" name="physical" placeholder="E.g. white, small">
                 <p>Left side is undesired, right side is desired.</p>
@@ -179,6 +183,9 @@
                 <p class="breed-desc">
                     {{data[0][2]}}
                 </p>
+                <p class="breed-compatability">
+                    Compatability with your pet: {{data[0][4] * 100}}%
+                </p>
                 <br>
                 <label class="container">Relevant
                   <input type="radio" checked="checked" name="radio0" value="relevant">
@@ -199,6 +206,9 @@
                 </h2>
                 <p class="breed-desc">
                     {{data[1][2]}}
+                </p>
+                <p class="breed-compatability">
+                    Compatability with your pet: {{data[1][4] * 100}}%
                 </p>
                 <br>
                 <label class="container">Relevant
@@ -221,6 +231,9 @@
                 <p class="breed-desc">
                     {{data[2][2]}}
                 </p>
+                <p class="breed-compatability">
+                    Compatability with your pet: {{data[2][4] * 100}}%
+                </p>
                 <br>
                 <label class="container">Relevant
                   <input type="radio" checked="checked" name="radio2" value="relevant">
@@ -242,6 +255,9 @@
                 <p class="breed-desc">
                     {{data[3][2]}}
                 </p>
+                <p class="breed-compatability">
+                    Compatability with your pet: {{data[3][4] * 100}}%
+                </p>
                 <br>
                 <label class="container">Relevant
                   <input type="radio" checked="checked" name="radio3" value="relevant">
@@ -262,6 +278,9 @@
                 </h2>
                 <p class="breed-desc">
                     {{data[4][2]}}
+                </p>
+                <p class="breed-compatability">
+                    Compatability with your pet: {{data[4][4] * 100}}%
                 </p>
                 <br>
                 <label class="container">Relevant
