@@ -40,7 +40,7 @@ def search():
 			otherDF = dogs
 			dog_or_cat = "cat"
 		v = make_vector(request.args)
-		rocchioVector = ValidationError
+		rocchioVector = v
 		rocchioText = request.args.get('physical')
 		results = sim(v,request.args.get('physical'),5,dogs,cats)
 		rocchioResults = results
