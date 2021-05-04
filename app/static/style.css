@@ -50,12 +50,12 @@ label {
     font-size: 10px !important;
 }
 
-.text-input {
+/*.text-input {
     width: 400px !important;
     text-align: center !important;
-    /*margin-left: 500px;
-    margin-right: 500px;*/
-}
+    margin-left: 500px;
+    margin-right: 500px;
+}*/
 
 .row {
     display: flex;
