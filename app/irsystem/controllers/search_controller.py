@@ -41,6 +41,8 @@ def search():
 			dog_or_cat = "cat"
 		v = make_vector(request.args)
 		rocchioVector = v
+		print("initial setting of vector")
+		print(rocchioVector)
 		rocchioText = request.args.get('physical')
 		results = sim(v,request.args.get('physical'),5,dogs,cats)
 		rocchioResults = results
@@ -51,6 +53,8 @@ def search():
 			prevExisting = "none"
 		return render_results(results)
 	elif request.args.get('rocchio-selected') != None:
+		rocchioNonRel = []
+		rocchioRel = []
 		for i in range(5):
 			upvote = request.args.get("radio"+str(i))
 			if upvote == "relevant":
@@ -58,9 +62,12 @@ def search():
 			else:
 				toappend = rocchioDF.loc[rocchioDF['breed'] == rocchioResults[i]].to_numpy()[0][7:]
 				rocchioNonRel.append(toappend)
-		
+
 		v = rocchio(rocchioVector,rocchioRel,rocchioNonRel)
+		# v = np.random.rand(len(v))*5
 		rocchioVector = v
+		print("rocchio setting of vector")
+		print(rocchioVector)
 		t = rocchioText
 		results = sim(v,t,5,dogs,cats)
 		rocchioResults = results
@@ -82,9 +89,9 @@ def search():
 
 def rocchio(input,rel, nonrel):
 	#used these from assignment 5
-	a = .3
-	b = .3
-	c = .8
+	a = .5
+	b = .5
+	c = .1
 	relSum = None
 	nonrelSum = None
 	bterm = None
@@ -107,11 +114,15 @@ def rocchio(input,rel, nonrel):
 		nonrelSum = nr + nonrelSum
 
 	if len(rel) != 0:
-		bTerm = b*relSum/len(rel)
+		bterm = b*relSum/len(rel)
 	if len(nonrel) != 0:
-		cTerm = c*nonrelSum/len(nonrel)
+		cterm = c*nonrelSum/len(nonrel)
+	print("bterm")
+	print(bterm)
+	print("cterm")
+	print(cterm)
 	toReturn = a*input + bterm - cterm
-	return np.clip(toReturn,0,None)
+	return np.clip(toReturn,1,5,None)
 
 def makeTFIDF(csv, input):
 	vectorizer = TfidfVectorizer(

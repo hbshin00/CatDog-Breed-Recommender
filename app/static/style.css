@@ -33,6 +33,11 @@ body {
       font-family: 'system-ui' !important;
 }
 
+label {
+    font-weight: 400 !important;
+    font-size: 12px !important;
+}
+
 .slidecontainer {
     width: 100%;
 }
