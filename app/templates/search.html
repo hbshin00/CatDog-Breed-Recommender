@@ -117,126 +117,132 @@
                 <input type="text" id="physical-dog" name="physical" placeholder="E.g. white, small">
                 <br>
                 <div class = instructions>
-                    <p>For the following questions, use the slider to indicate your preference.</p>
-                    <p>For any questions marked with an asterisk (*), please leave the slider in the center to indicate no preference.
+                    <p>For the following questions, please use the slider to indicate your preference.</p>
+                    <p>For any questions marked with an asterisk (*), you can leave the slider in the center to indicate no preference.
                 </div>
                 <br>
-                <p>How much space do you have?</p>
-                <div class = "slidecontainer">
-                    <label for="left end" class="pull-left">Not a lot of space</label>
-                    <label for="right end" class="pull-right">Lots of space</label>
-                    <input type="range" id="apartment" name="apartment" min="1" max="5" value = "3" class="slider">
+                <div class = "row">
+                    <div class = "column">
+                        <p>How much space do you have?</p>
+                        <div class = "slidecontainer">
+                            <label for="left end" class="pull-left">Not a lot of space</label>
+                            <label for="right end" class="pull-right">Lots of space</label>
+                            <input type="range" id="apartment" name="apartment" min="1" max="5" value = "3" class="slider">
+                        </div>
+                        <br>
+                        <p>How experienced of a dog owner are you?:</p>
+                        <div class = "slidecontainer">
+                            <label for="left end" class="pull-left">Novice</label>
+                            <label for="right end" class="pull-right">Expert</label>
+                            <input type="range" id="novice" name="novice" min="1" max="5" value = "3" class="slider">
+                        </div>
+                        <br>
+                        <!--<p>Sensitivity:</p>
+                        <label for="left end" class="pull-left">Not a lot of space</label>
+                        <label for="right end" class="pull-right">Lots of space</label>
+                        <input type="range" id="sensitivity" name="sensitivity" min="1" max="5">-->
+                        <p>Will your dog be alone often/for long periods of time?</p>
+                        <label for="left end" class="pull-left">Not at all</label>
+                        <label for="right end" class="pull-right">Very frequently</label>
+                        <input type="range" id="alone" name="alone" min="1" max="5">
+                        <br>
+                        <p>How cold does your environment get?</p>
+                        <label for="left end" class="pull-left">Not cold at all</label>
+                        <label for="right end" class="pull-right">Extremely cold</label>
+                        <input type="range" id="cold" name="cold" min="1" max="5">
+                        <br>
+                        <p>How warm does your environment get?</p>
+                        <label for="left end" class="pull-left">Not warm at all</label>
+                        <label for="right end" class="pull-right">Extremely hot</label>
+                        <input type="range" id="hot" name="hot" min="1" max="5">
+                        <br>
+                        <p>How affectionate would you like your dog to be?*</p>
+                        <label for="left end" class="pull-left">Not affectionate</label>
+                        <label for="right end" class="pull-right">Extremely affectionate</label>
+                        <input type="range" id="family-dog" name="family-dog" min="1" max="5">
+                        <br>
+                        <p>Will this dog be around children?</p>
+                        <label for="left end" class="pull-left">Never/Very rarely</label>
+                        <label for="right end" class="pull-right">All the time</label>
+                        <input type="range" id="kids-dog" name="kids-dog" min="1" max="5">
+                        <br>
+                        <p>Will this dog be around other dogs?</p>
+                        <label for="left end" class="pull-left">Never/Very rarely</label>
+                        <label for="right end" class="pull-right">All the time</label>
+                        <input type="range" id="dog-friendly" name="dog-friendly" min="1" max="5">
+                        <!--<p>Friendly towards strangers:</p>
+                        <label for="left end" class="pull-left">Not a lot of space</label>
+                        <label for="right end" class="pull-right">Lots of space</label>
+                        <input type="range" id="strangers" name="strangers" min="1" max="5">-->
+                        <br>
+                    </div>
+                    <div class = "column">
+                        <p>How tolerant are you of shedding?</p>
+                        <label for="left end" class="pull-left">Not tolerant at all</label>
+                        <label for="right end" class="pull-right">Extremely tolerant</label>
+                        <input type="range" id="shedding-dog" name="shedding-dog" min="1" max="5">
+                        <br>
+                        <p>How tolerant are you of drooling?</p>
+                        <label for="left end" class="pull-left">Not tolerant at all</label>
+                        <label for="right end" class="pull-right">Extremely tolerant</label>
+                        <input type="range" id="drool" name="drool" min="1" max="5">
+                        <!--<p>Easy to groom:</p>
+                        <label for="left end" class="pull-left">Not a lot of space</label>
+                        <label for="right end" class="pull-right">Lots of space</label>
+                        <input type="range" id="groom-dog" name="groom-dog" min="1" max="5">
+                        <p>General health:</p>
+                        <input type="range" id="health-dog" name="health-dog" min="1" max="5">
+                        <p>Potential for weight gain:</p>
+                        <input type="range" id="weight-gain" name="weight-gain" min="1" max="5">-->
+                        <br>
+                        <p>How big of a dog do you want?*</p>
+                        <!--<div class = clarifying-note>
+                            <p>(Please leave the slider in the center if you do not have a preference.)</p>
+                        </div>-->
+                        <label for="left end" class="pull-left">Small</label>
+                        <label for="right end" class="pull-right">Big</label>
+                        <input type="range" id="size" name="size" min="1" max="5">
+                        <br>
+                        <p>How trainable do you want your dog to be?*</p>
+                        <label for="left end" class="pull-left">Potty-trained is plenty</label>
+                        <label for="right end" class="pull-right">Dog show caliber</label>
+                        <input type="range" id="train" name="train" min="1" max="5">
+                        <br>
+                        <p>How intelligent of a dog do you want?*</p>
+                        <label for="left end" class="pull-left">Sharp as a marble</label>
+                        <label for="right end" class="pull-right">Extremely intelligent</label>
+                        <input type="range" id="intelligence-dog" name="intelligence-dog" min="1" max="5">
+                        <!--<p>Potential for mouthiness:</p>
+                        <input type="range" id="mouthiness" name="mouthiness" min="1" max="5">
+                        <p>Prey drive:</p>
+                        <input type="range" id="prey" name="prey" min="1" max="5">-->
+                        <br>
+                        <p>How tolerant are you of barking/howling?</p>
+                        <label for="left end" class="pull-left">Not tolerant at all</label>
+                        <label for="right end" class="pull-right">Extremely tolerant</label>
+                        <input type="range" id="noise" name="noise" min="1" max="5">
+                        <!--<p>Wanderlust potential:</p>
+                        <input type="range" id="wander" name="wander" min="1" max="5">
+                        <p>Energy level:</p>
+                        <label for="left end" class="pull-left">Not a lot of space</label>
+                        <label for="right end" class="pull-right">Lots of space</label>
+                        <input type="range" id="energy" name="energy" min="1" max="5">
+                        <p>Intensity:</p>
+                        <label for="left end" class="pull-left">Not a lot of space</label>
+                        <label for="right end" class="pull-right">Lots of space</label>
+                        <input type="range" id="intensity" name="intensity" min="1" max="5">-->
+                        <br>
+                        <p>How much time will you dedicate to exercising your dog?</p>
+                        <label for="left end" class="pull-left">Hardly any</label>
+                        <label for="right end" class="pull-right">A whole lot</label>
+                        <input type="range" id="exercise" name="exercise" min="1" max="5">
+                        <br>
+                        <p>How much time do you expect to spend playing with your dog?</p>
+                        <label for="left end" class="pull-left">Hardly any</label>
+                        <label for="right end" class="pull-right">A whole lot</label>
+                        <input type="range" id="playful" name="playful" min="1" max="5">
+                    </div>
                 </div>
-                <br>
-                <p>How experienced of a dog owner are you?:</p>
-                <div class = "slidecontainer">
-                    <label for="left end" class="pull-left">Novice</label>
-                    <label for="right end" class="pull-right">Expert</label>
-                    <input type="range" id="novice" name="novice" min="1" max="5" value = "3" class="slider">
-                </div>
-                <br>
-                <!--<p>Sensitivity:</p>
-                <label for="left end" class="pull-left">Not a lot of space</label>
-                <label for="right end" class="pull-right">Lots of space</label>
-                <input type="range" id="sensitivity" name="sensitivity" min="1" max="5">-->
-                <p>Will your dog be alone often/for long periods of time?</p>
-                <label for="left end" class="pull-left">Not at all</label>
-                <label for="right end" class="pull-right">Very frequently</label>
-                <input type="range" id="alone" name="alone" min="1" max="5">
-                <br>
-                <p>How cold does your environment get?</p>
-                <label for="left end" class="pull-left">Not cold at all</label>
-                <label for="right end" class="pull-right">Extremely cold</label>
-                <input type="range" id="cold" name="cold" min="1" max="5">
-                <br>
-                <p>How warm does your environment get?</p>
-                <label for="left end" class="pull-left">Not warm at all</label>
-                <label for="right end" class="pull-right">Extremely hot</label>
-                <input type="range" id="hot" name="hot" min="1" max="5">
-                <br>
-                <p>How affectionate would you like your dog to be?*</p>
-                <label for="left end" class="pull-left">Not affectionate</label>
-                <label for="right end" class="pull-right">Extremely affectionate</label>
-                <input type="range" id="family-dog" name="family-dog" min="1" max="5">
-                <br>
-                <p>Will this dog be around children?</p>
-                <label for="left end" class="pull-left">Never/Very rarely</label>
-                <label for="right end" class="pull-right">All the time</label>
-                <input type="range" id="kids-dog" name="kids-dog" min="1" max="5">
-                <br>
-                <p>Will this dog be around other dogs?</p>
-                <label for="left end" class="pull-left">Never/Very rarely</label>
-                <label for="right end" class="pull-right">All the time</label>
-                <input type="range" id="dog-friendly" name="dog-friendly" min="1" max="5">
-                <!--<p>Friendly towards strangers:</p>
-                <label for="left end" class="pull-left">Not a lot of space</label>
-                <label for="right end" class="pull-right">Lots of space</label>
-                <input type="range" id="strangers" name="strangers" min="1" max="5">-->
-                <br>
-                <p>How tolerant are you of shedding?</p>
-                <label for="left end" class="pull-left">Not tolerant at all</label>
-                <label for="right end" class="pull-right">Extremely tolerant</label>
-                <input type="range" id="shedding-dog" name="shedding-dog" min="1" max="5">
-                <br>
-                <p>How tolerant are you of drooling?</p>
-                <label for="left end" class="pull-left">Not tolerant at all</label>
-                <label for="right end" class="pull-right">Extremely tolerant</label>
-                <input type="range" id="drool" name="drool" min="1" max="5">
-                <!--<p>Easy to groom:</p>
-                <label for="left end" class="pull-left">Not a lot of space</label>
-                <label for="right end" class="pull-right">Lots of space</label>
-                <input type="range" id="groom-dog" name="groom-dog" min="1" max="5">
-                <p>General health:</p>
-                <input type="range" id="health-dog" name="health-dog" min="1" max="5">
-                <p>Potential for weight gain:</p>
-                <input type="range" id="weight-gain" name="weight-gain" min="1" max="5">-->
-                <br>
-                <p>How big of a dog do you want?*</p>
-                <!--<div class = clarifying-note>
-                    <p>(Please leave the slider in the center if you do not have a preference.)</p>
-                </div>-->
-                <label for="left end" class="pull-left">Small</label>
-                <label for="right end" class="pull-right">Big</label>
-                <input type="range" id="size" name="size" min="1" max="5">
-                <br>
-                <p>How trainable do you want your dog to be?*</p>
-                <label for="left end" class="pull-left">Potty-trained is plenty</label>
-                <label for="right end" class="pull-right">Dog show caliber</label>
-                <input type="range" id="train" name="train" min="1" max="5">
-                <br>
-                <p>How intelligent of a dog do you want?*</p>
-                <label for="left end" class="pull-left">Sharp as a marble</label>
-                <label for="right end" class="pull-right">Extremely intelligent</label>
-                <input type="range" id="intelligence-dog" name="intelligence-dog" min="1" max="5">
-                <!--<p>Potential for mouthiness:</p>
-                <input type="range" id="mouthiness" name="mouthiness" min="1" max="5">
-                <p>Prey drive:</p>
-                <input type="range" id="prey" name="prey" min="1" max="5">-->
-                <br>
-                <p>How tolerant are you of barking/howling?</p>
-                <label for="left end" class="pull-left">Not tolerant at all</label>
-                <label for="right end" class="pull-right">Extremely tolerant</label>
-                <input type="range" id="noise" name="noise" min="1" max="5">
-                <!--<p>Wanderlust potential:</p>
-                <input type="range" id="wander" name="wander" min="1" max="5">
-                <p>Energy level:</p>
-                <label for="left end" class="pull-left">Not a lot of space</label>
-                <label for="right end" class="pull-right">Lots of space</label>
-                <input type="range" id="energy" name="energy" min="1" max="5">
-                <p>Intensity:</p>
-                <label for="left end" class="pull-left">Not a lot of space</label>
-                <label for="right end" class="pull-right">Lots of space</label>
-                <input type="range" id="intensity" name="intensity" min="1" max="5">-->
-                <br>
-                <p>How much time will you dedicate to exercising your dog?</p>
-                <label for="left end" class="pull-left">Hardly any</label>
-                <label for="right end" class="pull-right">A whole lot</label>
-                <input type="range" id="exercise" name="exercise" min="1" max="5">
-                <br>
-                <p>How much time do you expect to spend playing with your dog?</p>
-                <label for="left end" class="pull-left">Hardly any</label>
-                <label for="right end" class="pull-right">A whole lot</label>
-                <input type="range" id="playful" name="playful" min="1" max="5">
                 <button type="submit" name="dog-selected" class="btn btn-info"> Submit </button>
             </form>
             <form id="cat-form">
