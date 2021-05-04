@@ -116,7 +116,8 @@ label {
     border-radius: 5% !important;
     border: none !important;
     margin: 2% !important;
-    width: 15% !important;
+    width: 10% !important;
+    height: 5% !important;
     font-family: 'system-ui' !important;
     font-size: 25px !important;
     transition-duration: 0.2s;
