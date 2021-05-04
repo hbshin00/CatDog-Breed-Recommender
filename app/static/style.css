@@ -26,11 +26,12 @@ body {
 }
 
 #catdog-form {
-      margin: auto;
-      padding-right: 200px !important;
-      padding-left: 200px !important;
-      background-color: rgb(255, 211, 163) !important;
-      font-family: 'system-ui' !important;
+    text-align: center !important;
+    margin: auto;
+    padding-right: 200px !important;
+    padding-left: 200px !important;
+    background-color: rgb(255, 211, 163) !important;
+    font-family: 'system-ui' !important;
 }
 
 label {
