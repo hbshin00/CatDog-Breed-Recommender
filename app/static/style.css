@@ -52,6 +52,7 @@ label {
 
 .text-input {
     width: 250px !important;
+    text-align: center !important;
 }
 
 .row {
