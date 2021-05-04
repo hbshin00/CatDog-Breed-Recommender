@@ -39,8 +39,8 @@ body {
     margin-left: 150px;
     margin-right: 150px;
     margin-bottom: 150px;
-    padding-right: 100px !important;
-    padding-left: 100px !important;
+    padding-right: 75px !important;
+    padding-left: 75px !important;
     background-color: rgb(255, 230, 204) !important;
     font-family: 'system-ui' !important;
 }
