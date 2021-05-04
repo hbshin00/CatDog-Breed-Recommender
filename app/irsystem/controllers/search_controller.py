@@ -230,6 +230,8 @@ def render_results(results):
 			index = otherDF.index[otherDF["breed"].str.strip() == prevExisting.strip()]
 			if len(index) == 1:
 				companion = companion_matrix[index[0]]
-				compatability = "Compatability with your pet: " + str(companion[rel_index]*100) + "%"
+				compatability = "Pet compatability" + str(companion[rel_index]*100) + "%"
+			else:
+				compatability = "Pet compatability: pet not found"
 		data.append([entry[1][1], entry[1][3], entry[1][5], entry[1][4], compatability])
 	return render_template('search.html', name=project_name, netid=net_id, output_message=output_message, data=data)
