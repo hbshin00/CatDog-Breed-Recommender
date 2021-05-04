@@ -35,7 +35,10 @@ body {
     border: 15px solid rgb(255, 150, 38) !important;
     border-radius: 25px;
     text-align: center !important;
-    margin: 150px;
+    margin-top: 50px;
+    margin-left: 150px;
+    margin-right: 150px;
+    margin-bottom: 150px;
     padding-right: 150px !important;
     padding-left: 150px !important;
     background-color: rgb(255, 230, 204) !important;
