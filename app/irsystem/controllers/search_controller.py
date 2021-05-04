@@ -13,6 +13,8 @@ rocchioRel = []
 rocchioNonRel = []
 rocchioResults = []
 rocchioDF = None
+otherDF = None
+dog_or_cat = None
 
 @irsystem.route('/', methods=['GET'])
 def search():
@@ -20,11 +22,16 @@ def search():
 	cats = pd.read_csv("data/cats.csv")
 	global rocchioDF
 	if request.args.get('dog-selected') != None or request.args.get('cat-selected') != None:
+		global dog_or_cat
+		global otherDF
 		if request.args.get('dog-selected') is not None:
 			rocchioDF = dogs
+			otherDF = cats
+			dog_or_cat = "dog"
 		else:
 			rocchioDF = cats
-		
+			otherDF = dogs
+			dog_or_cat = "cat"
 		v = make_vector(request.args)
 		global rocchioVector
 		rocchioVector = v
@@ -33,7 +40,15 @@ def search():
 		results = sim(v,request.args.get('physical'),5,dogs,cats)
 		global rocchioResults
 		rocchioResults = results
-		return render_results(results,dogs,cats)
+		existing = request.args.get("existing-cat")
+		if existing == None:
+			print("hello1")
+			existing = request.args.get("existing-dog")
+		if existing == "":
+			print("hello2")
+			existing = "none"
+		print(existing)
+		return render_results(results, existing)
 	elif request.args.get('rocchio-selected') != None:
 		global rocchioRel
 		global rocchioNonRel
@@ -48,7 +63,7 @@ def search():
 		v = rocchio(rocchioVector,rocchioRel,rocchioNonRel)
 		t = rocchioText
 		results = sim(v,t,5,dogs,cats)
-		return render_results(results,dogs,cats)
+		return render_results(results)
 	else:
 		data = []
 		output_message = ''
@@ -192,20 +207,27 @@ def make_vector(traits):
 		output.append(int_int)
 	return np.array(output)
 
-def render_results(results, dogs, cats):
+def render_results(results, existing):
 	"""
 	Input: results (list of top k breeds)
 	Example: ["breed1", "breed2", "breed3"]
 	Output: render_template(?)
 	"""
-	
-
+	companion_matrix = pd.read_csv("data/matrix.csv").to_numpy()
 	output_message = "Your top " + str(len(results)) + " breeds are: "
 	data = []
 	for i in results:
 		rel_breeds = rocchioDF.loc[rocchioDF['breed'] == i]
-		entry = [rel_breeds["intro"]]
+		# entry = [rel_breeds["intro"]]
 		entry = list(rel_breeds.to_records(index=False))
 		entry.insert(0, i)
-		data.append([entry[1][1], entry[1][3], entry[1][5], entry[1][4]])
+		compatability = 1
+		print(existing)
+		if existing != "none":
+			rel_index = rocchioDF.index[rocchioDF["breed"] == i][0]
+			index = otherDF.index[otherDF["breed"].str.strip() == existing.strip()]
+			companion = companion_matrix[index[0]]
+			print(companion)
+			compatability = companion[rel_index]
+		data.append([entry[1][1], entry[1][3], entry[1][5], entry[1][4], compatability])
 	return render_template('search.html', name=project_name, netid=net_id, output_message=output_message, data=data)
