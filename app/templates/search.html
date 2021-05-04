@@ -116,13 +116,10 @@
                         <option id='Turkish Van'>Turkish Van</option>
                         <option id='Ukrainian Levkoy'>Ukrainian Levkoy</option>
                     </datalist>
-                    <br>
-                    <br>
+                    <br> <br>
                     <p>Desired physical traits:</p>
                     <input type="text" id="physical-dog" name="physical" placeholder="E.g. white, small">
-                    <br>
-                    <br>
-                    <br>
+                    <br> <br> <br>
                     <div class = instructions>
                         <p>For the following questions, please use the slider to indicate your preference.</p>
                         <p>For any questions marked with an asterisk (*), you can leave the slider in the center to indicate no preference.
@@ -250,12 +247,12 @@
                         </div>
                     </div>
                     <button type="submit" name="dog-selected" class="btn btn-info"> Submit </button>
-                    <br>
-                    <br>
-                    <br>
+                    <br> <br> <br>
                 </form>
                 <form id="cat-form">
+                    <br>
                     <h2>Cat Trait Selector</h2>
+                    <br>
                     <p>If you already have a dog, please enter the breed:</p>
                     <input type="text" id="existing-dog" name="existing-dog" placeholder="E.g. Australian Shepherd" list="dog-list">
                     <datalist id="dog-list">
@@ -501,24 +498,45 @@
                         <option id=' Wirehaired Pointing Griffon '> Wirehaired Pointing Griffon </option>
                         <option id=' Xoloitzcuintli '> Xoloitzcuintli </option>
                     </datalist>
+                    <br> <br>
                     <p>Desired physical traits:</p>
                     <input type="text" id="physical-cat" name="physical" placeholder="E.g. white, small">
-                    <p>Left side is undesired, right side is desired.</p>
+                    <br> <br> <br>
+                    <div class = instructions>
+                        <p>For the following questions, please use the slider to indicate your preference.</p>
+                        <p>For any questions marked with an asterisk (*), you can leave the slider in the center to indicate no preference.
+                    </div>
+                    <label for="left end" class="pull-left">Hardly any</label>
+                    <label for="right end" class="pull-right">A whole lot</label>
                     <p>Affectionate with family:</p>
+                    <label for="left end" class="pull-left">Hardly any</label>
+                    <label for="right end" class="pull-right">A whole lot</label>
                     <input type="range" id="family-cat" name="family-cat" min="1" max="5">
                     <p>Amount of shedding:</p>
+                    <label for="left end" class="pull-left">Hardly any</label>
+                    <label for="right end" class="pull-right">A whole lot</label>
                     <input type="range" id="shedding-cat" name="shedding-cat" min="1" max="5">
                     <p>General health:</p>
                     <input type="range" id="health-cat" name="health-cat" min="1" max="5">
                     <p>Potential for playfulness:</p>
+                    <label for="left end" class="pull-left">Hardly any</label>
+                    <label for="right end" class="pull-right">A whole lot</label>
                     <input type="range" id="playful-cat" name="playful-cat" min="1" max="5">
                     <p>Kid-friendly:</p>
+                    <label for="left end" class="pull-left">Hardly any</label>
+                    <label for="right end" class="pull-right">A whole lot</label>
                     <input type="range" id="kids-cat" name="kids-cat" min="1" max="5">
                     <p>Easy to groom:</p>
+                    <label for="left end" class="pull-left">Hardly any</label>
+                    <label for="right end" class="pull-right">A whole lot</label>
                     <input type="range" id="groom-cat" name="groom-cat" min="1" max="5">
                     <p>Intelligence:</p>
+                    <label for="left end" class="pull-left">Hardly any</label>
+                    <label for="right end" class="pull-right">A whole lot</label>
                     <input type="range" id="intelligence-cat" name="intelligence-cat" min="1" max="5">
                     <p>Pet-friendly:</p>
+                    <label for="left end" class="pull-left">Hardly any</label>
+                    <label for="right end" class="pull-right">A whole lot</label>
                     <input type="range" id="pet-friendly" name="pet-friendly" min="1" max="5">
 
                     <button type="submit" name="cat-selected" class="btn btn-info"> Submit </button>
