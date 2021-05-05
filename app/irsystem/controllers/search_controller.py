@@ -55,11 +55,16 @@ def search():
 		rocchioRel = []
 		for i in range(5):
 			upvote = request.args.get("radio"+str(i))
-			if upvote == "relevant":
-				rocchioRel.append(rocchioDF.loc[rocchioDF['breed'] == rocchioResults[i]].to_numpy()[0][7:])
+			vector = rocchioDF.loc[rocchioDF['breed'] == rocchioResults[i]].to_numpy()[0][7:]
+			row = rocchioDF.loc[rocchioDF['breed'] == rocchioResults[i]].to_numpy()[0]
+			if(dog_or_cat == "dog"):
+				vector = np.concatenate((row[7:9],row[10:13],row[14:16],row[17:19],row[22:25],row[27:28],row[31:33]))
 			else:
-				toappend = rocchioDF.loc[rocchioDF['breed'] == rocchioResults[i]].to_numpy()[0][7:]
-				rocchioNonRel.append(toappend)
+				vector = np.concatenate((row[7:9],row[10:]))
+			if upvote == "relevant":
+				rocchioRel.append(vector)
+			else:
+				rocchioNonRel.append(vector)
 
 		v = rocchio(rocchioVector,rocchioRel,rocchioNonRel)
 		# v = np.random.rand(len(v))*5
@@ -85,9 +90,19 @@ def search():
 
 def rocchio(input,rel, nonrel):
 	#used these from assignment 5
-	a = .5
-	b = .5
-	c = .1
+	a = .8
+	b = .4
+	c = .2
+	if len(rel) == 0:
+		a = 1.5
+		b = 0
+		c = .5
+	elif len(nonrel) == 0:
+		a = .5
+		b = .5
+		c = 0
+
+
 	relSum = None
 	nonrelSum = None
 	bterm = None
@@ -141,6 +156,11 @@ def sim(inVector, intext, k, dogs, cats):
 		row = vectors[i]
 		#makes vector be the relevant parts of the database row
 		vector = (row[7:])
+		if(dog_or_cat == "dog"):
+			vector = np.concatenate((row[7:9],row[10:13],row[14:16],row[17:19],row[22:25],row[27:28],row[31:33]))
+		else:
+			vector = np.concatenate((row[7:9],row[10:]))
+
 		textVector = matrix[i]
 		rank = row[2]
 		#divide rank into 8 groups, then turn shift into float based on max value
@@ -195,13 +215,12 @@ def make_vector(traits):
 	"""
 	output = []
 	if traits.get('dog-selected') is not None:
-		traits_lst = ['apartment','novice','sensitivity','alone','cold','hot',
-			'family-dog','kids-dog','dog-friendly','strangers','shedding-dog',
-			'drool','groom-dog','health-dog','weight-gain','size','train',
-			'intelligence-dog','mouthiness','prey','noise','wander','energy',
-			'intensity','exercise','playful']
+		traits_lst = ['apartment','novice','alone','cold','hot',
+			'kids-dog','dog-friendly','shedding-dog',
+			'drool','size','train',
+			'intelligence-dog','noise','exercise','playful']
 	elif traits.get('cat-selected') is not None:
-		traits_lst = ['family-cat','shedding-cat','health-cat','playful-cat','kids-cat',
+		traits_lst = ['family-cat','shedding-cat','playful-cat','kids-cat',
 			'groom-cat','intelligence-cat','pet-friendly']
 	else:
 		raise Exception("Neither dog nor cat is selected")
