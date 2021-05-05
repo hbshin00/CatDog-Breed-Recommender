@@ -25,12 +25,23 @@ body {
     font-family: 'system-ui' !important;
 }
 
+/*.form-box {
+    border: 3px solid rgb(255, 150, 38) !important;
+    border-radius: 25px;
+    padding: 50px;
+}*/
+
 #catdog-form {
+    border: 15px solid rgb(255, 150, 38) !important;
+    border-radius: 25px;
     text-align: center !important;
-    margin: auto;
-    padding-right: 200px !important;
-    padding-left: 200px !important;
-    background-color: rgb(255, 211, 163) !important;
+    margin-top: 60px;
+    margin-left: 150px;
+    margin-right: 150px;
+    margin-bottom: 150px;
+    padding-right: 75px !important;
+    padding-left: 75px !important;
+    background-color: rgb(255, 230, 204) !important;
     font-family: 'system-ui' !important;
 }
 
@@ -39,13 +50,30 @@ label {
     font-size: 10px !important;
 }
 
+/*.text-input {
+    width: 400px !important;
+    text-align: center !important;
+    margin-left: 500px;
+    margin-right: 500px;
+}*/
+
 .row {
     display: flex;
 }
 
-.column {
+.dog-column {
     flex: 50%;
-    padding: 60px;
+    padding-top: 25px;
+    padding-left: 60px;
+    padding-right: 60px;
+    padding-bottom: 60px;
+}
+
+.cat-column {
+    padding-top: 25px;
+    padding-left: 200px;
+    padding-right: 200px;
+    padding-bottom: 60px;
 }
 
 .slidecontainer {
@@ -81,16 +109,39 @@ label {
     font-weight: 500 !important;
 }
 
-button {
-    color: rgb(255, 211, 163) !important;
+.btn {
+    color: rgb(255, 230, 204) !important;
     background-color: rgb(255, 150, 38) !important;
-    padding: 2%;
-    border-radius: 5%;
+    padding: 1.5% !important;
+    border-radius: 5% !important;
     border: none !important;
-    margin: 2%;
-    width: 15%;
+    margin: 3% !important;
+    width: 10% !important;
     font-family: 'system-ui' !important;
     font-size: 25px !important;
+    transition-duration: 0.2s;
+}
+
+.submit-btn {
+    color: rgb(255, 230, 204) !important;
+    background-color: rgb(255, 150, 38) !important;
+    padding: 1.5% !important;
+    border-radius: 5% !important;
+    border: none !important;
+    width: 17% !important;
+    font-family: 'system-ui' !important;
+    font-size: 25px !important;
+    transition-duration: 0.2s;
+}
+
+.btn:hover {
+    background-color: rgb(255, 181, 102) !important;
+    color: rgb(255, 230, 204) !important;
+}
+
+.submit-btn:hover {
+    background-color: rgb(255, 181, 102) !important;
+    color: rgb(255, 230, 204) !important;
 }
 
 body {
@@ -201,5 +252,3 @@ button.margin-right {
 	border-radius: 50%;
 	background: white;
 }
-</style>
-<body>
