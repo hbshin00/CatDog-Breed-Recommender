@@ -173,21 +173,21 @@ button.margin-right {
 .breed-img {
 /*     margin-left: auto;
     margin-right: auto; */
-    display: inline-block;
+    display: inline;
     height: 100px;
 }
 
 .breed-name {
     text-align: center !important;
-    display: inline-block;
+    display: inline;
     font-size: 20px !important;
     font-family: 'system-ui' !important;
     font-weight: bold !important;
 }
 
 .breed-desc {
-/*     text-align: center !important; */
-    display: inline-block;
+    text-align: center !important;
+    display: inline;
     font-size: 15px !important;
     font-family: 'system-ui' !important;
     padding-right: 200px !important;
