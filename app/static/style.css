@@ -122,7 +122,25 @@ label {
     transition-duration: 0.2s;
 }
 
+.submit-btn {
+    color: rgb(255, 230, 204) !important;
+    background-color: rgb(255, 150, 38) !important;
+    padding: 1.5% !important;
+    border-radius: 5% !important;
+    border: none !important;
+    margin: 3% !important;
+    width: 20% !important;
+    font-family: 'system-ui' !important;
+    font-size: 25px !important;
+    transition-duration: 0.2s;
+}
+
 .btn:hover {
+    background-color: rgb(255, 181, 102) !important;
+    color: rgb(255, 230, 204) !important;
+}
+
+.submit-btn:hover {
     background-color: rgb(255, 181, 102) !important;
     color: rgb(255, 230, 204) !important;
 }
@@ -235,5 +253,3 @@ button.margin-right {
 	border-radius: 50%;
 	background: white;
 }
-</style>
-<body>
