@@ -81,19 +81,66 @@ label {
 }
 
 .slider {
+    -webkit-appearance: none;
     width: 100%;
     height: 10px;
     border-radius: 4px;
-    background: #d3d3d3;
+    background: rgb(255, 255, 255);
     outline: none;
 }
 
 .slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
     appearance: none;
     width: 20px;
     height: 20px;
     border-radius: 50%;
-    background: #04AA6D;
+    background: rgb(179, 101, 0);
+    cursor: pointer;
+    transition-duration: 0.2s;
+}
+
+.slidecontainer:hover .slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: rgb(212, 123, 0);
+    cursor: pointer;
+}
+
+.cat-slidecontainer {
+    width: 100%;
+}
+
+.cat-slider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 10px;
+    border-radius: 4px;
+    background: rgb(255, 255, 255);
+    outline: none;
+}
+
+.cat-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: rgb(179, 101, 0);
+    cursor: pointer;
+    transition-duration: 0.2s;
+}
+
+.cat-slidecontainer:hover .cat-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: rgb(212, 123, 0);
     cursor: pointer;
 }
 
@@ -166,19 +213,13 @@ button.margin-right {
     text-align: center;
 }
 
-.result {
-    display: flex;
-    flex-flow: row;
-    flex-wrap: nowrap;
-}
-
-.img-name {
-    padding-left: 75px;
-    flex-grow: 2;
-    flex-basis: 0;	
-}
+/* .result {
+    display: inline;
+} */
 
 .breed-img {
+    margin-left: auto;
+    margin-right: auto;
     height: 100px;
 }
 
@@ -190,11 +231,10 @@ button.margin-right {
 }
 
 .breed-desc {
-    text-align: right !important;
+    text-align: center !important;
     font-size: 15px !important;
     font-family: 'system-ui' !important;
-    
-	-right: 200px !important;
+    padding-right: 200px !important;
     padding-left: 200px !important;
 }
 .container {
@@ -203,7 +243,7 @@ button.margin-right {
   padding-left: 35px;
   margin-bottom: 12px;
   cursor: pointer;
-  font-size: 22px;
+  font-size: 35px;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
