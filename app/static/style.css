@@ -176,8 +176,13 @@ button.margin-right {
 
 .img-name {
     padding-left: 75px;
+<<<<<<< HEAD
     flex-grow: 0;
     flex-basis: 0;
+=======
+    flex-grow: 1;
+    flex-basis: 0;	
+>>>>>>> da23faa2f0046c48c54fbc9e239b37b0e34484b0
 }
 
 .breed-img {
@@ -193,8 +198,13 @@ button.margin-right {
 
 .desc {
     padding-left: 75px;
+<<<<<<< HEAD
     flex-grow: 0;
     flex-basis: 0;
+=======
+    flex-grow: 1;
+    flex-basis: 0;	
+>>>>>>> da23faa2f0046c48c54fbc9e239b37b0e34484b0
 }
 
 .breed-desc {
@@ -271,6 +281,6 @@ button.margin-right {
 
 .feedback {
     padding-left: 0px;
-    flex-grow: 0;
+    flex-grow: 1;
     flex-basis: 0;
 }
