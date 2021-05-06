@@ -166,14 +166,15 @@ button.margin-right {
     text-align: center;
 }
 
-/* .result {
-    white-space: nowrap;
-} */
+.result {
+    display: flex;
+    flex-flow: row;
+    flex-wrap: nowrap;
+}
 
 .breed-img {
-    margin-left: auto;
-    margin-right: auto;
-    display: inline;
+    flex-grow: 2;
+    flex-basis: 0;
     height: 100px;
 }
 
@@ -186,7 +187,6 @@ button.margin-right {
 
 .breed-desc {
     text-align: right !important;
-/*     display: inline; */
     font-size: 15px !important;
     font-family: 'system-ui' !important;
     padding-right: 200px !important;
