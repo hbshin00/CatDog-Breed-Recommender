@@ -95,6 +95,17 @@ label {
     width: 20px;
     height: 20px;
     border-radius: 50%;
+    background: rgb(120, 170, 0);
+    cursor: pointer;
+    transition-duration: 0.2s;
+}
+
+.slidecontainer:hover .slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
     background: rgb(179, 101, 0);
     cursor: pointer;
 }
@@ -113,6 +124,17 @@ label {
 }
 
 .cat-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: rgb(179, 101, 0);
+    cursor: pointer;
+    transition-duration: 0.2s;
+}
+
+.cat-slidecontainer:hover .cat-slider::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
     width: 20px;
