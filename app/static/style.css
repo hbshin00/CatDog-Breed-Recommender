@@ -174,7 +174,7 @@ button.margin-right {
 
 .img-name {
     padding-left: 75px;
-    flex-grow: 2;
+    flex-grow: 0;
     flex-basis: 0;	
 }
 
@@ -193,8 +193,10 @@ button.margin-right {
     text-align: left !important;
     font-size: 15px !important;
     font-family: 'system-ui' !important;
-    padding-right: 50px !important;
-    padding-left: 50px !important;
+    flex-grow: 0;
+    flex-basis: 0;
+    padding-right: 25px !important;
+    padding-left: 25px !important;
 }
 .container {
   display: block;
@@ -202,7 +204,7 @@ button.margin-right {
   padding-left: 35px;
   margin-bottom: 12px;
   cursor: pointer;
-  font-size: 22px;
+  font-size: 35px;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -257,4 +259,10 @@ button.margin-right {
 	height: 8px;
 	border-radius: 50%;
 	background: white;
+}
+
+.feedback {
+    padding-left: 0px;
+    flex-grow: 0;
+    flex-basis: 0;
 }
