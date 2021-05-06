@@ -95,7 +95,7 @@ label {
     width: 20px;
     height: 20px;
     border-radius: 50%;
-    background: rgb(120, 70, 0);
+    background: rgb(179, 101, 0);
     cursor: pointer;
     transition-duration: 0.2s;
 }
@@ -106,7 +106,7 @@ label {
     width: 20px;
     height: 20px;
     border-radius: 50%;
-    background: rgb(179, 101, 0);
+    background: rgb(212, 123, 0);
     cursor: pointer;
 }
 
@@ -129,7 +129,7 @@ label {
     width: 20px;
     height: 20px;
     border-radius: 50%;
-    background: rgb(120, 70, 0);
+    background: rgb(179, 101, 0);
     cursor: pointer;
     transition-duration: 0.2s;
 }
@@ -140,7 +140,7 @@ label {
     width: 20px;
     height: 20px;
     border-radius: 50%;
-    background: rgb(179, 101, 0);
+    background: rgb(212, 123, 0);
     cursor: pointer;
 }
 
