@@ -166,14 +166,19 @@ button.margin-right {
     text-align: center;
 }
 
-/* .result {
-    white-space: nowrap;
-} */
+.result {
+    display: flex;
+    flex-flow: row;
+    flex-wrap: nowrap;
+}
+
+.img-name {
+    padding-left: 75px;
+    flex-grow: 2;
+    flex-basis: 0;	
+}
 
 .breed-img {
-    margin-left: auto;
-    margin-right: auto;
-    display: inline;
     height: 100px;
 }
 
@@ -186,10 +191,10 @@ button.margin-right {
 
 .breed-desc {
     text-align: right !important;
-/*     display: inline; */
     font-size: 15px !important;
     font-family: 'system-ui' !important;
-    padding-right: 200px !important;
+    
+	-right: 200px !important;
     padding-left: 200px !important;
 }
 .container {
