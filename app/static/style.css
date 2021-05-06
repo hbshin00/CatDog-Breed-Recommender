@@ -172,9 +172,13 @@ button.margin-right {
     flex-wrap: nowrap;
 }
 
-.breed-img {
+.img-name {
+    padding-left: 75px;
     flex-grow: 2;
-    flex-basis: 0;
+    flex-basis: 0;	
+}
+
+.breed-img {
     height: 100px;
 }
 
@@ -189,7 +193,8 @@ button.margin-right {
     text-align: right !important;
     font-size: 15px !important;
     font-family: 'system-ui' !important;
-    padding-right: 200px !important;
+    
+	-right: 200px !important;
     padding-left: 200px !important;
 }
 .container {
