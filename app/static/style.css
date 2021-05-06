@@ -190,12 +190,11 @@ button.margin-right {
 }
 
 .breed-desc {
-    text-align: right !important;
+    text-align: left !important;
     font-size: 15px !important;
     font-family: 'system-ui' !important;
-    
-	-right: 200px !important;
-    padding-left: 200px !important;
+    padding-right: 50px !important;
+    padding-left: 50px !important;
 }
 .container {
   display: block;
