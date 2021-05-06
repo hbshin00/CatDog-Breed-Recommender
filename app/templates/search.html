@@ -605,10 +605,12 @@
                 document.getElementById('dog-button').addEventListener('click', () => {
                     document.getElementById('cat-form').style.display = 'none';
                     document.getElementById('dog-form').style.display = 'block';
+                    document.getElementById('rocchio-form').style.display = 'none';
                 })
                 document.getElementById('cat-button').addEventListener('click', () => {
                     document.getElementById('cat-form').style.display = 'block';
                     document.getElementById('dog-form').style.display = 'none';
+                    document.getElementById('rocchio-form').style.display = 'none';
                 })
             </script>
         </div>
@@ -617,7 +619,7 @@
         <br>
         <br>
         <br>
-        <form class="results">
+        <form class="results" id="rocchio-form">
             <div class="result0">
                 <img class="breed-img" src="{{data[0][1]}}" alt="image" />
                 <h2 class="breed-name">

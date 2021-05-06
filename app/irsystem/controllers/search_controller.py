@@ -250,10 +250,10 @@ def render_results(results):
 			if len(index) == 1:
 				if dog_or_cat == "dog":
 					companion = companion_matrix[rel_index]
-					compatability = "Pet compatibility: " + str(companion[index[0]]*100) + "%"
+					compatability = "Pet compatibility: " + str(int(companion[index[0]]*100)) + "%"
 				else:
 					companion = companion_matrix[index[0]]
-					compatability = "Pet compatibility: " + str(companion[rel_index]*100) + "%"
+					compatability = "Pet compatibility: " + str(int(companion[rel_index]*100)) + "%"
 			else:
 				compatability = "Pet compatibility: pet not found"
 		data.append([entry[1][1], entry[1][3], entry[1][5], entry[1][4], compatability])
