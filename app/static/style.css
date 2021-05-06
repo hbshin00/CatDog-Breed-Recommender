@@ -221,7 +221,7 @@ button.margin-right {
 
 .img-name {
     padding-left: 75px;
-    flex-grow: 0;
+    flex-grow: 2;
     flex-basis: 0;	
 }
 
@@ -240,7 +240,7 @@ button.margin-right {
     text-align: left !important;
     font-size: 15px !important;
     font-family: 'system-ui' !important;
-    flex-grow: 0;
+    flex-grow: 2;
     flex-basis: 0;
     padding-right: 25px !important;
     padding-left: 25px !important;
