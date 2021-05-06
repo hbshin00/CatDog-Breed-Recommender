@@ -221,8 +221,8 @@ button.margin-right {
 
 .img-name {
     padding-left: 75px;
-    flex-grow: 1;
-    flex-basis: 0;
+    flex-grow: 0;
+    flex-basis: 0;	
 }
 
 .breed-img {
@@ -234,12 +234,6 @@ button.margin-right {
     font-size: 20px !important;
     font-family: 'system-ui' !important;
     font-weight: bold !important;
-}
-
-.desc {
-    padding-left: 75px;
-    flex-grow: 1;
-    flex-basis: 0;
 }
 
 .breed-desc {
@@ -266,14 +260,14 @@ button.margin-right {
 
 /* Hide the browser's default radio button */
 .container input {
-   position: absolute; 
+  position: absolute;
   opacity: 0;
   cursor: pointer;
 }
 
 /* Create a custom radio button */
 .checkmark {
-   position: absolute; 
+  position: absolute;
   top: 0;
   left: 0;
   height: 25px;
@@ -295,7 +289,7 @@ button.margin-right {
 /* Create the indicator (the dot/circle - hidden when not checked) */
 .checkmark:after {
   content: "";
-   position: absolute; 
+  position: absolute;
   display: none;
 }
 
@@ -312,10 +306,4 @@ button.margin-right {
 	height: 8px;
 	border-radius: 50%;
 	background: white;
-}
-
-.feedback {
-    padding-left: 0px;
-    flex-grow: 1;
-    flex-basis: 0;
 }
