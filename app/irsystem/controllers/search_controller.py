@@ -240,6 +240,7 @@ def render_results(results):
 	output_message = "Your top " + str(len(results)) + " breeds are: "
 	data = []
 	for i in results:
+		print(i)
 		rel_breeds = rocchioDF.loc[rocchioDF['breed'] == i]
 		entry = list(rel_breeds.to_records(index=False))
 		entry.insert(0, i)
@@ -248,8 +249,12 @@ def render_results(results):
 			rel_index = rocchioDF.index[rocchioDF["breed"] == i][0]
 			index = otherDF.index[otherDF["breed"].str.strip() == prevExisting.strip()]
 			if len(index) == 1:
-				companion = companion_matrix[index[0]]
-				compatability = "Pet compatability: " + str(companion[rel_index]*100) + "%"
+				if dog_or_cat == "dog":
+					companion = companion_matrix[rel_index]
+					compatability = "Pet compatability: " + str(companion[index[0]]*100) + "%"
+				else:
+					companion = companion_matrix[index[0]]
+					compatability = "Pet compatability: " + str(companion[rel_index]*100) + "%"
 			else:
 				compatability = "Pet compatability: pet not found"
 		data.append([entry[1][1], entry[1][3], entry[1][5], entry[1][4], compatability])
