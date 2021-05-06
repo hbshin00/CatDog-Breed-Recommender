@@ -81,19 +81,21 @@ label {
 }
 
 .slider {
+    -webkit-appearance: none;
     width: 100%;
     height: 10px;
     border-radius: 4px;
-    background: #d3d3d3;
+    background: rgb(255, 255, 255);
     outline: none;
 }
 
 .slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
     appearance: none;
     width: 20px;
     height: 20px;
     border-radius: 50%;
-    background: #04AA6D;
+    background: rgb(179, 101, 0);
     cursor: pointer;
 }
 
@@ -175,7 +177,7 @@ button.margin-right {
 .img-name {
     padding-left: 75px;
     flex-grow: 0;
-    flex-basis: 0;	
+    flex-basis: 0;
 }
 
 .breed-img {
@@ -192,7 +194,7 @@ button.margin-right {
 .desc {
     padding-left: 75px;
     flex-grow: 0;
-    flex-basis: 0;	
+    flex-basis: 0;
 }
 
 .breed-desc {
