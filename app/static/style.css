@@ -213,19 +213,13 @@ button.margin-right {
     text-align: center;
 }
 
-.result {
-    display: flex;
-    flex-flow: row;
-    flex-wrap: nowrap;
-}
-
-.img-name {
-    padding-left: 75px;
-    flex-grow: 2;
-    flex-basis: 0;	
-}
+/* .result {
+    display: inline;
+} */
 
 .breed-img {
+    margin-left: auto;
+    margin-right: auto;
     height: 100px;
 }
 
@@ -237,13 +231,11 @@ button.margin-right {
 }
 
 .breed-desc {
-    text-align: left !important;
+    text-align: center !important;
     font-size: 15px !important;
     font-family: 'system-ui' !important;
-    flex-grow: 2;
-    flex-basis: 0;
-    padding-right: 25px !important;
-    padding-left: 25px !important;
+    padding-right: 200px !important;
+    padding-left: 200px !important;
 }
 .container {
   display: block;
@@ -251,7 +243,7 @@ button.margin-right {
   padding-left: 35px;
   margin-bottom: 12px;
   cursor: pointer;
-  font-size: 35px;
+  font-size: 22px;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
