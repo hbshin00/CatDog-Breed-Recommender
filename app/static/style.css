@@ -174,7 +174,7 @@ button.margin-right {
 
 .img-name {
     padding-left: 75px;
-    flex-grow: 0;
+    flex-grow: 1;
     flex-basis: 0;	
 }
 
@@ -191,7 +191,7 @@ button.margin-right {
 
 .desc {
     padding-left: 75px;
-    flex-grow: 0;
+    flex-grow: 1;
     flex-basis: 0;	
 }
 
@@ -269,6 +269,6 @@ button.margin-right {
 
 .feedback {
     padding-left: 0px;
-    flex-grow: 0;
+    flex-grow: 1;
     flex-basis: 0;
 }
