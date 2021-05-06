@@ -189,6 +189,12 @@ button.margin-right {
     font-weight: bold !important;
 }
 
+.desc {
+    padding-left: 75px;
+    flex-grow: 0;
+    flex-basis: 0;	
+}
+
 .breed-desc {
     text-align: left !important;
     font-size: 15px !important;
